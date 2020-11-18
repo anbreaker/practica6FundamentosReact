@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 import Head from './components/Head';
-import Header from './components/Header';
 import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import Axios from './components/Axios';
+import ScriptsHtml from './components/ScriptsHtml';
 
 import './components/general.css';
 
@@ -12,9 +12,8 @@ ReactDOM.render(
   <React.Fragment>
     <Head />
     <Navigation />
-    <Header />
-    {/* <App /> */}
-    <Footer />
+    <Axios />
+    <ScriptsHtml />
   </React.Fragment>,
   document.getElementById('root')
 );
