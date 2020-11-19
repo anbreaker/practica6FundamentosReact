@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 
 const client = axios.create({
-  // baseURL: process.env.REACT_APP_API_BASE_URL,
-  baseURL: 'http://localhost:4000',
+  // baseURL: 'http://localhost:4000',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
 const getAdverts = () => {
-  const url = '/api/ads';
+  const url = '/api/v1/tweets';
   return client.get(url);
 };
 

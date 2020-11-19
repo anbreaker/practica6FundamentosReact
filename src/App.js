@@ -1,24 +1,23 @@
 import {Button} from 'react-bootstrap';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import HomePage from './components/HomePage';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
-    <div className="container">
-      <div className="App" id="main">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">
-            Learn React
-          </a>
-          <Button>Ver</Button>
-        </header>
+    <Router>
+      <div className="container">
+        <Switch>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
 

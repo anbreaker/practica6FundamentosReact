@@ -1,5 +1,5 @@
 import React from 'react';
-import ScriptsHtml from './ScriptsHtml';
+
 function Navigation() {
   return (
     <React.Fragment>
@@ -57,7 +57,6 @@ function Navigation() {
           </div>
         </nav>
       </div>
-      <ScriptsHtml />
     </React.Fragment>
   );
 }
