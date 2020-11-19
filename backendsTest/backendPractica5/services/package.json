@@ -1,0 +1,16 @@
+{
+  "name": "Services_Thumbnail_Creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resizeImg.js",
+  "scripts": {
+    "micro": "node services/serviceThumbnailCreator.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cote": "^1.0.0",
+    "jimp": "^0.16.1"
+  }
+}

@@ -1,13 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 
+import Head from '../Head';
+import Navigation from '../Navigation';
+import Footer from '../Footer';
+
 const client = axios.create({
-  // baseURL: 'http://localhost:4000',
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
+const token = `token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjU1NmVkNTQ2ZDg3NDQwNWY0NDNmMSIsImlhdCI6MTYwNTgwOTU0OCwiZXhwIjoxNjA3NTM3NTQ4fQ.5qbCyulNYQgymahmUa82BAp3p3qoWQgKLuNXUNgXkU0`;
+
 const getAdverts = () => {
-  const url = '/api/v1/tweets';
+  const url = `/api/ads?${token}`;
   return client.get(url);
 };
 
@@ -27,11 +32,18 @@ class Axios extends React.Component {
     console.log(this.state);
 
     const {adverts} = this.state;
+
     return (
       <React.Fragment>
-        <div className="container">
-          <div>{JSON.stringify(adverts)} ver</div>
+        <Head />
+        <Navigation />
+
+        <div className="container p-4 form-sign">
+          <div className="jumbotron">
+            <div>{JSON.stringify(adverts)} &#60;--ver</div>
+          </div>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

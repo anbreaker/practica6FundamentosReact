@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/header') %>
+  </head>
+  <body>
+    <div class="container p-2">
+      <%- include('partials/navigation') %>
+      <h1>NodePop</h1>
+      <!-- < %- include('partials/ul') %> -->
+
+      <!-- Header -->
+      <div class="container">
+        <div class="header-nav"></div>
+      </div>
+
+      <div class="container p-4 form-sign">
+        <div class="jumbotron">
+          <h1 class="display-3"><%= __('Hello, world!') %></h1>
+          <p class="lead">
+            <%= __('In this exercise we created an API, Multilanguaje, Cookies, on') %>
+            <%= __(' backend with javascript.') %>
+          </p>
+          <hr class="my-4" />
+          <p>
+            <%= __('It is practice number 5 of the Keepcoding Full Stack Web bootcamp') %>
+          </p>
+          <div class="text-center">
+            <a class="btn btn-info btn-lg" href="login" role="button">
+              <%= __('Go to Log In!') %></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+    <!-- scripts -->
+    <%- include('partials/scripts') %>
+  </body>
+</html>

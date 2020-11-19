@@ -1,7 +1,8 @@
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import NewAdvertPage from './components/pages/NewAdvertPage';
+import Axios from './components/pages/Axios';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
           </Route>
           <Route path="/new-advert">
             <NewAdvertPage />
+          </Route>
+          <Route path="/axios">
+            <Axios />
           </Route>
           <Route path="/">
             <HomePage />
