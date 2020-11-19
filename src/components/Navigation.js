@@ -7,7 +7,7 @@ function Navigation() {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <a className="navbar-brand" href="/">
-            Practice 5
+            Practice 6
           </a>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">

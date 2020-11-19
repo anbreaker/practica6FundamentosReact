@@ -30,6 +30,7 @@ function FormTemplate() {
             </Form.Group>
 
             <Form.Group controlId="formBasicRange">
+              <Form.Label>Select Tags:</Form.Label>
               {['checkbox'].map((type) => (
                 <div key={`inline-${type}`} className="mb-3">
                   <Form.Check
