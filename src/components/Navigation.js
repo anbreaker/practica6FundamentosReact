@@ -1,4 +1,5 @@
 import React from 'react';
+import {Dropdown} from 'react-bootstrap';
 
 function Navigation() {
   return (
@@ -8,32 +9,16 @@ function Navigation() {
           <a className="navbar-brand" href="/">
             Practice 5
           </a>
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false">
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
               Menu
-            </button>
-
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/">
-                Home
-              </a>
-              <a className="dropdown-item" href="/login">
-                Log In
-              </a>
-              <a className="dropdown-item" href="nodepop-private">
-                User Session
-              </a>
-              <a className="dropdown-item" href="logout">
-                Log Out
-              </a>
-            </div>
-          </div>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/">Home</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">User Session</Dropdown.Item>
+              <Dropdown.Item href="/login">Log In</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">

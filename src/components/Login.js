@@ -19,11 +19,10 @@ function Login() {
                         name="email"
                         className="form-control form-input"
                         placeholder="email@mail.com"
-                        value=""
+                        // onChange="email"
                         required
                       />
                     </div>
-
                     <div className="form-group">
                       <input
                         type="password"
