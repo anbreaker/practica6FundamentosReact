@@ -56,9 +56,11 @@ function FormTemplate() {
               ))}
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className="text-center">
+              <Button className="btn btn-info " type="submit">
+                Submit
+              </Button>
+            </div>
           </Form>
         </div>
       </div>
