@@ -10,7 +10,7 @@ function Navigation() {
             Practice 6
           </a>
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
               Menu
             </Dropdown.Toggle>
             <Dropdown.Menu>

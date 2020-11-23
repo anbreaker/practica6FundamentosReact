@@ -32,10 +32,21 @@ function Login() {
                         required
                       />
                     </div>
+                    <div className="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="customCheck2"
+                        disabled=""
+                      />
+                      <label className="custom-control-label" for="customCheck2">
+                        Remember This.
+                      </label>
+                    </div>
                     <button
                       type="submit"
                       id="btn-login"
-                      className="btn btn-info btn-block">
+                      className="btn btn-info btn-block mt-2">
                       Log In
                     </button>
                   </form>
