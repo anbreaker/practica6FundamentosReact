@@ -30,7 +30,7 @@ function AdsPage(props) {
       <Navigation />
       <div className="container p-4 form-sign">
         <div className="jumbotron">
-          <div>{JSON.stringify(ads)} &#60;--ver</div>
+          <div>{JSON.stringify(ads)}</div>
           <table id="tabel" border="1">
             <tbody>
               <tr class="center table-info">
@@ -43,14 +43,15 @@ function AdsPage(props) {
                 <td width="440">Path</td>
               </tr>
               <tr class="table-warning">
-                <td>{ads}</td>
+                <td>Ver</td>
                 <td class="center"></td>
                 <td class="center">
                   <img src="/uploads/thumbnails/advert.imagePath.png" alt="img" />
                 </td>
-                <td class="center">{ads}</td>
-                <td class="center">{ads}</td>
-                <td class="center">{ads}</td>
+                <td class="center">Ver</td>
+                <td class="center">Ver</td>
+                <td class="center">Ver</td>
+                <td class="center">Ver</td>
               </tr>
             </tbody>
           </table>
