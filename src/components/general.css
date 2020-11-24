@@ -1,3 +1,9 @@
 body {
   padding-bottom: 20px;
+  height: 100%;
+  margin-bottom: -282px;
+}
+
+.footer {
+  height: 282px;
 }

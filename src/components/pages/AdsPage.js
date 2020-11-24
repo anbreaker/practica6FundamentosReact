@@ -18,8 +18,10 @@ function AdsPage(props) {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setAds(response);
+        response.forEach((ads) => {
+          console.log(ads);
+        });
       })
       .catch((error) => console.error('Error:', error));
   }, []);
@@ -30,10 +32,14 @@ function AdsPage(props) {
       <Navigation />
       <div className="container p-4 form-sign">
         <div className="jumbotron">
-          <div>{JSON.stringify(ads)}</div>
+          {/* <ul>
+            {ads.forEach((ads) => {
+              <li>{JSON.stringify(ads)}</li>;
+            })}
+          </ul> */}
           <table id="tabel" border="1">
             <tbody>
-              <tr class="center table-info">
+              <tr className="center table-info">
                 <td width="200">Adverts</td>
                 <td width="100">Sale</td>
                 <td width="80">Cost</td>
@@ -42,16 +48,16 @@ function AdsPage(props) {
                 <td width="280">_id</td>
                 <td width="440">Path</td>
               </tr>
-              <tr class="table-warning">
+              <tr className="table-warning">
                 <td>Ver</td>
-                <td class="center"></td>
-                <td class="center">
+                <td className="center"></td>
+                <td className="center">
                   <img src="/uploads/thumbnails/advert.imagePath.png" alt="img" />
                 </td>
-                <td class="center">Ver</td>
-                <td class="center">Ver</td>
-                <td class="center">Ver</td>
-                <td class="center">Ver</td>
+                <td className="center">Ver</td>
+                <td className="center">Ver</td>
+                <td className="center">Ver</td>
+                <td className="center">Ver</td>
               </tr>
             </tbody>
           </table>
