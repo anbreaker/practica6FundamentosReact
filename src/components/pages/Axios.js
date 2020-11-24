@@ -9,7 +9,7 @@ const client = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-const token = `token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjU1NmVkNTQ2ZDg3NDQwNWY0NDNmMSIsImlhdCI6MTYwNTgwOTU0OCwiZXhwIjoxNjA3NTM3NTQ4fQ.5qbCyulNYQgymahmUa82BAp3p3qoWQgKLuNXUNgXkU0`;
+const token = `token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYmNkYWQ0YTI4Mjk2MzE2NDEyMmM5OCIsImlhdCI6MTYwNjIxNzQzNiwiZXhwIjoxNjkyNjE3NDM2fQ._FL9u_xpcRRN3oAS5EGK-At7Ods3PCX6aobzBx0vtTk`;
 
 const getAdverts = () => {
   const url = `/api/ads?${token}`;
