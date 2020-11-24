@@ -17,7 +17,7 @@ function Navigation() {
               <Dropdown.Item href="/">Home</Dropdown.Item>
               <Dropdown.Item href="#/action-2">User Session</Dropdown.Item>
               <Dropdown.Item href="/login">Log In</Dropdown.Item>
-              <Dropdown.Item href="/new-advert">New Ads</Dropdown.Item>
+              <Dropdown.Item href="/new-advert">New Advert</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
