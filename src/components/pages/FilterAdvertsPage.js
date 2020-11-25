@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Head from '../Head';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import FormTemplate from '../FormTemplate';
+import FormFiltersAds from '../FormFiltersAds';
 import AdLIst from '../AdLIst';
 
 function FilterAdverts() {
@@ -50,7 +50,7 @@ function FilterAdverts() {
       <React.Fragment>
         <Head />
         <Navigation />
-        <FormTemplate onFilterChange={onFilterChange} />
+        <FormFiltersAds />
         <AdLIst ads={ads} />
         <Footer />
       </React.Fragment>

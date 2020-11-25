@@ -3,7 +3,7 @@ import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import NewAdvertPage from './components/pages/NewAdvertPage';
 import AdsPage from './components/pages/AdsPage';
-import FilterAdverts from './components/pages/FilterAdverts';
+import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
             <LoginPage />
           </Route>
           <Route path="/filter">
-            <FilterAdverts />
+            <FilterAdvertsPage />
           </Route>
           <Route path="/new-advert">
             <NewAdvertPage />

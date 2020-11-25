@@ -5,6 +5,7 @@ function AdLIst({ads = []}) {
   return (
     <React.Fragment>
       <div className="container p-4 form-sign">
+        <h1>Ads List</h1>
         <div className="jumbotron">
           <table id="tabel" border="1">
             <thead>

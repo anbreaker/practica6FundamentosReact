@@ -2,7 +2,7 @@ import React from 'react';
 import Head from '../Head';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import FormTemplate from '../FormTemplate';
+import FormTemplate from '../FormNewAdvert';
 
 function NewAdvertPage() {
   return (

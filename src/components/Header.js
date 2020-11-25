@@ -7,6 +7,7 @@ function Header() {
         <div className="header-nav"></div>
       </div>
       <div className="container p-4 form-sign">
+        <h1>Welcome!👋 Practice 6 Fundamentals of React</h1>
         <div className="jumbotron">
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">
