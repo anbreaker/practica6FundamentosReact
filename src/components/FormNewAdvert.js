@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Button, Jumbotron} from 'react-bootstrap';
 
-function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
+function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
@@ -29,13 +29,13 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
                 />
               </Form.Group>
               <Form.Group className="col-4" controlId="formBasicPassword">
-                <Form.Label>Cost</Form.Label>
-                <Form.Control type="text" placeholder="Enter Cost" required />
+                <Form.Label>Cost €</Form.Label>
+                <Form.Control type="text" placeholder="Enter Cost €" required />
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6" controlId="formBasicRange">
+              <Form.Group className="col-5" controlId="formBasicRange">
                 <Form.Label>Select Tags:</Form.Label>
                 {['checkbox'].map((type) => (
                   <div key={`inline-${type}`} className="mb-3">
@@ -62,7 +62,7 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
                 ))}
               </Form.Group>
 
-              <Form.Group className="col-6" controlId="formBasicRange">
+              <Form.Group className="col-7" controlId="formBasicRange">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
                   id="custom-file"
@@ -83,4 +83,4 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   );
 }
 
-export default FormTemplate;
+export default FormNewAdvert;

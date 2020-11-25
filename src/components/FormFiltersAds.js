@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Form, Button, Jumbotron, Container} from 'react-bootstrap';
+import {Form, Button, ButtonGroup, Jumbotron} from 'react-bootstrap';
 
-function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
+function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
@@ -15,9 +15,20 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
 
     slider.oninput = function () {
       output.innerHTML = this.value;
+      setCost(this.value);
     };
   }
 
+  function onChangeCostAdvert(event) {
+    setAdName(event.target.value);
+  }
+
+  function onChangeSaleSearch(event) {
+    //Uno u otro...
+    setOnSale(true);
+  }
+
+  console.log(cost, adName);
   return (
     <React.Fragment>
       <div className="container p-4">
@@ -25,7 +36,7 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
         <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
             <Form.Row>
-              <Form.Group className="col-6" controlId="formBasicEmail">
+              <Form.Group className="col-6" onChange={onChangeCostAdvert}>
                 <Form.Label>Advert Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter advert name" />
               </Form.Group>
@@ -47,12 +58,24 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6" controlId="formBasicPassword">
-                <Form.Label>Buy or Sell</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter true for buy an false for Sell"
-                />
+              <Form.Group className="col-6" controlId="formBasicRange">
+                <Form.Label>Select On Sale or Search Product:</Form.Label>
+                {['checkbox'].map((type) => (
+                  <div key={`inline-${type}`} className="mb-3">
+                    <Form.Check
+                      inline
+                      label="On Sale"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                    <Form.Check
+                      inline
+                      label="Search Product"
+                      type={type}
+                      id={`inline-${type}-1`}
+                    />
+                  </div>
+                ))}
               </Form.Group>
 
               <Form.Group className="col-6" controlId="formBasicRange">
@@ -95,4 +118,4 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   );
 }
 
-export default FormTemplate;
+export default FormFiltersAds;
