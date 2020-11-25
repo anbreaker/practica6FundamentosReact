@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
 
 function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
+  const [adName, setAdName] = useState('');
+  const [onSale, setOnSale] = useState(true);
+  const [cost, setCost] = useState(0);
+  const [file, setFile] = useState();
+  const [tags, setTags] = useState('');
+
   return (
     <React.Fragment>
       <div className="container container p-4 form-sign">
         <div className="jumbotron">
-          <Form onSubmit={() => onFilterChange({name, sell, cost})}>
+          <Form onSubmit={() => onFilterChange({})}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Advert Name</Form.Label>
               <Form.Control type="text" placeholder="Enter advert name" />
