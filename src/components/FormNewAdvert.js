@@ -72,8 +72,8 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
               </Form.Group>
             </Form.Row>
             <div className="text-center">
-              <Button className="btn btn-info btn-lg" type="submit">
-                Submit
+              <Button className="btn btn-info btn-lg mt-2" type="submit">
+                Upload New Advert
               </Button>
             </div>
           </Form>

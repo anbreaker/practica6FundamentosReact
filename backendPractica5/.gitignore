@@ -8,5 +8,5 @@ package-lock.json
 node_modules
 microservicioEjemplo/node_modules
 
-.env
+
 .vscode
