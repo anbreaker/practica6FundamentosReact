@@ -4,13 +4,14 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 
 function AdsPage(props) {
+  const url = `http://localhost:3001/`;
   const [ads, setAds] = useState([]);
 
   const token = localStorage.getItem('token');
 
   //http://localhost:3001/api/loginJWT
   useEffect(() => {
-    fetch(`http://localhost:3001/api/ads?token=${token}`, {
+    fetch(`${url}api/ads?token=${token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +51,7 @@ function AdsPage(props) {
                   <td className="center">{ad.onSale ? 'true' : 'false'}</td>
                   <td className="center">{ad.cost} €</td>
                   <td className="center">
-                    <img src="/uploads/thumbnails/{ad.imagePath}.png" alt="img" />
+                    <img src={`${url}uploads/thumbnails/${ad.imagePath}.png`} alt="img" />
                   </td>
                   <td className="center">{ad.tags.map((tag) => `${tag}, `)}</td>
                   <td className="center">{ad._id}</td>
