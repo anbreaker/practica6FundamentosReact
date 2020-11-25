@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [showError, setShowError] = useState(false);
 
   function onChangeEmail(event) {
     setEmail(event.target.value);
@@ -25,6 +26,8 @@ function Login() {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
           window.location.href = '/ads';
+        } else {
+          setShowError(true);
         }
       });
   }
@@ -58,6 +61,7 @@ function Login() {
                         placeholder="Password "
                         className="form-control form-input"
                         required
+                        onFocus={() => setShowError(false)}
                         onChange={(ev) => setPassword(ev.target.value)}
                       />
                     </div>
@@ -79,6 +83,11 @@ function Login() {
                       Log In
                     </button>
                   </form>
+                  {showError && (
+                    <div className="text-center text-danger mt-2">
+                      Invalid Credentials
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

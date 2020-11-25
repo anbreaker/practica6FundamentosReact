@@ -17,13 +17,11 @@ function AdsPage(props) {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
       .then((response) => {
-        setAds(response);
-        response.forEach((ads) => {
-          console.log(ads);
-        });
+        if (response.status === 200) return response.json();
+        window.location.href = '/login';
       })
+      .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
   }, []);
 
