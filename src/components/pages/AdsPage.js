@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 
 function AdsPage(props) {
-  const [ads, setAds] = useState();
+  const [ads, setAds] = useState([]);
 
   const token = localStorage.getItem('token');
 
@@ -26,8 +26,6 @@ function AdsPage(props) {
       .catch((error) => console.error('Error:', error));
   }, []);
 
-  const numbers = [1, 2, 3, 4, 5];
-  const listItems = numbers.map((number) => <li>{number}</li>);
   return (
     <React.Fragment>
       <Head />
@@ -41,23 +39,21 @@ function AdsPage(props) {
                 <td width="100">Sale</td>
                 <td width="80">Cost</td>
                 <td width="80">Photo</td>
-                <td width="80">Tags</td>
-                <td width="280">_id</td>
-                <td width="440">Path</td>
+                <td width="260">Tags</td>
+                <td width="240">_id</td>
               </tr>
             </thead>
             <tbody>
               {ads.map((ad) => (
                 <tr className="table-warning">
                   <td>{ad.name}</td>
-                  <td className="center">{ad.onSale && true}</td>
+                  <td className="center">{ad.onSale ? 'true' : 'false'}</td>
                   <td className="center">{ad.cost} €</td>
                   <td className="center">
                     <img src="/uploads/thumbnails/{ad.imagePath}.png" alt="img" />
                   </td>
-                  <td className="center">{ad.tags}</td>
+                  <td className="center">{ad.tags.map((tag) => `${tag}, `)}</td>
                   <td className="center">{ad._id}</td>
-                  <td className="center">{ad.imagePath}</td>
                 </tr>
               ))}
             </tbody>
