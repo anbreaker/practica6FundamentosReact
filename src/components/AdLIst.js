@@ -1,4 +1,5 @@
 import React from 'react';
+import {Jumbotron, Table} from 'react-bootstrap';
 
 function AdLIst({ads = []}) {
   const url = `http://localhost:3001/`;
@@ -6,16 +7,16 @@ function AdLIst({ads = []}) {
     <React.Fragment>
       <div className="container p-4 form-sign">
         <h1>Ads List</h1>
-        <div className="jumbotron">
-          <table id="tabel" border="1">
+        <Jumbotron>
+          <Table responsive>
             <thead>
               <tr className="text-center table-info">
-                <td width="200">Adverts</td>
-                <td width="100">Sale</td>
-                <td width="80">Cost</td>
-                <td width="80">Photo</td>
-                <td width="260">Tags</td>
-                <td width="240">_id</td>
+                <th className="center">Adverts</th>
+                <th>Sale</th>
+                <th>Cost</th>
+                <th>Photo</th>
+                <th>Tags</th>
+                <th>_id</th>
               </tr>
             </thead>
             <tbody>
@@ -32,8 +33,10 @@ function AdLIst({ads = []}) {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </Table>
+        </Jumbotron>
+
+        <div></div>
       </div>
     </React.Fragment>
   );

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Button} from 'react-bootstrap';
+import {Form, Button, Jumbotron} from 'react-bootstrap';
 
 function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
@@ -12,11 +12,11 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
     <React.Fragment>
       <div className="container container p-4 form-sign">
         <h1>New Advert</h1>
-        <div className="jumbotron">
+        <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Advert Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter advert name" />
+              <Form.Control type="text" placeholder="Enter advert name" required />
             </Form.Group>
 
             <Form.Row>
@@ -25,11 +25,12 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
                 <Form.Control
                   type="text"
                   placeholder="Enter true for buy an false for Sell"
+                  required
                 />
               </Form.Group>
               <Form.Group className="col-4" controlId="formBasicPassword">
                 <Form.Label>Cost</Form.Label>
-                <Form.Control type="text" placeholder="Enter Cost" />
+                <Form.Control type="text" placeholder="Enter Cost" required />
               </Form.Group>
             </Form.Row>
 
@@ -76,7 +77,7 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
               </Button>
             </div>
           </Form>
-        </div>
+        </Jumbotron>
       </div>
     </React.Fragment>
   );

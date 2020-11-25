@@ -22,7 +22,7 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   return (
     <React.Fragment>
       <div className="container container p-4 form-sign">
-        <h1>Filter List Advert</h1>
+        <h1>Filters List Adverts</h1>
         <div className="jumbotron">
           <Form onSubmit={() => onFilterChange({})}>
             <Form.Row>

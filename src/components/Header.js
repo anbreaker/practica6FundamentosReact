@@ -1,4 +1,5 @@
 import React from 'react';
+import {Jumbotron} from 'react-bootstrap';
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
       </div>
       <div className="container p-4 form-sign">
         <h1>Welcome!👋 Practice 6 Fundamentals of React</h1>
-        <div className="jumbotron">
+        <Jumbotron>
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">
             In this exercise we use the API of the backend practice in javascript. the
@@ -22,7 +23,7 @@ function Header() {
               Go to Log In!
             </a>
           </div>
-        </div>
+        </Jumbotron>
       </div>
     </React.Fragment>
   );
