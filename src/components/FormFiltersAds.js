@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Button} from 'react-bootstrap';
-// import './sliderRange.css';
+import {Form, Button, Jumbotron, Container} from 'react-bootstrap';
 
 function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
@@ -21,9 +20,9 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
 
   return (
     <React.Fragment>
-      <div className="container container p-4 form-sign">
-        <h1>Filters List Adverts</h1>
-        <div className="jumbotron">
+      <div className="container p-4">
+        <h1>Filters Adverts</h1>
+        <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
             <Form.Row>
               <Form.Group className="col-6" controlId="formBasicEmail">
@@ -90,7 +89,7 @@ function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
               </Button>
             </div>
           </Form>
-        </div>
+        </Jumbotron>
       </div>
     </React.Fragment>
   );

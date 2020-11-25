@@ -11,7 +11,7 @@ function AdLIst({ads = []}) {
           <Table responsive>
             <thead>
               <tr className="text-center table-info">
-                <th className="center">Adverts</th>
+                <th>Adverts</th>
                 <th>Sale</th>
                 <th>Cost</th>
                 <th>Photo</th>

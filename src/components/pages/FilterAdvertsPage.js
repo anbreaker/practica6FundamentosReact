@@ -50,8 +50,8 @@ function FilterAdverts() {
       <React.Fragment>
         <Head />
         <Navigation />
-        <AdLIst ads={ads} />
         <FormFiltersAds />
+        <AdLIst ads={ads} />
         <Footer />
       </React.Fragment>
     </div>
