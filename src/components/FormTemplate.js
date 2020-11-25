@@ -1,12 +1,12 @@
 import React from 'react';
 import {Form, Button} from 'react-bootstrap';
 
-function FormTemplate() {
+function FormTemplate({uploadImage = false, onFilterChange = () => {}}) {
   return (
     <React.Fragment>
       <div className="container container p-4 form-sign">
         <div className="jumbotron">
-          <Form>
+          <Form onSubmit={() => onFilterChange({name, sell, cost})}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Advert Name</Form.Label>
               <Form.Control type="text" placeholder="Enter advert name" />
@@ -20,14 +20,16 @@ function FormTemplate() {
               <Form.Control type="text" placeholder="Enter Cost" />
             </Form.Group>
 
-            <Form.Group controlId="formBasicRange">
-              <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
-              <Form.File
-                id="custom-file"
-                label="Select Photo, file must be smaller than 1mb"
-                custom
-              />
-            </Form.Group>
+            {uploadImage && (
+              <Form.Group controlId="formBasicRange">
+                <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
+                <Form.File
+                  id="custom-file"
+                  label="Select Photo, file must be smaller than 1mb"
+                  custom
+                />
+              </Form.Group>
+            )}
 
             <Form.Group controlId="formBasicRange">
               <Form.Label>Select Tags:</Form.Label>

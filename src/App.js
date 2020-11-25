@@ -3,6 +3,7 @@ import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import NewAdvertPage from './components/pages/NewAdvertPage';
 import AdsPage from './components/pages/AdsPage';
+import FilterAdverts from './components/pages/FilterAdverts';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Switch>
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/filter">
+            <FilterAdverts />
           </Route>
           <Route path="/new-advert">
             <NewAdvertPage />

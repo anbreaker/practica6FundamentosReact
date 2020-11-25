@@ -9,7 +9,7 @@ function NewAdvertPage() {
     <React.Fragment>
       <Head />
       <Navigation />
-      <FormTemplate />
+      <FormTemplate uploadImage />
       <Footer />
     </React.Fragment>
   );
