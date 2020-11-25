@@ -26,19 +26,16 @@ function AdsPage(props) {
       .catch((error) => console.error('Error:', error));
   }, []);
 
+  const numbers = [1, 2, 3, 4, 5];
+  const listItems = numbers.map((number) => <li>{number}</li>);
   return (
     <React.Fragment>
       <Head />
       <Navigation />
       <div className="container p-4 form-sign">
         <div className="jumbotron">
-          {/* <ul>
-            {ads.forEach((ads) => {
-              <li>{JSON.stringify(ads)}</li>;
-            })}
-          </ul> */}
           <table id="tabel" border="1">
-            <tbody>
+            <thead>
               <tr className="center table-info">
                 <td width="200">Adverts</td>
                 <td width="100">Sale</td>
@@ -48,17 +45,21 @@ function AdsPage(props) {
                 <td width="280">_id</td>
                 <td width="440">Path</td>
               </tr>
-              <tr className="table-warning">
-                <td>Ver</td>
-                <td className="center"></td>
-                <td className="center">
-                  <img src="/uploads/thumbnails/advert.imagePath.png" alt="img" />
-                </td>
-                <td className="center">Ver</td>
-                <td className="center">Ver</td>
-                <td className="center">Ver</td>
-                <td className="center">Ver</td>
-              </tr>
+            </thead>
+            <tbody>
+              {ads.map((ad) => (
+                <tr className="table-warning">
+                  <td>{ad.name}</td>
+                  <td className="center">{ad.onSale && true}</td>
+                  <td className="center">{ad.cost} €</td>
+                  <td className="center">
+                    <img src="/uploads/thumbnails/{ad.imagePath}.png" alt="img" />
+                  </td>
+                  <td className="center">{ad.tags}</td>
+                  <td className="center">{ad._id}</td>
+                  <td className="center">{ad.imagePath}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
