@@ -35,7 +35,7 @@ function AdsPage(props) {
         <div className="jumbotron">
           <table id="tabel" border="1">
             <thead>
-              <tr className="center table-info">
+              <tr className="text-center table-info">
                 <td width="200">Adverts</td>
                 <td width="100">Sale</td>
                 <td width="80">Cost</td>
@@ -48,13 +48,13 @@ function AdsPage(props) {
               {ads.map((ad) => (
                 <tr className="table-warning">
                   <td>{ad.name}</td>
-                  <td className="center">{ad.onSale ? 'true' : 'false'}</td>
-                  <td className="center">{ad.cost} €</td>
+                  <td className="text-center">{ad.onSale ? 'true' : 'false'}</td>
+                  <td className="text-center">{ad.cost} €</td>
                   <td className="center">
                     <img src={`${url}uploads/thumbnails/${ad.imagePath}.png`} alt="img" />
                   </td>
-                  <td className="center">{ad.tags.map((tag) => `${tag}, `)}</td>
-                  <td className="center">{ad._id}</td>
+                  <td className="text-center">{ad.tags.map((tag) => `${tag}, `)}</td>
+                  <td className="text-center">{ad._id}</td>
                 </tr>
               ))}
             </tbody>
