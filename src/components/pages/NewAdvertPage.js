@@ -5,14 +5,20 @@ import Footer from '../Footer';
 import FormNewAdvert from '../FormNewAdvert';
 
 function NewAdvertPage() {
-  return (
-    <React.Fragment>
-      <Head />
-      <Navigation />
-      <FormNewAdvert uploadImage />
-      <Footer />
-    </React.Fragment>
-  );
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  if (isLoggedIn) {
+    return (
+      <React.Fragment>
+        <Head />
+        <Navigation />
+        <FormNewAdvert uploadImage />
+        <Footer />
+      </React.Fragment>
+    );
+  } else {
+    window.location.href = '/login';
+  }
 }
 
 export default NewAdvertPage;
