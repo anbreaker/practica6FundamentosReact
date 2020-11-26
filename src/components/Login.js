@@ -26,7 +26,7 @@ function Login() {
       .then((response) => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
-          window.location.href = '/ads';
+          window.location.href = '/adverts';
         } else {
           setShowError(true);
         }

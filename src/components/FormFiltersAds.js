@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Button, ButtonGroup, Jumbotron} from 'react-bootstrap';
+import {Form, Button, Jumbotron} from 'react-bootstrap';
 
 function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');

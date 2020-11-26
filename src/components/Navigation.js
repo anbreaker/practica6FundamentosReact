@@ -21,12 +21,12 @@ function Navigation() {
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/">Home</Dropdown.Item>
-              {isLoggedIn && <Dropdown.Item href="/ads">User Session</Dropdown.Item>}
+              {isLoggedIn && <Dropdown.Item href="/adverts">User Session</Dropdown.Item>}
               {isLoggedIn && <Dropdown.Item href="/filter">Filter ads</Dropdown.Item>}
               {isLoggedIn && <Dropdown.Item href="/new-advert">New Advert</Dropdown.Item>}
               {!isLoggedIn && <Dropdown.Item href="/login">Log In</Dropdown.Item>}
               {isLoggedIn && (
-                <Dropdown.Item href="/login" onClick={handleLogOut}>
+                <Dropdown.Item href="/" onClick={handleLogOut}>
                   Log Out
                 </Dropdown.Item>
               )}
@@ -45,7 +45,7 @@ function Navigation() {
 
               {isLoggedIn && (
                 <li className="nav-item">
-                  <a className="nav-link" href="/ads">
+                  <a className="nav-link" href="/adverts">
                     User Session
                   </a>
                 </li>
@@ -66,7 +66,7 @@ function Navigation() {
               )}
               {isLoggedIn && (
                 <li className="nav-item">
-                  <a className="nav-link" href="logout" onClick={handleLogOut}>
+                  <a className="nav-link" href="/" onClick={handleLogOut}>
                     Log Out
                   </a>
                 </li>

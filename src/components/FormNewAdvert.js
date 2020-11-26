@@ -1,13 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Form, Button, Jumbotron} from 'react-bootstrap';
 
 function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
-  const [adName, setAdName] = useState('');
-  const [onSale, setOnSale] = useState(true);
-  const [cost, setCost] = useState(0);
-  const [file, setFile] = useState();
-  const [tags, setTags] = useState('');
-
   return (
     <React.Fragment>
       <div className="container container p-4 form-sign">
