@@ -34,7 +34,9 @@ function App() {
           <Route path="/404" exact>
             <NotFoundPage />
           </Route>
-          <Route>{/* <Redirect to="/404" /> */}</Route>
+          <Route>
+            <Redirect to="/404" />
+          </Route>
         </Switch>
       </div>
     </Router>

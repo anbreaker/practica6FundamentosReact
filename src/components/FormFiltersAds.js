@@ -51,9 +51,9 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                   onChange={moveRange}
                   custom
                 />
-                <p>
+                <h5 className="text-xl-center">
                   Value: <span id="demo"></span>
-                </p>
+                </h5>
               </Form.Group>{' '}
             </Form.Row>
 
