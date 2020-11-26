@@ -16,7 +16,7 @@ function Navigation() {
             Practice 6
           </a>
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle className="btn btn-secondary btn-dark" id="dropdown-basic">
               Menu
             </Dropdown.Toggle>
             <Dropdown.Menu>

@@ -9,7 +9,7 @@ function Header() {
       </Container>
       <Container className="p-4 form-sign">
         <h1>Welcome!👋 Practice 6 Fundamentals of React</h1>
-        <Jumbotron>
+        <Jumbotron className="mt-4">
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">
             In this exercise we use the API of the backend practice in javascript. the
