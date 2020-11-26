@@ -3,7 +3,7 @@ import Head from '../Head';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import FormFiltersAds from '../FormFiltersAds';
-import AdLIst from '../AdLIst';
+import AdvertsList from '../AdvertsList';
 
 function FilterAdverts() {
   const url = `http://localhost:3001/`;
@@ -51,7 +51,7 @@ function FilterAdverts() {
         <Head />
         <Navigation />
         <FormFiltersAds />
-        <AdLIst ads={ads} />
+        <AdvertsList ads={ads} />
         <Footer />
       </React.Fragment>
     </div>

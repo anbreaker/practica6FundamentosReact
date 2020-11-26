@@ -1,4 +1,5 @@
 import React from 'react';
+import './general.css';
 
 function Head() {
   return (

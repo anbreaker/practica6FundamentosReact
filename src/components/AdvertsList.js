@@ -29,7 +29,9 @@ function AdLIst({ads = []}) {
                     <img src={`${url}uploads/thumbnails/${ad.imagePath}.png`} alt="img" />
                   </td>
                   <td className="text-center">{ad.tags.map((tag) => `${tag}, `)}</td>
-                  <td className="text-center">{ad._id}</td>
+                  <td className="text-center">
+                    <a href={`http://localhost:3000/adverts/:id=${ad._id}`}>{ad._id}</a>
+                  </td>
                 </tr>
               ))}
             </tbody>

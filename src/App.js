@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import NewAdvertPage from './components/pages/NewAdvertPage';
-import AdsPage from './components/pages/AdsPage';
+import AdvertsListPage from './components/pages/AdvertsListPage';
 import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import AdvertIdPage from './components/pages/AdvertIdPage';
@@ -22,7 +22,7 @@ function App() {
             <NewAdvertPage />
           </Route>
           <Route path="/adverts" exact>
-            <AdsPage />
+            <AdvertsListPage />
           </Route>
           {/* advert/:id */}
           <Route path="/advert/id" exact>
@@ -34,9 +34,7 @@ function App() {
           <Route path="/404" exact>
             <NotFoundPage />
           </Route>
-          <Route>
-            <Redirect to="/404" />
-          </Route>
+          <Route>{/* <Redirect to="/404" /> */}</Route>
         </Switch>
       </div>
     </Router>

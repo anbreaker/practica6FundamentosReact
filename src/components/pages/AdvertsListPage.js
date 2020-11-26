@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import Head from '../Head';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
-import AdLIst from '../AdLIst';
+import AdvertsList from '../AdvertsList';
 
-function AdsPage(props) {
+function AdvertsListPage(props) {
   const url = `http://localhost:3001/`;
   const [ads, setAds] = useState([]);
 
@@ -30,10 +30,10 @@ function AdsPage(props) {
     <React.Fragment>
       <Head />
       <Navigation />
-      <AdLIst ads={ads} />
+      <AdvertsList ads={ads} />
       <Footer />
     </React.Fragment>
   );
 }
 
-export default AdsPage;
+export default AdvertsListPage;
