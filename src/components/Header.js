@@ -1,13 +1,13 @@
 import React from 'react';
-import {Jumbotron} from 'react-bootstrap';
+import {Jumbotron, Container} from 'react-bootstrap';
 
 function Header() {
   return (
     <React.Fragment>
-      <div className="container" id="main">
+      <Container>
         <div className="header-nav"></div>
-      </div>
-      <div className="container p-4 form-sign">
+      </Container>
+      <Container className="p-4 form-sign">
         <h1>Welcome!👋 Practice 6 Fundamentals of React</h1>
         <Jumbotron>
           <h1 className="display-3">Hello, world!</h1>
@@ -24,7 +24,7 @@ function Header() {
             </a>
           </div>
         </Jumbotron>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }

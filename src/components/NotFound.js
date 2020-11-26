@@ -1,12 +1,12 @@
 import React from 'react';
-import {Jumbotron} from 'react-bootstrap';
+import {Jumbotron, Container} from 'react-bootstrap';
 
 function NotFound() {
   return (
     <React.Fragment>
-      <div className="container p-4">
+      <Container className="p-4">
         <Jumbotron>
-          <div className="col-12 text-center">
+          <div className="text-center">
             <h1>404</h1>
             <h2>UH OH! You're lost.</h2>
             <p>
@@ -18,7 +18,7 @@ function NotFound() {
             </a>
           </div>
         </Jumbotron>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Button, Jumbotron} from 'react-bootstrap';
+import {Form, Button, Container, Jumbotron} from 'react-bootstrap';
 
 function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
@@ -31,7 +31,7 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   console.log(cost, adName);
   return (
     <React.Fragment>
-      <div className="container p-4">
+      <Container className="p-4">
         <h1>Filters Adverts</h1>
         <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
@@ -113,7 +113,7 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
             </div>
           </Form>
         </Jumbotron>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }

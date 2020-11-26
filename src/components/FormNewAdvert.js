@@ -1,10 +1,10 @@
 import React from 'react';
-import {Form, Button, Jumbotron} from 'react-bootstrap';
+import {Form, Button, Jumbotron, Container} from 'react-bootstrap';
 
 function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
   return (
     <React.Fragment>
-      <div className="container container p-4 form-sign">
+      <Container className="p-4 form-sign">
         <h1>New Advert</h1>
         <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
@@ -72,7 +72,7 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
             </div>
           </Form>
         </Jumbotron>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }

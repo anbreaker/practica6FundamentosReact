@@ -5,6 +5,7 @@ import NewAdvertPage from './components/pages/NewAdvertPage';
 import AdsPage from './components/pages/AdsPage';
 import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
 import NotFoundPage from './components/pages/NotFoundPage';
+import AdvertIdPage from './components/pages/AdvertIdPage';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
           </Route>
           <Route path="/adverts" exact>
             <AdsPage />
+          </Route>
+          {/* advert/:id */}
+          <Route path="/advert/id" exact>
+            <AdvertIdPage />
           </Route>
           <Route path="/" exact>
             <HomePage />
