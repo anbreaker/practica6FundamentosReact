@@ -45,7 +45,7 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
                 <Form.Control type="number" placeholder="Enter Cost €" required />
               </Form.Group>
 
-              <Form.Group className="col-4" controlId="formBasicRange">
+              <Form.Group className="col-4">
                 <Form.Label>Select Buy or Sale Product:</Form.Label>
                 <ButtonToolbar aria-label="Toolbar with button groups">
                   <ButtonGroup className="mr-2" aria-label="First group">
@@ -67,7 +67,7 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-5" controlId="formBasicRange">
+              <Form.Group className="col-5">
                 <Form.Label>Select Tags:</Form.Label>
                 {['checkbox'].map((type) => (
                   <div key={`inline-${type}`} className="mb-3">
@@ -94,7 +94,7 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
                 ))}
               </Form.Group>
 
-              <Form.Group className="col-7" controlId="formBasicRange">
+              <Form.Group className="col-7">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
                   id="custom-file"

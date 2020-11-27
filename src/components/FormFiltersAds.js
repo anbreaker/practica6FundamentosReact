@@ -35,6 +35,21 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
     if (event.target.id === 'saleBtn') setOnSale(true);
   }
 
+  function clickTags(event) {
+    //Repetir esto 4 Veces???
+
+    if (event.target.id === 'tecnology') setTags((tags) => [...tags, 'tecnology']);
+    if (event.target.id === 'tecnology' && event.target.checked === false) {
+      setTags(tags.filter((tag) => tag !== event.target.id));
+    }
+
+    if (event.target.id === 'developer') setTags((tags) => [...tags, 'developer']);
+    if (event.target.id === 'work') setTags((tags) => [...tags, 'work']);
+    if (event.target.id === 'lifestyle') setTags((tags) => [...tags, 'lifestyle']);
+    console.log(event.target.name);
+  }
+
+  console.log(tags, '<-ver');
   return (
     <React.Fragment>
       <Container className="p-4">
@@ -46,7 +61,7 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                 <Form.Label>Advert Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter advert name" />
               </Form.Group>
-              <Form.Group className="col-6 slidecontainer" controlId="formBasicEmail">
+              <Form.Group className="col-6 slidecontainer">
                 <Form.Label>Range</Form.Label>
                 <Form.Control
                   className="slider"
@@ -64,7 +79,7 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6" controlId="formBasicRange">
+              <Form.Group className="col-6">
                 <Form.Label>Select On Sale or Search Product:</Form.Label>
                 <ButtonToolbar aria-label="Toolbar with button groups">
                   <ButtonGroup className="mr-2" aria-label="First group">
@@ -84,28 +99,37 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                 </ButtonToolbar>
               </Form.Group>
 
-              <Form.Group className="col-6" controlId="formBasicRange">
+              <Form.Group className="col-6">
                 <Form.Label>Select Tags:</Form.Label>
                 {['checkbox'].map((type) => (
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
                       label="Tecnology"
-                      type={type}
-                      id={`inline-${type}-1`}
+                      type="checkbox"
+                      id="tecnology"
+                      onClick={clickTags}
                     />
                     <Form.Check
                       inline
                       label="Developer"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="developer"
+                      onClick={clickTags}
                     />
-                    <Form.Check inline label="Work" type={type} id={`inline-${type}-2`} />
+                    <Form.Check
+                      inline
+                      label="Work"
+                      type="checkbox"
+                      id="work"
+                      onClick={clickTags}
+                    />
                     <Form.Check
                       inline
                       label="lifestyle"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="lifestyle"
+                      onClick={clickTags}
                     />
                   </div>
                 ))}
