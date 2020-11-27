@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import AdvertId from '../AdvertId';
 import Layout from '../Layout';
+import SpinnerComponent from '../SpinnerComponent';
 
 function AdvertIdPage(props) {
   const {id} = useParams();
@@ -27,7 +28,7 @@ function AdvertIdPage(props) {
       .catch((error) => console.error('Error:', error));
   }, []);
 
-  return <Layout>{advert ? <AdvertId ad={advert} /> : 'Cargando'}</Layout>;
+  return <Layout>{advert ? <AdvertId ad={advert} /> : <SpinnerComponent />}</Layout>;
 }
 
 export default AdvertIdPage;

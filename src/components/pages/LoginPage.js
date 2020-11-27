@@ -1,12 +1,18 @@
 import React from 'react';
+import Head from '../Head';
+import Navigation from '../Navigation';
 import Login from '../Login';
-import Layout from '../Layout';
+import Footer from '../Footer';
 
 function LoginPage() {
   return (
-    <Layout>
+    //Bucle infinito Layout...
+    <React.Fragment>
+      <Head />
+      <Navigation />
       <Login />
-    </Layout>
+      <Footer />{' '}
+    </React.Fragment>
   );
 }
 

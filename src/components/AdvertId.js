@@ -14,7 +14,7 @@ function AdvertId({ad}) {
   return (
     <React.Fragment>
       <Container className="p-4">
-        <h1>Adverts with id: {`${ad._id}`} </h1>
+        <h1>Advert id:</h1>
         <Jumbotron>
           <Card style={{width: '18rem'}}>
             <Card.Img

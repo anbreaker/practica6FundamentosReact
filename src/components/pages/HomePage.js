@@ -1,12 +1,18 @@
 import React from 'react';
+import Head from '../Head';
+import Navigation from '../Navigation';
 import Header from '../Header';
-import Layout from '../Layout';
+import Footer from '../Footer';
 
 function HomePage() {
   return (
-    <Layout>
+    //Bucle infinito Layout...
+    <React.Fragment>
+      <Head />
+      <Navigation />
       <Header />
-    </Layout>
+      <Footer />
+    </React.Fragment>
   );
 }
 
