@@ -30,14 +30,12 @@ function AdvertId({ad}) {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem className="ml-2 mt-2 mr-2">
-                On Sale: {`${ad.onSale} `}
+                On Sale: {ad.onSale}
               </ListGroupItem>
-              <ListGroupItem className="ml-2 mt-2 mr-2">
-                Price: {`${ad.cost} €`}
-              </ListGroupItem>
+              <ListGroupItem className="ml-2 mt-2 mr-2">Price: {ad.cost} €</ListGroupItem>
               <ListGroupItem className="ml-2 mt-2 mr-2 mb-2 ">
                 {/* Tags: {ad.tags.map((tag) => `${tag}, `)} */}
-                Tags: {`${ad.tags}`}
+                Tags: {ad.tags && ad.tags.join(', ')}
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">

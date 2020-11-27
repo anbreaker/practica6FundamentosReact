@@ -8,7 +8,7 @@ function AdvertIdPage(props) {
 
   //fetch
   const url = `http://localhost:3001/`;
-  const [advert, setadvert] = useState([]);
+  const [advert, setadvert] = useState();
 
   const token = localStorage.getItem('token');
 
@@ -27,11 +27,7 @@ function AdvertIdPage(props) {
       .catch((error) => console.error('Error:', error));
   }, []);
 
-  return (
-    <Layout>
-      <AdvertId ad={advert} />
-    </Layout>
-  );
+  return <Layout>{advert ? <AdvertId ad={advert} /> : 'Cargando'}</Layout>;
 }
 
 export default AdvertIdPage;
