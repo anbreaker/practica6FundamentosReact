@@ -1,17 +1,12 @@
 import React from 'react';
-import Head from '../Head';
-import Navigation from '../Navigation';
 import Login from '../Login';
-import Footer from '../Footer';
+import Layout from '../Layout';
 
 function LoginPage() {
   return (
-    <React.Fragment>
-      <Head />
-      <Navigation />
+    <Layout>
       <Login />
-      <Footer />
-    </React.Fragment>
+    </Layout>
   );
 }
 

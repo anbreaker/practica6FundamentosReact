@@ -31,12 +31,15 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
-          <Route path="/404" exact>
+          <Route>
+            <NotFoundPage />
+          </Route>
+          {/* <Route path="/404" exact>
             <NotFoundPage />
           </Route>
           <Route>
             <Redirect to="/404" />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>

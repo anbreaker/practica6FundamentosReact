@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Head from '../Head';
-import Navigation from '../Navigation';
-import Footer from '../Footer';
+import Layout from '../Layout';
 import AdvertsList from '../AdvertsList';
 
 function AdvertsListPage(props) {
@@ -27,12 +25,9 @@ function AdvertsListPage(props) {
   }, []);
 
   return (
-    <React.Fragment>
-      <Head />
-      <Navigation />
+    <Layout>
       <AdvertsList ads={ads} />
-      <Footer />
-    </React.Fragment>
+    </Layout>
   );
 }
 

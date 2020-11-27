@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Head from '../Head';
-import Navigation from '../Navigation';
-import Footer from '../Footer';
 import FormFiltersAds from '../FormFiltersAds';
 import AdvertsList from '../AdvertsList';
+import Layout from '../Layout';
 
 function FilterAdverts() {
   const url = `http://localhost:3001/`;
@@ -46,15 +44,10 @@ function FilterAdverts() {
   }
 
   return (
-    <div>
-      <React.Fragment>
-        <Head />
-        <Navigation />
-        <FormFiltersAds />
-        <AdvertsList ads={ads} />
-        <Footer />
-      </React.Fragment>
-    </div>
+    <Layout>
+      <FormFiltersAds />
+      <AdvertsList ads={ads} />
+    </Layout>
   );
 }
 

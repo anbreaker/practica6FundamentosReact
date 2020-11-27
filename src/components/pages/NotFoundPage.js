@@ -4,10 +4,10 @@ import NotFound from '../NotFound';
 
 function NotFoundPage() {
   return (
-    <div>
+    <React.Fragment>
       <Head />
       <NotFound />
-    </div>
+    </React.Fragment>
   );
 }
 

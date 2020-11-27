@@ -1,17 +1,12 @@
 import React from 'react';
-import Head from '../Head';
-import Navigation from '../Navigation';
 import Header from '../Header';
-import Footer from '../Footer';
+import Layout from '../Layout';
 
 function HomePage() {
   return (
-    <React.Fragment>
-      <Head />
-      <Navigation />
+    <Layout>
       <Header />
-      <Footer />
-    </React.Fragment>
+    </Layout>
   );
 }
 

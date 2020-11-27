@@ -1,24 +1,13 @@
 import React from 'react';
-import Head from '../Head';
-import Navigation from '../Navigation';
-import Footer from '../Footer';
 import FormNewAdvert from '../FormNewAdvert';
+import Layout from '../Layout';
 
 function NewAdvertPage() {
-  const isLoggedIn = !!localStorage.getItem('token');
-
-  if (isLoggedIn) {
-    return (
-      <React.Fragment>
-        <Head />
-        <Navigation />
-        <FormNewAdvert uploadImage />
-        <Footer />
-      </React.Fragment>
-    );
-  } else {
-    window.location.href = '/login';
-  }
+  return (
+    <Layout>
+      <FormNewAdvert uploadImage />
+    </Layout>
+  );
 }
 
 export default NewAdvertPage;
