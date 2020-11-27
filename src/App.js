@@ -25,7 +25,7 @@ function App() {
             <AdvertsListPage />
           </Route>
           {/* advert/:id */}
-          <Route path="/advert/id" exact>
+          <Route path="/advert/:id" exact>
             <AdvertIdPage />
           </Route>
           <Route path="/" exact>

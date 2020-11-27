@@ -5,11 +5,7 @@ import Footer from './Footer';
 
 function Layout({children}) {
   const isLoggedIn = !!localStorage.getItem('token');
-
-  if (!isLoggedIn) {
-    window.location.href = '/login';
-    return;
-  }
+  if (!isLoggedIn) return (window.location.href = '/login');
 
   return (
     <React.Fragment>
