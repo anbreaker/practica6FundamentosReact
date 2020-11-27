@@ -26,11 +26,11 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
     };
   }
 
-  function onChangeCostAdvert(event) {
+  function onChangeAdvertName(event) {
     setAdName(event.target.value);
   }
 
-  function onChangeSaleSearch(event) {
+  function onChangeSaleBuy(event) {
     if (event.target.id === 'buyBtn') setOnSale(false);
     if (event.target.id === 'saleBtn') setOnSale(true);
   }
@@ -42,7 +42,7 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
         <Jumbotron>
           <Form onSubmit={() => onFilterChange({})}>
             <Form.Row>
-              <Form.Group className="col-6" onChange={onChangeCostAdvert}>
+              <Form.Group className="col-6" onChange={onChangeAdvertName}>
                 <Form.Label>Advert Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter advert name" />
               </Form.Group>
@@ -70,13 +70,13 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                   <ButtonGroup className="mr-2" aria-label="First group">
                     <Button
                       className="btn btn-sm btn-secondary"
-                      onClick={onChangeSaleSearch}
+                      onClick={onChangeSaleBuy}
                       id="buyBtn">
                       Buy
                     </Button>
                     <Button
                       className="btn btn-sm btn-primary"
-                      onClick={onChangeSaleSearch}
+                      onClick={onChangeSaleBuy}
                       id="saleBtn">
                       Sale
                     </Button>
