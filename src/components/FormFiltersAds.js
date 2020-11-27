@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
-import {Form, Button, Container, Jumbotron} from 'react-bootstrap';
+import {
+  Button,
+  ButtonGroup,
+  ButtonToolbar,
+  Container,
+  Form,
+  Jumbotron,
+} from 'react-bootstrap';
 
 function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
   const [file, setFile] = useState();
-  const [tags, setTags] = useState('');
+  const [tags, setTags] = useState([]);
 
   function moveRange() {
     const slider = document.getElementById('myRange');
@@ -24,11 +31,10 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   }
 
   function onChangeSaleSearch(event) {
-    //Uno u otro...
-    setOnSale(true);
+    if (event.target.id === 'buyBtn') setOnSale(false);
+    if (event.target.id === 'saleBtn') setOnSale(true);
   }
 
-  console.log(cost, adName);
   return (
     <React.Fragment>
       <Container className="p-4">
@@ -54,28 +60,28 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                 <h5 className="text-xl-center">
                   Value: <span id="demo"></span>
                 </h5>
-              </Form.Group>{' '}
+              </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group className="col-6" controlId="formBasicRange">
                 <Form.Label>Select On Sale or Search Product:</Form.Label>
-                {['checkbox'].map((type) => (
-                  <div key={`inline-${type}`} className="mb-3">
-                    <Form.Check
-                      inline
-                      label="On Sale"
-                      type={type}
-                      id={`inline-${type}-1`}
-                    />
-                    <Form.Check
-                      inline
-                      label="Search Product"
-                      type={type}
-                      id={`inline-${type}-1`}
-                    />
-                  </div>
-                ))}
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                  <ButtonGroup className="mr-2" aria-label="First group">
+                    <Button
+                      className="btn btn-sm btn-secondary"
+                      onClick={onChangeSaleSearch}
+                      id="buyBtn">
+                      Buy
+                    </Button>
+                    <Button
+                      className="btn btn-sm btn-primary"
+                      onClick={onChangeSaleSearch}
+                      id="saleBtn">
+                      Sale
+                    </Button>
+                  </ButtonGroup>
+                </ButtonToolbar>
               </Form.Group>
 
               <Form.Group className="col-6" controlId="formBasicRange">
