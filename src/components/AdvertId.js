@@ -15,14 +15,11 @@ function AdvertId({ad}) {
   function deleteAdById(event) {
     event.preventDefault();
 
-    fetch(urlToDelete, {
-      method: 'DELETE',
-    })
+    fetch(urlToDelete, {method: 'DELETE'})
       .then((response) => response.json())
       .catch(console.error)
       .then(() => (window.location.href = '/adverts'));
   }
-  console.log(ad);
 
   return (
     <React.Fragment>
@@ -43,7 +40,7 @@ function AdvertId({ad}) {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem className="ml-2 mt-2 mr-2">
-                On Sale: {ad.onSale}
+                On Sale: {ad.onSale.toString()}
               </ListGroupItem>
               <ListGroupItem className="ml-2 mt-2 mr-2">Price: {ad.cost} €</ListGroupItem>
               <ListGroupItem className="ml-2 mt-2 mr-2 mb-2 ">

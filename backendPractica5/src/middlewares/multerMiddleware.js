@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const maxSize = 1000000;
+const maxSize = 10000000;
 const multerMiddlewareUploads = multer({
   storage,
   dest: path.join(__dirname, '..', '/public/uploads'),
@@ -23,7 +23,7 @@ const multerMiddlewareUploads = multer({
     const mimetype = filetypes.test(file.mimetype);
 
     if (req.headers['content-length'] > maxSize) {
-      callback(new Error('The file must be smaller than 1mb'));
+      callback(new Error('The file must be smaller than 10mb'));
     }
 
     const extensionName = filetypes.test(path.extname(file.originalname));

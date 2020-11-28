@@ -1,11 +1,13 @@
 import React from 'react';
-import {Jumbotron, Table} from 'react-bootstrap';
+import {Jumbotron, Container, Table} from 'react-bootstrap';
 
 function AdList({ads = []}) {
-  const url = `http://localhost:3001/`;
+  const urlBackend = `http://localhost:3001/`;
+  const urlFront = `http://localhost:3000/`;
+
   return (
     <React.Fragment>
-      <div className="container p-4 form-sign">
+      <Container className="p-4 form-sign">
         <h1>Ads List</h1>
         <Jumbotron>
           <Table responsive>
@@ -26,20 +28,23 @@ function AdList({ads = []}) {
                   <td className="text-center">{ad.onSale ? 'true' : 'false'}</td>
                   <td className="text-center">{ad.cost} €</td>
                   <td className="center">
-                    <img src={`${url}uploads/thumbnails/${ad.imagePath}.png`} alt="img" />
+                    <a href={`${urlFront}advert/${ad._id}`}>
+                      <img
+                        src={`${urlBackend}uploads/thumbnails/${ad.imagePath}.png`}
+                        alt="img"
+                      />
+                    </a>
                   </td>
                   <td className="text-center">{ad.tags.join(', ')}</td>
                   <td className="text-center">
-                    <a href={`http://localhost:3000/advert/${ad._id}`}>{ad._id}</a>
+                    <a href={`${urlFront}advert/${ad._id}`}>{ad._id}</a>
                   </td>
                 </tr>
               ))}
             </tbody>
           </Table>
         </Jumbotron>
-
-        <div></div>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }

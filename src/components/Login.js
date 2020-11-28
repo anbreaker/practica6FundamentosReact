@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Jumbotron, Button} from 'react-bootstrap';
+import {Container, Jumbotron, Button} from 'react-bootstrap';
 
 function Login() {
   const [email, setEmail] = useState();
@@ -35,7 +35,7 @@ function Login() {
 
   return (
     <React.Fragment>
-      <div className="container p-4 form-sign">
+      <Container className="p-4 form-sign">
         <Jumbotron>
           <div className="row">
             <div className="col-md-6 offset-md-3">
@@ -94,7 +94,7 @@ function Login() {
             </div>
           </div>
         </Jumbotron>
-      </div>
+      </Container>
     </React.Fragment>
   );
 }
