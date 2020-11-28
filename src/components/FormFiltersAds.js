@@ -36,16 +36,12 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
   }
 
   function clickTags(event) {
-    //Repetir esto 4 Veces???
-
-    if (event.target.id === 'tecnology') setTags((tags) => [...tags, 'tecnology']);
-    if (event.target.id === 'tecnology' && event.target.checked === false) {
+    if (event.target.checked === false) {
       setTags(tags.filter((tag) => tag !== event.target.id));
+    } else {
+      setTags((tags) => [...tags, event.target.id]);
     }
 
-    if (event.target.id === 'developer') setTags((tags) => [...tags, 'developer']);
-    if (event.target.id === 'work') setTags((tags) => [...tags, 'work']);
-    if (event.target.id === 'lifestyle') setTags((tags) => [...tags, 'lifestyle']);
     console.log(event.target.name);
   }
 
