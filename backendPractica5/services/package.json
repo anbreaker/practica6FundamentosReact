@@ -1,5 +1,5 @@
 {
-  "name": "Services_Thumbnail_Creator",
+  "name": "services_thumbnail_creator",
   "version": "1.0.0",
   "description": "",
   "main": "resizeImg.js",

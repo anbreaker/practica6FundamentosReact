@@ -24,7 +24,7 @@ const advertSchema = new Schema(
     //thumbnail: {
     //  type: String,
     //},
-    tags: ['tecnology', 'developer', 'work', 'lifestyle'],
+    tags: ['technology', 'developer', 'work', 'lifestyle'],
   },
   {
     // Don't create index on production!!

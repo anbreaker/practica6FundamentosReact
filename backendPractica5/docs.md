@@ -3,13 +3,12 @@ title: NodePopJWT v1.0
 language_tabs:
   - javascript: javascript
 language_clients:
-  - javascript: ""
+  - javascript: ''
 toc_footers: []
 includes: []
 search: false
 highlight_theme: darkula
 headingLevel: 2
-
 ---
 
 <!-- Generator: Widdershins v4.0.1 -->
@@ -20,7 +19,7 @@ headingLevel: 2
 
 Base URLs:
 
-* <a href="http://127.0.0.1:3000/api">http://127.0.0.1:3000/api</a>
+- <a href="http://127.0.0.1:3000/api">http://127.0.0.1:3000/api</a>
 
 <h1 id="nodepopjwt-misc">Misc</h1>
 
@@ -31,24 +30,25 @@ Base URLs:
 > Code samples
 
 ```javascript
-
 const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
 };
 
-fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'GET',
+fetch(
+  'http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'GET',
 
-  headers: headers
-})
-.then(function(res) {
+    headers: headers,
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `GET /ads/5f5912fbb1828432bd7a162f`
@@ -136,17 +136,17 @@ Returns:
 
 <h3 id="get-all-ads-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
-|Content-Type|header|string|true|none|
-|Accept|header|string|true|none|
+| Name         | In     | Type   | Required | Description |
+| ------------ | ------ | ------ | -------- | ----------- |
+| token        | query  | string | true     | none        |
+| Content-Type | header | string | true     | none        |
+| Accept       | header | string | true     | none        |
 
 <h3 id="get-all-ads-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -210,26 +210,25 @@ onSale: true
 cost: 123
 image: string
 tags: work
-
 ```
 
 <h3 id="create-ad-with-form-data-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
-|body|body|object|false|none|
-|» name|body|string|true|none|
-|» onSale|body|boolean|true|none|
-|» cost|body|integer(int32)|true|none|
-|» image|body|string|true|none|
-|» tags|body|string|true|none|
+| Name     | In    | Type           | Required | Description |
+| -------- | ----- | -------------- | -------- | ----------- |
+| token    | query | string         | true     | none        |
+| body     | body  | object         | false    | none        |
+| » name   | body  | string         | true     | none        |
+| » onSale | body  | boolean        | true     | none        |
+| » cost   | body  | integer(int32) | true     | none        |
+| » image  | body  | string         | true     | none        |
+| » tags   | body  | string         | true     | none        |
 
 <h3 id="create-ad-with-form-data-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -242,24 +241,25 @@ This operation does not require authentication
 > Code samples
 
 ```javascript
-
 const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
 };
 
-fetch('http://127.0.0.1:3000/api/ads?tags=technology&cost=700-&name=Ad&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'GET',
+fetch(
+  'http://127.0.0.1:3000/api/ads?tags=technology&cost=700-&name=Ad&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'GET',
 
-  headers: headers
-})
-.then(function(res) {
+    headers: headers,
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `GET /ads`
@@ -316,20 +316,20 @@ fetch('http://127.0.0.1:3000/api/ads?tags=technology&cost=700-&name=Ad&token=eyJ
 
 <h3 id="get-ads-by-filters-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|tags|query|string|true|none|
-|cost|query|string|true|none|
-|name|query|string|true|none|
-|token|query|string|true|none|
-|Content-Type|header|string|true|none|
-|Accept|header|string|true|none|
+| Name         | In     | Type   | Required | Description |
+| ------------ | ------ | ------ | -------- | ----------- |
+| tags         | query  | string | true     | none        |
+| cost         | query  | string | true     | none        |
+| name         | query  | string | true     | none        |
+| token        | query  | string | true     | none        |
+| Content-Type | header | string | true     | none        |
+| Accept       | header | string | true     | none        |
 
 <h3 id="get-ads-by-filters-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -342,18 +342,18 @@ This operation does not require authentication
 > Code samples
 
 ```javascript
-
-fetch('http://127.0.0.1:3000/api/ads/5fa2671ee10d5e37b06cc18e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'DELETE'
-
-})
-.then(function(res) {
+fetch(
+  'http://127.0.0.1:3000/api/ads/5fa2671ee10d5e37b06cc18e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'DELETE',
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `DELETE /ads/5fa2671ee10d5e37b06cc18e`
@@ -362,15 +362,15 @@ fetch('http://127.0.0.1:3000/api/ads/5fa2671ee10d5e37b06cc18e?token=eyJhbGciOiJI
 
 <h3 id="delete-ad-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
+| Name  | In    | Type   | Required | Description |
+| ----- | ----- | ------ | -------- | ----------- |
+| token | query | string | true     | none        |
 
 <h3 id="delete-ad-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -436,42 +436,42 @@ fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a1630?name=test&onsale=t
 
 <h3 id="update-ad-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|name|query|string|true|none|
-|onsale|query|boolean|true|none|
-|token|query|string|true|none|
-|body|body|[UpdateAdRequest](#schemaupdateadrequest)|true|none|
+| Name   | In    | Type                                      | Required | Description |
+| ------ | ----- | ----------------------------------------- | -------- | ----------- |
+| name   | query | string                                    | true     | none        |
+| onsale | query | boolean                                   | true     | none        |
+| token  | query | string                                    | true     | none        |
+| body   | body  | [UpdateAdRequest](#schemaupdateadrequest) | true     | none        |
 
 <h3 id="update-ad-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
 </aside>
 
-## Get Ad by :_id
+## Get Ad by :\_id
 
 <a id="opIdGetAdby:_id"></a>
 
 > Code samples
 
 ```javascript
-
-fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a1630?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'GET'
-
-})
-.then(function(res) {
+fetch(
+  'http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a1630?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'GET',
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `GET /ads/5f5912fbb1828432bd7a1630`
@@ -494,15 +494,15 @@ fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a1630?token=eyJhbGciOiJI
 
 <h3 id="get-ad-by-:_id-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
+| Name  | In    | Type   | Required | Description |
+| ----- | ----- | ------ | -------- | ----------- |
+| token | query | string | true     | none        |
 
 <h3 id="get-ad-by-:_id-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -515,18 +515,18 @@ This operation does not require authentication
 > Code samples
 
 ```javascript
-
-fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f/notOnSale?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'POST'
-
-})
-.then(function(res) {
+fetch(
+  'http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f/notOnSale?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'POST',
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `POST /ads/5f5912fbb1828432bd7a162f/notOnSale`
@@ -535,15 +535,15 @@ Post change notOnSale
 
 <h3 id="post-change-notonsale-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
+| Name  | In    | Type   | Required | Description |
+| ----- | ----- | ------ | -------- | ----------- |
+| token | query | string | true     | none        |
 
 <h3 id="post-change-notonsale-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -556,18 +556,18 @@ This operation does not require authentication
 > Code samples
 
 ```javascript
-
-fetch('http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f/yesOnSale?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
-{
-  method: 'POST'
-
-})
-.then(function(res) {
+fetch(
+  'http://127.0.0.1:3000/api/ads/5f5912fbb1828432bd7a162f/yesOnSale?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas',
+  {
+    method: 'POST',
+  }
+)
+  .then(function (res) {
     return res.json();
-}).then(function(body) {
+  })
+  .then(function (body) {
     console.log(body);
-});
-
+  });
 ```
 
 `POST /ads/5f5912fbb1828432bd7a162f/yesOnSale`
@@ -576,15 +576,15 @@ Post change yesOnSale
 
 <h3 id="post-change-yesonsale-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|token|query|string|true|none|
+| Name  | In    | Type   | Required | Description |
+| ----- | ----- | ------ | -------- | ----------- |
+| token | query | string | true     | none        |
 
 <h3 id="post-change-yesonsale-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -632,15 +632,15 @@ fetch('http://127.0.0.1:3000/api/signup',
 
 <h3 id="get-signup-user-on-private-zone-postman-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|body|body|[GetSignupUseronprivatezonePostmanRequest](#schemagetsignupuseronprivatezonepostmanrequest)|true|none|
+| Name | In   | Type                                                                                        | Required | Description |
+| ---- | ---- | ------------------------------------------------------------------------------------------- | -------- | ----------- |
+| body | body | [GetSignupUseronprivatezonePostmanRequest](#schemagetsignupuseronprivatezonepostmanrequest) | true     | none        |
 
 <h3 id="get-signup-user-on-private-zone-postman-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -688,15 +688,15 @@ fetch('http://127.0.0.1:3000/api/signin',
 
 <h3 id="get-signin-login-existing-user-on-private-zone-postman-parameters">Parameters</h3>
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|body|body|[GetSigninloginexistinguseronprivatezonePostmanRequest](#schemagetsigninloginexistinguseronprivatezonepostmanrequest)|true|none|
+| Name | In   | Type                                                                                                                  | Required | Description |
+| ---- | ---- | --------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| body | body | [GetSigninloginexistinguseronprivatezonePostmanRequest](#schemagetsigninloginexistinguseronprivatezonepostmanrequest) | true     | none        |
 
 <h3 id="get-signin-login-existing-user-on-private-zone-postman-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|None|
+| Status | Meaning                                                 | Description | Schema |
+| ------ | ------------------------------------------------------- | ----------- | ------ |
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | none        | None   |
 
 <aside class="success">
 This operation does not require authentication
@@ -717,18 +717,17 @@ This operation does not require authentication
   "onSale": false,
   "cost": 214
 }
-
 ```
 
 UpdateAdRequest
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|name|string|true|none|none|
-|onSale|string|true|none|none|
-|cost|integer(int32)|true|none|none|
+| Name   | Type           | Required | Restrictions | Description |
+| ------ | -------------- | -------- | ------------ | ----------- |
+| name   | string         | true     | none         | none        |
+| onSale | string         | true     | none         | none        |
+| cost   | integer(int32) | true     | none         | none        |
 
 <h2 id="tocS_CreateAdwithJSONRequest">CreateAdwithJSONRequest</h2>
 <!-- backwards compatibility -->
@@ -743,25 +742,21 @@ UpdateAdRequest
   "onSale": true,
   "cost": 707,
   "imagePath": "d1d50271-4b0a-4909-8a9f-b5ad48998d38.png",
-  "tags": [
-    "tecnology",
-    "lifestyle"
-  ]
+  "tags": ["technology", "lifestyle"]
 }
-
 ```
 
 CreateAdwithJSONRequest
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|name|string|true|none|none|
-|onSale|boolean|true|none|none|
-|cost|integer(int32)|true|none|none|
-|imagePath|string|true|none|none|
-|tags|[string]|true|none|none|
+| Name      | Type           | Required | Restrictions | Description |
+| --------- | -------------- | -------- | ------------ | ----------- |
+| name      | string         | true     | none         | none        |
+| onSale    | boolean        | true     | none         | none        |
+| cost      | integer(int32) | true     | none         | none        |
+| imagePath | string         | true     | none         | none        |
+| tags      | [string]       | true     | none         | none        |
 
 <h2 id="tocS_GetSignupUseronprivatezonePostmanRequest">GetSignupUseronprivatezonePostmanRequest</h2>
 <!-- backwards compatibility -->
@@ -775,17 +770,16 @@ CreateAdwithJSONRequest
   "email": "user1@user.com",
   "password": 123
 }
-
 ```
 
 GetSignupUseronprivatezonePostmanRequest
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|email|string|true|none|none|
-|password|string|true|none|none|
+| Name     | Type   | Required | Restrictions | Description |
+| -------- | ------ | -------- | ------------ | ----------- |
+| email    | string | true     | none         | none        |
+| password | string | true     | none         | none        |
 
 <h2 id="tocS_GetSigninloginexistinguseronprivatezonePostmanRequest">GetSigninloginexistinguseronprivatezonePostmanRequest</h2>
 <!-- backwards compatibility -->
@@ -799,15 +793,13 @@ GetSignupUseronprivatezonePostmanRequest
   "email": "user@user.com",
   "password": 123
 }
-
 ```
 
 GetSigninloginexistinguseronprivatezonePostmanRequest
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|email|string|true|none|none|
-|password|string|true|none|none|
-
+| Name     | Type   | Required | Restrictions | Description |
+| -------- | ------ | -------- | ------------ | ----------- |
+| email    | string | true     | none         | none        |
+| password | string | true     | none         | none        |

@@ -41,8 +41,6 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
     } else {
       setTags((tags) => [...tags, event.target.id]);
     }
-
-    console.log(event.target.name);
   }
 
   console.log(tags, '<-ver');
@@ -101,9 +99,9 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
-                      label="Tecnology"
+                      label="technology"
                       type="checkbox"
-                      id="tecnology"
+                      id="technology"
                       onClick={clickTags}
                     />
                     <Form.Check

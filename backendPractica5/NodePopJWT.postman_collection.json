@@ -730,7 +730,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\n      \"name\": \"test1\",\n      \"onSale\": true,\n      \"cost\": 707,\n      \"imagePath\": \"d1d50271-4b0a-4909-8a9f-b5ad48998d38.png\",\n      \"tags\": [\"tecnology\", \"lifestyle\"]\n    }",
+					"raw": "    {\n      \"name\": \"test1\",\n      \"onSale\": true,\n      \"cost\": 707,\n      \"imagePath\": \"d1d50271-4b0a-4909-8a9f-b5ad48998d38.png\",\n      \"tags\": [\"technology\", \"lifestyle\"]\n    }",
 					"options": {
 						"raw": {
 							"language": "json"

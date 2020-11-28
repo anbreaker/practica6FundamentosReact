@@ -4,13 +4,13 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: http://127.0.0.1:3000/api
-  variables: {}
+  - url: http://127.0.0.1:3000/api
+    variables: {}
 paths:
   /ads/5f5912fbb1828432bd7a162f:
     get:
       tags:
-      - Misc
+        - Misc
       summary: Get all Ads
       description: >-
         Get all the ads from the database.
@@ -99,31 +99,31 @@ paths:
         ```
       operationId: GetallAds
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
       responses:
         200:
           description: ''
@@ -132,7 +132,7 @@ paths:
   /ads:
     post:
       tags:
-      - Misc
+        - Misc
       summary: Create Ad with form-data
       description: >-
         ## Create Ad with form-data
@@ -156,26 +156,26 @@ paths:
         ```
       operationId: CreateAdwithform-data
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       requestBody:
         content:
           application/x-www-form-urlencoded:
             encoding: {}
             schema:
               required:
-              - name
-              - onSale
-              - cost
-              - image
-              - tags
+                - name
+                - onSale
+                - cost
+                - image
+                - tags
               type: object
               properties:
                 name:
@@ -201,7 +201,7 @@ paths:
       deprecated: false
     get:
       tags:
-      - Misc
+        - Misc
       summary: Get Ads by Filters
       description: >-
         ## Get ad by filters an params
@@ -262,58 +262,58 @@ paths:
         ```
       operationId: GetAdsbyFilters
       parameters:
-      - name: tags
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: technology
-      - name: cost
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: 700-
-      - name: name
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: Ad
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
-      - name: Content-Type
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
-      - name: Accept
-        in: header
-        description: ''
-        required: true
-        style: simple
-        schema:
-          type: string
-          example: application/json
+        - name: tags
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: technology
+        - name: cost
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: 700-
+        - name: name
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: Ad
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: Content-Type
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
       responses:
         200:
           description: ''
@@ -322,20 +322,20 @@ paths:
   /ads/5fa2671ee10d5e37b06cc18e:
     delete:
       tags:
-      - Misc
+        - Misc
       summary: Delete Ad
       description: '## Delete an ad using its id'
       operationId: DeleteAd
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       responses:
         200:
           description: ''
@@ -344,7 +344,7 @@ paths:
   /ads/5f5912fbb1828432bd7a1630:
     patch:
       tags:
-      - Misc
+        - Misc
       summary: Update Ad
       description: >-
         ## Update an ad according to the parameters that we pass it after locating it by its id
@@ -368,33 +368,33 @@ paths:
         ```
       operationId: UpdateAd
       parameters:
-      - name: name
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: test
-      - name: onsale
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: boolean
-          example: true
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: name
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: test
+        - name: onsale
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            example: true
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       requestBody:
         description: ''
         content:
@@ -413,7 +413,7 @@ paths:
       deprecated: false
     get:
       tags:
-      - Misc
+        - Misc
       summary: Get Ad by :_id
       description: >-
         ## Get ad by :id (5f5912fbb1828432bd7a1630)
@@ -437,15 +437,15 @@ paths:
         ```
       operationId: GetAdby:_id
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       responses:
         200:
           description: ''
@@ -454,20 +454,20 @@ paths:
   /ads/5f5912fbb1828432bd7a162f/notOnSale:
     post:
       tags:
-      - Misc
+        - Misc
       summary: Post change notOnSale
       description: Post change notOnSale
       operationId: PostchangenotOnSale
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       responses:
         200:
           description: ''
@@ -476,20 +476,20 @@ paths:
   /ads/5f5912fbb1828432bd7a162f/yesOnSale:
     post:
       tags:
-      - Misc
+        - Misc
       summary: Post change yesOnSale
       description: Post change yesOnSale
       operationId: PostchangeyesOnSale
       parameters:
-      - name: token
-        in: query
-        description: ''
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
+        - name: token
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTI4YmIzMmIzMWUzNjgzOWM1YWNhNyIsImlhdCI6MTYwNDQ5MzI0MiwiZXhwIjoxNjA2MjIxMjQyfQ.AISxX7HBUUMvHsinkieNv37TWuF0e76iblOHIgbCYas
       responses:
         200:
           description: ''
@@ -498,7 +498,7 @@ paths:
   /signup:
     post:
       tags:
-      - Misc
+        - Misc
       summary: Get Signup User on private zone Postman
       operationId: GetSignupUseronprivatezonePostman
       parameters: []
@@ -520,7 +520,7 @@ paths:
   /signin:
     post:
       tags:
-      - Misc
+        - Misc
       summary: Get Signin login existing user on private zone Postman
       operationId: GetSigninloginexistinguseronprivatezonePostman
       parameters: []
@@ -544,9 +544,9 @@ components:
     UpdateAdRequest:
       title: UpdateAdRequest
       required:
-      - name
-      - onSale
-      - cost
+        - name
+        - onSale
+        - cost
       type: object
       properties:
         name:
@@ -563,11 +563,11 @@ components:
     CreateAdwithJSONRequest:
       title: CreateAdwithJSONRequest
       required:
-      - name
-      - onSale
-      - cost
-      - imagePath
-      - tags
+        - name
+        - onSale
+        - cost
+        - imagePath
+        - tags
       type: object
       properties:
         name:
@@ -590,13 +590,13 @@ components:
         cost: 707
         imagePath: d1d50271-4b0a-4909-8a9f-b5ad48998d38.png
         tags:
-        - tecnology
-        - lifestyle
+          - technology
+          - lifestyle
     GetSignupUseronprivatezonePostmanRequest:
       title: GetSignupUseronprivatezonePostmanRequest
       required:
-      - email
-      - password
+        - email
+        - password
       type: object
       properties:
         email:
@@ -609,8 +609,8 @@ components:
     GetSigninloginexistinguseronprivatezonePostmanRequest:
       title: GetSigninloginexistinguseronprivatezonePostmanRequest
       required:
-      - email
-      - password
+        - email
+        - password
       type: object
       properties:
         email:
@@ -621,5 +621,5 @@ components:
         email: user@user.com
         password: 123
 tags:
-- name: Misc
-  description: ''
+  - name: Misc
+    description: ''

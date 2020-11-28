@@ -26,7 +26,16 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
     if (event.target.id === 'buyBtn') setOnSale(false);
     if (event.target.id === 'saleBtn') setOnSale(true);
   }
-  console.log(cost);
+
+  function clickTags(event) {
+    if (event.target.checked === false) {
+      setTags(tags.filter((tag) => tag !== event.target.id));
+    } else {
+      setTags((tags) => [...tags, event.target.id]);
+    }
+  }
+
+  console.log(adName, cost, onSale, tags);
 
   return (
     <React.Fragment>
@@ -73,22 +82,31 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
-                      label="Tecnology"
-                      type={type}
-                      id={`inline-${type}-1`}
+                      label="technology"
+                      type="checkbox"
+                      id="technology"
+                      onClick={clickTags}
                     />
                     <Form.Check
                       inline
                       label="Developer"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="developer"
+                      onClick={clickTags}
                     />
-                    <Form.Check inline label="Work" type={type} id={`inline-${type}-2`} />
+                    <Form.Check
+                      inline
+                      label="Work"
+                      type="checkbox"
+                      id="work"
+                      onClick={clickTags}
+                    />
                     <Form.Check
                       inline
                       label="lifestyle"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="lifestyle"
+                      onClick={clickTags}
                     />
                   </div>
                 ))}

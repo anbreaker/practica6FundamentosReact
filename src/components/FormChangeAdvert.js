@@ -75,7 +75,7 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
                   <div key={`inline-${type}`} className="mb-3">
                     <Form.Check
                       inline
-                      label="Tecnology"
+                      label="technology"
                       type={type}
                       id={`inline-${type}-1`}
                     />
