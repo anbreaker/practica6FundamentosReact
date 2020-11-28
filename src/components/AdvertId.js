@@ -9,6 +9,19 @@ import {
 } from 'react-bootstrap';
 
 function AdvertId({ad}) {
+  const token = localStorage.getItem('token');
+  const urlToDelete = `http://127.0.0.1:3001/api/ads/${ad._id}?token=${token}`;
+
+  function deleteAdById(event) {
+    event.preventDefault();
+
+    fetch(urlToDelete, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .catch(console.error)
+      .then(() => (window.location.href = '/adverts'));
+  }
   console.log(ad);
 
   return (
@@ -42,7 +55,7 @@ function AdvertId({ad}) {
               <Button className="btn btn-success mt-4 mb-4 mr-4" type="submit">
                 Change Adv
               </Button>
-              <Button className="btn btn-danger mt-4 mb-4" type="submit">
+              <Button className="btn btn-danger mt-4 mb-4" onClick={deleteAdById}>
                 Delete Advert
               </Button>
             </div>

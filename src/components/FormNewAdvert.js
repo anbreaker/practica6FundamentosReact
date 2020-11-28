@@ -18,8 +18,6 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
   const token = localStorage.getItem('token');
   const url = `http://127.0.0.1:3001/api/ads?token=${token}`;
 
-  console.log(file);
-
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
   }

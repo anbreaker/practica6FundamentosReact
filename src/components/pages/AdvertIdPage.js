@@ -6,11 +6,9 @@ import SpinnerComponent from '../SpinnerComponent';
 
 function AdvertIdPage(props) {
   const {id} = useParams();
-
-  //fetch
-  const url = `http://localhost:3001/`;
   const [advert, setadvert] = useState();
 
+  const url = `http://localhost:3001/`;
   const token = localStorage.getItem('token');
 
   useEffect(() => {
