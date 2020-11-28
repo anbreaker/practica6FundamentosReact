@@ -20,7 +20,7 @@ function FormFiltersAds({onFilterChange = () => {}}) {
 
   function moveRange() {
     const slider = document.getElementById('myRange');
-    const output = document.getElementById('demo');
+    const output = document.getElementById('output');
     output.innerHTML = slider.value;
 
     slider.oninput = function () {
@@ -58,7 +58,7 @@ function FormFiltersAds({onFilterChange = () => {}}) {
                 <Form.Control type="text" placeholder="Enter advert name" />
               </Form.Group>
               <Form.Group className="col-6 slidecontainer">
-                <Form.Label>Range</Form.Label>
+                <Form.Label>Value Max</Form.Label>
                 <Form.Control
                   className="slider"
                   type="range"
@@ -69,7 +69,7 @@ function FormFiltersAds({onFilterChange = () => {}}) {
                   custom
                 />
                 <h5 className="text-xl-center">
-                  Value: <span id="demo"></span>
+                  Value: <span id="output"></span>
                 </h5>
               </Form.Group>
             </Form.Row>
