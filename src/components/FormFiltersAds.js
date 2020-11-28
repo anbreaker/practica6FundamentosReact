@@ -8,17 +8,11 @@ import {
   Jumbotron,
 } from 'react-bootstrap';
 
-function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
+function FormFiltersAds({onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
-  const [file, setFile] = useState();
   const [tags, setTags] = useState([]);
-
-  const token = localStorage.getItem('token');
-  const url = `http://127.0.0.1:3001/api/ads?token=${token}`;
-
-  console.log(file);
 
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
@@ -48,36 +42,16 @@ function FormFiltersAds({uploadImage = false, onFilterChange = () => {}}) {
     }
   }
 
-  function createUrl() {
-    console.log('ver');
-  }
-
-  function formSubmit(event) {
-    event.preventDefault();
-    const form = new FormData();
-    form.append('name', adName);
-    form.append('onSale', onSale);
-    form.append('cost', cost);
-    form.append('image', file);
-    tags.forEach((tag) => form.append('tags', tag));
-
-    fetch(url, {
-      method: 'GET',
-      body: form,
-    })
-      .then((response) => response.json())
-      .catch(console.error)
-      .then(() => (window.location.href = '/filter'));
-  }
-
-  console.log(adName, cost, onSale, tags);
-
   return (
     <React.Fragment>
       <Container className="p-4">
         <h1>Filters Adverts</h1>
         <Jumbotron>
-          <Form onSubmit={formSubmit}>
+          <Form
+            onSubmit={(event) => {
+              event.preventDefault();
+              onFilterChange({adName, onSale, cost, tags});
+            }}>
             <Form.Row>
               <Form.Group className="col-6" onChange={onChangeAdvertName}>
                 <Form.Label>Advert Name</Form.Label>

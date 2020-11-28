@@ -28,7 +28,14 @@ function FilterAdverts() {
   function onFilterChange(filters) {
     const params = new URLSearchParams();
     params.set('token', token);
-    params.set('name', filters.name);
+    params.set('name', filters.adName);
+    params.set('onSale', filters.onSale);
+    params.set('cost', `-${filters.cost}`);
+
+    filters.tags.forEach((tag) => params.append('tags', tag));
+
+    console.log(params.toString(), '<--ver');
+
     fetch(`${url}api/ads?${params.toString()}`, {
       method: 'GET',
       headers: {
@@ -45,7 +52,7 @@ function FilterAdverts() {
 
   return (
     <Layout>
-      <FormFiltersAds />
+      <FormFiltersAds onFilterChange={onFilterChange} />
       <AdvertsList ads={ads} />
     </Layout>
   );
