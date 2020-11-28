@@ -10,7 +10,7 @@ function AdvertsListPage(props) {
 
   //http://localhost:3001/api/loginJWT
   useEffect(() => {
-    fetch(`${url}api/ads?token=${token}`, {
+    fetch(`${url}api/ads?limit=50&token=${token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

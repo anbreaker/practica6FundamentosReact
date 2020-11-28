@@ -8,7 +8,7 @@ module.exports.notFound = (req, res, next) => {
 };
 
 module.exports.InternalServerError = (err, req, res, next) => {
-  // console.log(err);
+  console.error(err);
   if (err.array) {
     // error de validación
     err.status = 422;
