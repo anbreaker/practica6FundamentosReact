@@ -95,7 +95,7 @@ pm2 start ecosystem.config.js
 
 ## To see an example on youtube (click on the image) 📼
 
-[![](https://raw.githubusercontent.com/anbreaker/practica6_fundamentos_react/main/public/React.png)](https://youtu.be/2wyjvx5XDOE")
+[![](https://raw.githubusercontent.com/anbreaker/practica6_fundamentos_react/main/public/React.png)](https://www.youtube.com/watch?v=2wyjvx5XDOE&t")
 
 ## Author
 
@@ -104,7 +104,7 @@ pm2 start ecosystem.config.js
 - Website: https://rootdevs.es/
 - Twitter: [@antunez19](https://twitter.com/antunez19)
 - Github: [@anbreaker](https://github.com/anbreaker)
-- LinkedIn: [@https:\/\/www.linkedin.com\/in\/francisco-javier-antunez-duran\/](https://www.linkedin.com/in/francisco-javier-antunez-duran/)
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/francisco-javier-antunez-duran\/]("https://www.linkedin.com/in/francisco-javier-antunez-duran/")
 
 ## Show your support
 
