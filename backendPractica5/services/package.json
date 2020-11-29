@@ -4,7 +4,7 @@
   "description": "",
   "main": "resizeImg.js",
   "scripts": {
-    "micro": "node services/serviceThumbnailCreator.js"
+    "micro": "node serviceThumbnailCreator.js"
   },
   "keywords": [],
   "author": "",

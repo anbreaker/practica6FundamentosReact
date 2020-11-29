@@ -15,24 +15,37 @@
 
 ## Install all dependencies src 💾
 
-## Install Dependencies of fundamentos-react
+## Install Dependencies of practica6_fundamentos_react
 
 ```sh
-Path: fundamentos-react/
+Path: practica6_fundamentos_react/
 npm i
 ```
 
-## Install Dependencies of backendPractia5 🔧
+## Install Dependencies of backendPractica5 🔧
 
 ```sh
-Path: fundamentos-react/backendPractia5
+Path: practica6_fundamentos_react/backendPractica5
 npm i
 ```
 
-## Install Dependencies of backendPractia5/services
+## To start a initial DataBase with Advert an Users 🏁
+
+- Exercice Example! This is not secure on Deploy!!
+- User: user@user.com pass 123
+- User: user@example.com pass 1234
 
 ```sh
-Path: fundamentos-react/backendPractia5/services
+Path: practica6_fundamentos_react/backendPractica5
+npm run initDB
+
+Respond y or yes
+```
+
+## Microservice install dependencies services backendPractica5/services 🔧
+
+```sh
+Path: practica6_fundamentos_react/backendPractica5/services
 npm i
 ```
 
@@ -40,7 +53,7 @@ npm i
 
 ```sh
 //To Use Port 3000
-Path: fundamentos-react/
+Path: practica6_fundamentos_react/
 npm start
 ```
 
@@ -48,7 +61,7 @@ npm start
 
 ```sh
 //To Use Port 3001
-Path: fundamentos-react/backendPractia5
+Path: practica6_fundamentos_react/backendPractica5
 npm run backend
 ```
 
@@ -56,14 +69,19 @@ npm run backend
 
 ```sh
 //To use Microservice ThumbnailCreator
-Path: fundamentos-react/backendPractia5/services
+Path: practica6_fundamentos_react/backendPractica5/
+npm run micro
+
+or ||
+
+Path: practica6_fundamentos_react/backendPractica5/services
 npm run micro
 ```
 
 ## Init NodeApi Backend and microserviceThumbnailCreator.js with PM2 🚀
 
 ```sh
-Path: fundamentos-react/backendPractia5
+Path: practica6_fundamentos_react/backendPractica5
 pm2 start ecosystem.config.js
 ```
 
