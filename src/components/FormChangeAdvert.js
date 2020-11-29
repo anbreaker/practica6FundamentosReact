@@ -47,7 +47,7 @@ function FormChangeAdvert({id}, {uploadImage = false, onFilterChange = () => {}}
     form.append('name', adName);
     form.append('onSale', onSale);
     form.append('cost', cost);
-    form.append('image', file);
+    // form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
     fetch(urlToChange, {
@@ -63,7 +63,7 @@ function FormChangeAdvert({id}, {uploadImage = false, onFilterChange = () => {}}
       });
   }
 
-  console.log(adName, cost, onSale, tags);
+  console.log(adName, cost, onSale, tags, file);
 
   return (
     <React.Fragment>

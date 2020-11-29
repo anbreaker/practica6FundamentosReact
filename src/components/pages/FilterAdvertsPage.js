@@ -30,11 +30,8 @@ function FilterAdverts() {
     params.set('token', token);
     params.set('name', filters.adName);
     params.set('onSale', filters.onSale);
-    params.set('cost', `-${filters.cost}`);
-
+    params.set('cost', `${filters.cost[0] * 100}-${filters.cost[1] * 100}`);
     filters.tags.forEach((tag) => params.append('tags', tag));
-
-    console.log(params.toString(), '<--ver');
 
     fetch(`${url}api/ads?${params.toString()}`, {
       method: 'GET',

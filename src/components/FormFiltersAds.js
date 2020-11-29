@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {Range} from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import {
   Button,
   ButtonGroup,
@@ -11,27 +13,17 @@ import {
 function FormFiltersAds({onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
-  const [cost, setCost] = useState(0);
+  const [cost, setCost] = useState([1, 40]);
   const [tags, setTags] = useState([]);
 
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
   }
 
-  function moveRange() {
-    const slider = document.getElementById('myRange');
-    const output = document.getElementById('output');
-    output.innerHTML = slider.value;
-
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-      setCost(this.value);
-    };
-  }
-
   function onChangeSaleBuy(event) {
     if (event.target.id === 'buyBtn') setOnSale(false);
     if (event.target.id === 'saleBtn') setOnSale(true);
+    if (event.target.id === 'allAds') setOnSale('');
   }
 
   function clickTags(event) {
@@ -40,6 +32,11 @@ function FormFiltersAds({onFilterChange = () => {}}) {
     } else {
       setTags((tags) => [...tags, event.target.id]);
     }
+  }
+
+  // function Slider
+  function log(value) {
+    setCost([value[0], value[1]]);
   }
 
   return (
@@ -57,19 +54,13 @@ function FormFiltersAds({onFilterChange = () => {}}) {
                 <Form.Label>Advert Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter advert name" />
               </Form.Group>
+
               <Form.Group className="col-6 slidecontainer">
                 <Form.Label>Value Max</Form.Label>
-                <Form.Control
-                  className="slider"
-                  type="range"
-                  min="1"
-                  max="10000"
-                  id="myRange"
-                  onChange={moveRange}
-                  custom
-                />
+                <Range allowCross={false} defaultValue={[20, 50]} onChange={log} />
+                <br />
                 <h5 className="text-xl-center">
-                  Value: <span id="output"></span>
+                  Value between: {`${cost[0] * 100} - ${cost[1] * 100}`}
                 </h5>
               </Form.Group>
             </Form.Row>
@@ -90,6 +81,12 @@ function FormFiltersAds({onFilterChange = () => {}}) {
                       onClick={onChangeSaleBuy}
                       id="saleBtn">
                       Sale
+                    </Button>
+                    <Button
+                      className="btn btn-sm btn-primary"
+                      onClick={onChangeSaleBuy}
+                      id="allAds">
+                      All
                     </Button>
                   </ButtonGroup>
                 </ButtonToolbar>
