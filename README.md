@@ -82,7 +82,7 @@ pm2 start ecosystem.config.js
 - Website: https://rootdevs.es/
 - Twitter: [@antunez19](https://twitter.com/antunez19)
 - Github: [@anbreaker](https://github.com/anbreaker)
-- LinkedIn: [https:\/\/www.linkedin.com\/in\/francisco-javier-antunez-duran\/](https://linkedin.com/in/https://www.linkedin.com/in/francisco-javier-antunez-duran/)
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/francisco-javier-antunez-duran\/](https://www.linkedin.com/in/francisco-javier-antunez-duran/)
 
 ## Show your support
 
