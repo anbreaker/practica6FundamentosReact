@@ -4,7 +4,6 @@ import LoginPage from './components/pages/LoginPage';
 import AdvertIdPage from './components/pages/AdvertIdPage';
 import AdvertsListPage from './components/pages/AdvertsListPage';
 import NewAdvertPage from './components/pages/NewAdvertPage';
-import ChangeAdvertPage from './components/pages/ChangeAdvertPage';
 import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 
@@ -22,9 +21,6 @@ function App() {
           <Route path="/new-advert" exact>
             <NewAdvertPage />
           </Route>
-          <Route path="/change-advert/:id" exact>
-            <ChangeAdvertPage />
-          </Route>
           <Route path="/adverts" exact>
             <AdvertsListPage />
           </Route>
@@ -34,15 +30,12 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
-          <Route>
-            <NotFoundPage />
-          </Route>
-          {/* <Route path="/404" exact>
+          <Route path="/404" exact>
             <NotFoundPage />
           </Route>
           <Route>
             <Redirect to="/404" />
-          </Route> */}
+          </Route>
         </Switch>
       </div>
     </Router>
