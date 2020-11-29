@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Button, Modal} from 'react-bootstrap';
 
 function ModalComponent(props) {
+  const {deleteAdById} = props;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -22,7 +23,7 @@ function ModalComponent(props) {
           <Button variant="success" onClick={handleClose}>
             No, Close
           </Button>
-          <Button variant="danger" onClick={props.deleteById}>
+          <Button variant="danger" onClick={deleteAdById}>
             Yes, Delete!
           </Button>
         </Modal.Footer>
