@@ -1,14 +1,26 @@
 import React, {useState} from 'react';
-import {Container, Jumbotron, Button} from 'react-bootstrap';
+import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showError, setShowError] = useState(false);
+  // const [rememberMail, setRememberMail] = useState(true);
 
   function onChangeEmail(event) {
     setEmail(event.target.value);
   }
+
+  // const userSession = sessionStorage.getItem('email');
+  // console.log(userSession);
+  // if (userSession !== null) {
+  //   console.log(userSession);
+  // }
+
+  // function remberEmail() {
+  //   setRememberMail(true);
+  //   console.log();
+  // }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -43,8 +55,8 @@ function Login() {
                 <h3 className="card-header">Log In:</h3>
                 <div className="card-body">
                   {/* <!-- Form --> */}
-                  <form onSubmit={handleSubmit} id="form-login" method="POST">
-                    <legend>Go to user API:</legend>
+                  <Form onSubmit={handleSubmit} method="POST">
+                    <legend>Go to Adverts:</legend>
                     <div className="form-group">
                       <input
                         type="email"
@@ -52,6 +64,7 @@ function Login() {
                         className="form-control form-input"
                         placeholder="email@mail.com"
                         onChange={onChangeEmail}
+                        // value={userSession || email}
                         required
                       />
                     </div>
@@ -66,24 +79,20 @@ function Login() {
                         onChange={(ev) => setPassword(ev.target.value)}
                       />
                     </div>
-                    <div className="custom-control custom-checkbox">
-                      <input
-                        type="checkbox"
-                        className="custom-control-input"
-                        id="customCheck2"
-                        disabled=""
-                      />
-                      <label className="custom-control-label" for="customCheck2">
-                        Remember This.
-                      </label>
-                    </div>
+                    {/* <Form.Check
+                      inline
+                      label="Remember This"
+                      type="checkbox"
+                      id="lifestyle"
+                      onClick={remberEmail}
+                    /> */}
                     <Button
                       type="submit"
                       id="btn-login"
                       className="btn btn-info btn-block mt-2">
                       Log In
                     </Button>
-                  </form>
+                  </Form>
                   {showError && (
                     <div className="text-center text-danger mt-2">
                       Invalid Credentials

@@ -138,7 +138,7 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
               <Form.Group className="col-7">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
-                  label="Select Photo, file must be smaller than 1mb"
+                  label="Select Photography"
                   custom
                   onChange={(ev) => setFile(ev.target.files[0])}
                 />
