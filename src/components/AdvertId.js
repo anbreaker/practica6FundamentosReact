@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  Card,
-  Container,
-  Jumbotron,
-  ListGroup,
-  ListGroupItem,
-} from 'react-bootstrap';
+import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
 import ModalComponent from './ModalComponent';
 
 function AdvertId({ad}) {
@@ -49,13 +42,13 @@ function AdvertId({ad}) {
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">
-              <Button
+              {/* <Button
                 className="btn btn-success mt-4 mb-4 mr-4"
                 onClick={() => {
                   window.location.href = `/change-advert/${ad._id}`;
                 }}>
                 Change Ad
-              </Button>
+              </Button> */}
               <ModalComponent deleteAdById={deleteAdById} />
             </div>
           </Card>

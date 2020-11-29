@@ -23,7 +23,7 @@ function AdList({ads = []}) {
             </thead>
             <tbody>
               {ads.map((ad) => (
-                <tr className="table-warning">
+                <tr key={`inline-${ad._id}`} className="table-warning">
                   <td>{ad.name}</td>
                   <td className="text-center">{ad.onSale ? 'true' : 'false'}</td>
                   <td className="text-center">{ad.cost} €</td>
