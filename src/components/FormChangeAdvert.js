@@ -15,10 +15,12 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
   const [file, setFile] = useState();
   const [tags, setTags] = useState([]);
 
+  const token = localStorage.getItem('token');
+  const url = `http://127.0.0.1:3001/api/ads?token=${token}`;
+
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
   }
-
   function onChangeCost(event) {
     setCost(event.target.value);
   }
@@ -28,14 +30,40 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
     if (event.target.id === 'saleBtn') setOnSale(true);
   }
 
-  console.log(cost);
+  function clickTags(event) {
+    if (event.target.checked === false) {
+      setTags(tags.filter((tag) => tag !== event.target.id));
+    } else {
+      setTags((tags) => [...tags, event.target.id]);
+    }
+  }
+
+  function formSubmit(event) {
+    event.preventDefault();
+    const form = new FormData();
+    form.append('name', adName);
+    form.append('onSale', onSale);
+    form.append('cost', cost);
+    form.append('image', file);
+    tags.forEach((tag) => form.append('tags', tag));
+
+    fetch(url, {
+      method: 'POST',
+      body: form,
+    })
+      .then((response) => response.json())
+      .catch(console.error)
+      .then(() => (window.location.href = '/adverts'));
+  }
+
+  console.log(adName, cost, onSale, tags);
 
   return (
     <React.Fragment>
       <Container className="p-4 form-sign">
-        <h1>New Advert</h1>
+        <h1>Change Advert</h1>
         <Jumbotron>
-          <Form onSubmit={() => onFilterChange({})}>
+          <Form onSubmit={formSubmit}>
             <Form.Group onChange={onChangeAdvertName}>
               <Form.Label>Advert Name</Form.Label>
               <Form.Control type="text" placeholder="Enter advert name" required />
@@ -76,21 +104,30 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
                     <Form.Check
                       inline
                       label="technology"
-                      type={type}
-                      id={`inline-${type}-1`}
+                      type="checkbox"
+                      id="technology"
+                      onClick={clickTags}
                     />
                     <Form.Check
                       inline
                       label="Developer"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="developer"
+                      onClick={clickTags}
                     />
-                    <Form.Check inline label="Work" type={type} id={`inline-${type}-2`} />
+                    <Form.Check
+                      inline
+                      label="Work"
+                      type="checkbox"
+                      id="work"
+                      onClick={clickTags}
+                    />
                     <Form.Check
                       inline
                       label="lifestyle"
-                      type={type}
-                      id={`inline-${type}-2`}
+                      type="checkbox"
+                      id="lifestyle"
+                      onClick={clickTags}
                     />
                   </div>
                 ))}
@@ -99,9 +136,9 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
               <Form.Group className="col-7">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
-                  id="custom-file"
                   label="Select Photo, file must be smaller than 1mb"
                   custom
+                  onChange={(ev) => setFile(ev.target.files[0])}
                 />
               </Form.Group>
             </Form.Row>

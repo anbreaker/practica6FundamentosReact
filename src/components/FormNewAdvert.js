@@ -56,8 +56,6 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
       .then(() => (window.location.href = '/adverts'));
   }
 
-  console.log(adName, cost, onSale, tags);
-
   return (
     <React.Fragment>
       <Container className="p-4 form-sign">

@@ -27,7 +27,7 @@ function AdvertId({ad}) {
       <Container className="p-4">
         <h1>Advert id:</h1>
         <Jumbotron>
-          <Card style={{width: '18rem'}}>
+          <Card style={{width: '12rem'}}>
             <Card.Img
               variant="top"
               src={`http://localhost:3001/uploads/thumbnails/${ad.imagePath}.png`}
@@ -45,7 +45,6 @@ function AdvertId({ad}) {
               </ListGroupItem>
               <ListGroupItem className="ml-2 mt-2 mr-2">Price: {ad.cost} €</ListGroupItem>
               <ListGroupItem className="ml-2 mt-2 mr-2 mb-2 ">
-                {/* Tags: {ad.tags.map((tag) => `${tag}, `)} */}
                 Tags: {ad.tags && ad.tags.join(', ')}
               </ListGroupItem>
             </ListGroup>

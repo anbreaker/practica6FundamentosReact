@@ -1,11 +1,12 @@
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
-import NewAdvertPage from './components/pages/NewAdvertPage';
+import AdvertIdPage from './components/pages/AdvertIdPage';
 import AdvertsListPage from './components/pages/AdvertsListPage';
+import NewAdvertPage from './components/pages/NewAdvertPage';
+import FormChangeAdvertPage from './components/pages/FormChangeAdvertPage';
 import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
 import NotFoundPage from './components/pages/NotFoundPage';
-import AdvertIdPage from './components/pages/AdvertIdPage';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/new-advert" exact>
             <NewAdvertPage />
+          </Route>
+          <Route path="/change-advert" exact>
+            <FormChangeAdvertPage />
           </Route>
           <Route path="/adverts" exact>
             <AdvertsListPage />
