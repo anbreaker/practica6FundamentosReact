@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+<h1 align="center">Práctica 6 Desarrollo Frontend React Fundamentos KEEPCODING 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/anbreaker/practica6FundamentosReact" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://twitter.com/antunez19" target="_blank">
+    <img alt="Twitter: antunez19" src="https://img.shields.io/twitter/follow/antunez19.svg?style=social" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Frontend of Backend on Node Express Nodepop
 
-## Available Scripts
+### 🏠 [Homepage](https://github.com/anbreaker/practica6FundamentosReact)
 
-In the project directory, you can run:
+## Install all dependencies src 💾
 
-### `npm start`
+## Install Dependencies of fundamentos-react
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+Path: fundamentos-react/
+npm i
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Install Dependencies of backendPractia5 🔧
 
-### `npm test`
+```sh
+Path: fundamentos-react/backendPractia5
+npm i
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install Dependencies of backendPractia5/services
 
-### `npm run build`
+```sh
+Path: fundamentos-react/backendPractia5/services
+npm i
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frontend on REACT(first terminal) 🔨
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+//To Use Port 3000
+Path: fundamentos-react/
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Backend Node with Express (second terminal) 🔨
 
-### `npm run eject`
+```sh
+//To Use Port 3001
+Path: fundamentos-react/backendPractia5
+npm run backend
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Microservices with Node (third terminal) 🔨
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+//To use Microservice ThumbnailCreator
+Path: fundamentos-react/backendPractia5/services
+npm run micro
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Init NodeApi Backend and microserviceThumbnailCreator.js with PM2 🚀
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+Path: fundamentos-react/backendPractia5
+pm2 start ecosystem.config.js
+```
 
-## Learn More
+## Postman Model 📯
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Postman: https://www.postman.com/collections/60f54fb4d346d7f4ebc0
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Api Documentation with Postman 📨
 
-### Code Splitting
+- Postman API DOCs: - https://documenter.getpostman.com/view/12623471/TVCjvk79
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
 
-### Analyzing the Bundle Size
+👤 **Francisco Javier Antúnez Durán aka anbreaker**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Website: https://rootdevs.es/
+- Twitter: [@antunez19](https://twitter.com/antunez19)
+- Github: [@anbreaker](https://github.com/anbreaker)
+- LinkedIn: [@https:\/\/www.linkedin.com\/in\/francisco-javier-antunez-duran\/](https://linkedin.com/in/https://www.linkedin.com/in/francisco-javier-antunez-duran/)
 
-### Making a Progressive Web App
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Give a ⭐️ if this project helped you!
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

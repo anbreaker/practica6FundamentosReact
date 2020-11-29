@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon src/index.js",
     "start": "NODE_ENV=production node src/index.js",
+    "backend": "NODE_ENV=development nodemon src/index.js",
     "initDB": "node src/initDB.js",
     "micro": "node services/serviceThumbnailCreator.js",
     "ngrok": "ngrok http -region=eu 3000",
