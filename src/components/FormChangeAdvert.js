@@ -8,7 +8,7 @@ import {
   Container,
 } from 'react-bootstrap';
 
-function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
+function FormChangeAdvert({id}, {uploadImage = false, onFilterChange = () => {}}) {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
@@ -16,7 +16,10 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
   const [tags, setTags] = useState([]);
 
   const token = localStorage.getItem('token');
-  const url = `http://127.0.0.1:3001/api/ads?token=${token}`;
+
+  console.log(id, 'este ID');
+
+  const urlToChange = `http://127.0.0.1:3001/api/ads/${id}?token=${token}`;
 
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
@@ -47,13 +50,17 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
     form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
-    fetch(url, {
-      method: 'POST',
+    fetch(urlToChange, {
+      method: 'PATCH',
       body: form,
     })
       .then((response) => response.json())
       .catch(console.error)
-      .then(() => (window.location.href = '/adverts'));
+      .then(() => {
+        setTimeout(() => {
+          window.location.href = '/adverts';
+        }, 500);
+      });
   }
 
   console.log(adName, cost, onSale, tags);
@@ -66,13 +73,13 @@ function FormChangeAdvert({uploadImage = false, onFilterChange = () => {}}) {
           <Form onSubmit={formSubmit}>
             <Form.Group onChange={onChangeAdvertName}>
               <Form.Label>Advert Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter advert name" required />
+              <Form.Control type="text" placeholder="Enter advert name" />
             </Form.Group>
 
             <Form.Row>
               <Form.Group className="col-8" onChange={onChangeCost}>
                 <Form.Label>Cost €</Form.Label>
-                <Form.Control type="number" placeholder="Enter Cost €" required />
+                <Form.Control type="number" placeholder="Enter Cost €" />
               </Form.Group>
 
               <Form.Group className="col-4">

@@ -49,8 +49,12 @@ function AdvertId({ad}) {
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">
-              <Button className="btn btn-success mt-4 mb-4 mr-4" type="submit">
-                Change Adv
+              <Button
+                className="btn btn-success mt-4 mb-4 mr-4"
+                onClick={() => {
+                  window.location.href = `/change-advert/${ad._id}`;
+                }}>
+                Change Ad
               </Button>
               <ModalComponent deleteAdById={deleteAdById} />
             </div>

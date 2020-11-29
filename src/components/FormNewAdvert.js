@@ -53,7 +53,11 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
     })
       .then((response) => response.json())
       .catch(console.error)
-      .then(() => (window.location.href = '/adverts'));
+      .then(() => {
+        setTimeout(() => {
+          window.location.href = '/adverts';
+        }, 500);
+      });
   }
 
   return (
