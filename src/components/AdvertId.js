@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Button,
   Card,
@@ -7,6 +7,7 @@ import {
   ListGroup,
   ListGroupItem,
 } from 'react-bootstrap';
+import ModalComponent from './ModalComponent';
 
 function AdvertId({ad}) {
   const token = localStorage.getItem('token');
@@ -52,9 +53,7 @@ function AdvertId({ad}) {
               <Button className="btn btn-success mt-4 mb-4 mr-4" type="submit">
                 Change Adv
               </Button>
-              <Button className="btn btn-danger mt-4 mb-4" onClick={deleteAdById}>
-                Delete Advert
-              </Button>
+              <ModalComponent deleteAdById={deleteAdById} />
             </div>
           </Card>
         </Jumbotron>
