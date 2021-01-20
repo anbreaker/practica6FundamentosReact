@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 package-lock.json
-react-tailwind
 
 # testing
 /coverage
@@ -26,3 +25,4 @@ yarn-error.log*
 
 ChangeAdvertPage.js
 FormChangeAdvert.js
+PracticaFundamentosRevision.pdf
