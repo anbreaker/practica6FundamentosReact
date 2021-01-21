@@ -1,9 +1,10 @@
 import React from 'react';
 import {Jumbotron, Container, Table} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 export const AdvertsList = ({ads = []}) => {
+  // const urlFront = `http://localhost:3000/`;
   const urlBackend = `http://localhost:3001/`;
-  const urlFront = `http://localhost:3000/`;
 
   return (
     <React.Fragment>
@@ -28,16 +29,16 @@ export const AdvertsList = ({ads = []}) => {
                   <td className="text-center">{ad.onSale ? 'true' : 'false'}</td>
                   <td className="text-center">{ad.cost} €</td>
                   <td className="center">
-                    <a href={`${urlFront}advert/${ad._id}`}>
+                    <Link to={`advert/${ad._id}`}>
                       <img
                         src={`${urlBackend}uploads/thumbnails/${ad.imagePath}.png`}
                         alt="img"
                       />
-                    </a>
+                    </Link>
                   </td>
                   <td className="text-center">{ad.tags.join(', ')}</td>
                   <td className="text-center">
-                    <a href={`${urlFront}advert/${ad._id}`}>{ad._id}</a>
+                    <Link to={`advert/${ad._id}`}>{ad._id}</Link>
                   </td>
                 </tr>
               ))}

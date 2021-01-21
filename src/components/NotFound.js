@@ -1,5 +1,6 @@
 import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 export const NotFound = () => {
   return (
@@ -13,9 +14,9 @@ export const NotFound = () => {
               The page you are looking for does not exist. How you got here is a mystery.
               But you can click the button below to go back to the homepage.
             </p>
-            <a href="/" className="btn btn-success btn-lg">
+            <Link to="/" className="btn btn-success btn-lg">
               Go Homepage
-            </a>
+            </Link>
           </div>
         </Jumbotron>
       </Container>

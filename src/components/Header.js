@@ -1,5 +1,6 @@
 import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -19,9 +20,9 @@ export const Header = () => {
           <hr className="my-4" />
           <p>It is practice number 6 of the Keepcoding Full Stack Web bootcamp</p>
           <div className="text-center">
-            <a className="btn btn-info btn-lg" href="login" role="button">
+            <Link to="login" className="btn btn-info btn-lg" role="button">
               Go to Log In!
-            </a>
+            </Link>
           </div>
         </Jumbotron>
       </Container>

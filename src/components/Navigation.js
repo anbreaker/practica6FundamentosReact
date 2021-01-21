@@ -1,6 +1,7 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
+import './general.css';
 
 export const Navigation = () => {
   function handleLogOut() {
@@ -22,76 +23,69 @@ export const Navigation = () => {
               Menu
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item>
-                <NavLink exact to="/">
-                  Home
-                </NavLink>
+              <Dropdown.Item as={Link} to="/">
+                Home
               </Dropdown.Item>
+
               {isLoggedIn && (
-                <Dropdown.Item>
-                  <NavLink exact to="/adverts">
-                    User Session
-                  </NavLink>
+                <Dropdown.Item as={Link} to="/adverts" className="underline">
+                  User Session
                 </Dropdown.Item>
               )}
               {isLoggedIn && (
-                <Dropdown.Item>
-                  <NavLink exact to="/filter">
-                    Filter ads
-                  </NavLink>
+                <Dropdown.Item as={Link} to="/filter" className="underline">
+                  Filter ads
                 </Dropdown.Item>
               )}
               {isLoggedIn && (
-                <Dropdown.Item>
-                  <NavLink exact to="/new-advert">
-                    New Advert
-                  </NavLink>
+                <Dropdown.Item as={Link} to="/new-advert" className="underline">
+                  New Advert
                 </Dropdown.Item>
               )}
               {!isLoggedIn && (
-                <Dropdown.Item>
-                  <NavLink exact to="/login">
-                    Log In
-                  </NavLink>
+                <Dropdown.Item as={Link} to="/new-advert" className="underline">
+                  Log In
                 </Dropdown.Item>
               )}
               {isLoggedIn && (
-                <Dropdown.Item>
-                  <NavLink exact to="/" onClick={handleLogOut}>
-                    Log out
-                  </NavLink>
+                <Dropdown.Item
+                  as={Link}
+                  to="/"
+                  className="underline"
+                  onClick={handleLogOut}>
+                  Log out
                 </Dropdown.Item>
               )}
             </Dropdown.Menu>
           </Dropdown>
 
           <div className="collapse navbar-collapse " id="navbarNav">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto ">
               {!isLoggedIn && (
-                <NavLink exact className="nav-item nav-link" to="/login">
+                <NavLink exact className="nav-item nav-link decoration" to="/login">
                   Log In<span className="sr-only"></span>
                 </NavLink>
               )}
 
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link" to="/adverts">
+                <NavLink exact className="nav-item nav-link decoration" to="/adverts">
                   User Session
                 </NavLink>
               )}
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link" to="/filter">
+                <NavLink exact className="nav-item nav-link decoration" to="/filter">
                   Filter Ads
                 </NavLink>
               )}
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link" to="/new-advert">
+                <NavLink exact className="nav-item nav-link decoration" to="/new-advert">
                   New Advert
                 </NavLink>
               )}
               {isLoggedIn && (
                 <NavLink
                   exact
-                  className="nav-item nav-link"
+                  className="nav-item nav-link decoration"
                   to="/"
                   onClick={handleLogOut}>
                   Log Out

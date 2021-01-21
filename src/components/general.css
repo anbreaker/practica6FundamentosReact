@@ -7,3 +7,12 @@ body {
 .footer {
   height: 282px;
 }
+
+
+
+.decoration:hover {
+  background-color: #131313;
+  border-radius: 7px;
+  color: azure;
+  padding: 7px;
+}
