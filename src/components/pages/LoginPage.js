@@ -1,10 +1,10 @@
 import React from 'react';
-import Head from '../Head';
+import {Head} from '../Head';
 import Navigation from '../Navigation';
 import Login from '../Login';
-import Footer from '../Footer';
+import {Footer} from '../Footer';
 
-function LoginPage() {
+export const LoginPage = () => {
   return (
     //Bucle infinito Layout...
     <React.Fragment>
@@ -14,6 +14,4 @@ function LoginPage() {
       <Footer />{' '}
     </React.Fragment>
   );
-}
-
-export default LoginPage;
+};

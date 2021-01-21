@@ -1,7 +1,7 @@
 import React from 'react';
 import './general.css';
 
-function Head() {
+export const Head = () => {
   return (
     <React.Fragment>
       <meta charSet="UTF-8" />
@@ -14,6 +14,4 @@ function Head() {
       <title>NodePop</title>
     </React.Fragment>
   );
-}
-
-export default Head;
+};

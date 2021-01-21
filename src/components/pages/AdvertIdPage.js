@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import AdvertId from '../AdvertId';
+import {AdvertId} from '../AdvertId';
 import Layout from '../Layout';
 import SpinnerComponent from '../SpinnerComponent';
 
-function AdvertIdPage(props) {
+export const AdvertIdPage = (props) => {
   const {id} = useParams();
   const [advert, setadvert] = useState();
 
@@ -27,6 +27,4 @@ function AdvertIdPage(props) {
   }, [token, url, id]);
 
   return <Layout>{advert ? <AdvertId ad={advert} /> : <SpinnerComponent />}</Layout>;
-}
-
-export default AdvertIdPage;
+};

@@ -1,36 +1,36 @@
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-import HomePage from './components/pages/HomePage';
-import LoginPage from './components/pages/LoginPage';
-import AdvertIdPage from './components/pages/AdvertIdPage';
-import AdvertsListPage from './components/pages/AdvertsListPage';
-import NewAdvertPage from './components/pages/NewAdvertPage';
-import FilterAdvertsPage from './components/pages/FilterAdvertsPage';
-import NotFoundPage from './components/pages/NotFoundPage';
+import {HomePage} from './components/pages/HomePage';
+import {LoginPage} from './components/pages/LoginPage';
+import {AdvertIdPage} from './components/pages/AdvertIdPage';
+import {AdvertsListPage} from './components/pages/AdvertsListPage';
+import {NewAdvertPage} from './components/pages/NewAdvertPage';
+import {FilterAdvertsPage} from './components/pages/FilterAdvertsPage';
+import {NotFoundPage} from './components/pages/NotFoundPage';
 
 function App() {
   return (
     <Router>
       <div className="container">
         <Switch>
-          <Route path="/login" exact>
+          <Route exact path="/login">
             <LoginPage />
           </Route>
-          <Route path="/filter" exact>
+          <Route exact path="/filter">
             <FilterAdvertsPage />
           </Route>
-          <Route path="/new-advert" exact>
+          <Route exact path="/new-advert">
             <NewAdvertPage />
           </Route>
-          <Route path="/adverts" exact>
+          <Route exact path="/adverts">
             <AdvertsListPage />
           </Route>
-          <Route path="/advert/:id" exact>
+          <Route exact path="/advert/:id">
             <AdvertIdPage />
           </Route>
-          <Route path="/" exact>
+          <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/404" exact>
+          <Route exact path="/404">
             <NotFoundPage />
           </Route>
           <Route>

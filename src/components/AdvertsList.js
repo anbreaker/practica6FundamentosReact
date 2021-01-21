@@ -1,7 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container, Table} from 'react-bootstrap';
 
-function AdList({ads = []}) {
+const AdvertList = ({ads = []}) => {
   const urlBackend = `http://localhost:3001/`;
   const urlFront = `http://localhost:3000/`;
 
@@ -47,6 +47,6 @@ function AdList({ads = []}) {
       </Container>
     </React.Fragment>
   );
-}
+};
 
-export default AdList;
+export default AdvertList;

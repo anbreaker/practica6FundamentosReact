@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
 import ModalComponent from './ModalComponent';
 
-function AdvertId({ad}) {
+export const AdvertId = ({ad}) => {
   const token = localStorage.getItem('token');
   const urlToDelete = `http://127.0.0.1:3001/api/ads/${ad._id}?token=${token}`;
 
@@ -56,6 +56,4 @@ function AdvertId({ad}) {
       </Container>
     </React.Fragment>
   );
-}
-
-export default AdvertId;
+};

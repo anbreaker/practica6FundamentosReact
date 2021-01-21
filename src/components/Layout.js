@@ -1,7 +1,7 @@
 import React from 'react';
-import Head from './Head';
+import {Head} from './Head';
 import Navigation from './Navigation';
-import Footer from './Footer';
+import {Footer} from './Footer';
 
 function Layout({children}) {
   const isLoggedIn = !!localStorage.getItem('token');

@@ -3,7 +3,7 @@ import FormFiltersAds from '../FormFiltersAds';
 import AdvertsList from '../AdvertsList';
 import Layout from '../Layout';
 
-function FilterAdverts() {
+export const FilterAdvertsPage = () => {
   const url = `http://localhost:3001/`;
   const [ads, setAds] = useState([]);
 
@@ -23,7 +23,7 @@ function FilterAdverts() {
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
-  }, []);
+  }, [token, url]);
 
   function onFilterChange(filters) {
     const params = new URLSearchParams();
@@ -53,6 +53,4 @@ function FilterAdverts() {
       <AdvertsList ads={ads} />
     </Layout>
   );
-}
-
-export default FilterAdverts;
+};

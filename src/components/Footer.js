@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+export const Footer = () => {
   return (
     <React.Fragment>
       <footer className="container footer-page p-4 footer">
@@ -23,6 +23,4 @@ function Footer() {
       </footer>
     </React.Fragment>
   );
-}
-
-export default Footer;
+};

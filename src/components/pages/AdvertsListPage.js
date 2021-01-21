@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Layout from '../Layout';
 import AdvertsList from '../AdvertsList';
 
-function AdvertsListPage(props) {
+export const AdvertsListPage = (props) => {
   const url = `http://localhost:3001/`;
   const [ads, setAds] = useState([]);
 
@@ -22,13 +22,11 @@ function AdvertsListPage(props) {
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
-  }, []);
+  }, [token, url]);
 
   return (
     <Layout>
       <AdvertsList ads={ads} />
     </Layout>
   );
-}
-
-export default AdvertsListPage;
+};
