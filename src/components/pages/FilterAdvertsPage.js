@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import FormFiltersAds from '../FormFiltersAds';
-import AdvertsList from '../AdvertsList';
-import Layout from '../Layout';
+import {FormFiltersAds} from '../FormFiltersAds';
+import {AdvertsList} from '../AdvertsList';
+import {Layout} from '../Layout';
 
 export const FilterAdvertsPage = () => {
   const url = `http://localhost:3001/`;

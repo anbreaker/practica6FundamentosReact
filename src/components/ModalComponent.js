@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Modal} from 'react-bootstrap';
 
-function ModalComponent(props) {
+export const ModalComponent = (props) => {
   const {deleteAdById} = props;
   const [show, setShow] = useState(false);
 
@@ -30,6 +30,4 @@ function ModalComponent(props) {
       </Modal>
     </React.Fragment>
   );
-}
-
-export default ModalComponent;
+};

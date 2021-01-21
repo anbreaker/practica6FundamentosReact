@@ -1,7 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
 
-function Header() {
+export const Header = () => {
   return (
     <React.Fragment>
       <Container>
@@ -27,6 +27,4 @@ function Header() {
       </Container>
     </React.Fragment>
   );
-}
-
-export default Header;
+};

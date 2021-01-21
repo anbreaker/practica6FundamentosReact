@@ -8,7 +8,7 @@ import {
   Container,
 } from 'react-bootstrap';
 
-function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
+export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
@@ -154,6 +154,4 @@ function FormNewAdvert({uploadImage = false, onFilterChange = () => {}}) {
       </Container>
     </React.Fragment>
   );
-}
-
-export default FormNewAdvert;
+};

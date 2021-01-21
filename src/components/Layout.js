@@ -1,9 +1,9 @@
 import React from 'react';
 import {Head} from './Head';
-import Navigation from './Navigation';
+import {Navigation} from './Navigation';
 import {Footer} from './Footer';
 
-function Layout({children}) {
+export const Layout = ({children}) => {
   const isLoggedIn = !!localStorage.getItem('token');
   if (!isLoggedIn) return (window.location.href = '/login');
 
@@ -15,6 +15,4 @@ function Layout({children}) {
       <Footer />
     </React.Fragment>
   );
-}
-
-export default Layout;
+};

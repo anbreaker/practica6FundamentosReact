@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import Layout from '../Layout';
-import AdvertsList from '../AdvertsList';
+import {Layout} from '../Layout';
+import {AdvertsList} from '../AdvertsList';
 
 export const AdvertsListPage = (props) => {
   const url = `http://localhost:3001/`;

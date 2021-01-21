@@ -10,7 +10,7 @@ import {
   Jumbotron,
 } from 'react-bootstrap';
 
-function FormFiltersAds({onFilterChange = () => {}}) {
+export const FormFiltersAds = ({onFilterChange = () => {}}) => {
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState([1, 40]);
@@ -139,6 +139,4 @@ function FormFiltersAds({onFilterChange = () => {}}) {
       </Container>
     </React.Fragment>
   );
-}
-
-export default FormFiltersAds;
+};

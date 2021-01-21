@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
 
-function Navigation() {
+export const Navigation = () => {
   function handleLogOut() {
     localStorage.clear();
   }
@@ -77,6 +77,4 @@ function Navigation() {
       </div>
     </React.Fragment>
   );
-}
-
-export default Navigation;
+};

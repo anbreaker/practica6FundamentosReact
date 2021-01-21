@@ -1,7 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
 
-function NotFound() {
+export const NotFound = () => {
   return (
     <React.Fragment>
       <Container className="p-4">
@@ -21,6 +21,4 @@ function NotFound() {
       </Container>
     </React.Fragment>
   );
-}
-
-export default NotFound;
+};

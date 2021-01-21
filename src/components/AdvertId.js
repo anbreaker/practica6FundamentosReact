@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
-import ModalComponent from './ModalComponent';
+import {ModalComponent} from './ModalComponent';
 
 export const AdvertId = ({ad}) => {
   const token = localStorage.getItem('token');

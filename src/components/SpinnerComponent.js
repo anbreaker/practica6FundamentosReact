@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Jumbotron, Spinner} from 'react-bootstrap';
 
-function SpinnerComponent() {
+export const SpinnerComponent = () => {
   return (
     <React.Fragment>
       <Container>
@@ -13,6 +13,4 @@ function SpinnerComponent() {
       </Container>
     </React.Fragment>
   );
-}
-
-export default SpinnerComponent;
+};

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {AdvertId} from '../AdvertId';
-import Layout from '../Layout';
-import SpinnerComponent from '../SpinnerComponent';
+import {Layout} from '../Layout';
+import {SpinnerComponent} from '../SpinnerComponent';
 
 export const AdvertIdPage = (props) => {
   const {id} = useParams();

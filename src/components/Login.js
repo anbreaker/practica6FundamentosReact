@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
-function Login() {
+export const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showError, setShowError] = useState(false);
@@ -106,6 +106,4 @@ function Login() {
       </Container>
     </React.Fragment>
   );
-}
-
-export default Login;
+};
