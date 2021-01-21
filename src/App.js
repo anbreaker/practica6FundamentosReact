@@ -12,30 +12,14 @@ function App() {
     <Router>
       <div className="container">
         <Switch>
-          <Route exact path="/login">
-            <LoginPage />
-          </Route>
-          <Route exact path="/filter">
-            <FilterAdvertsPage />
-          </Route>
-          <Route exact path="/new-advert">
-            <NewAdvertPage />
-          </Route>
-          <Route exact path="/adverts">
-            <AdvertsListPage />
-          </Route>
-          <Route exact path="/advert/:id">
-            <AdvertIdPage />
-          </Route>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/404">
-            <NotFoundPage />
-          </Route>
-          <Route>
-            <Redirect to="/404" />
-          </Route>
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/filter" component={FilterAdvertsPage} />
+          <Route exact path="/new-advert" component={NewAdvertPage} />
+          <Route exact path="/adverts" component={AdvertsListPage} />
+          <Route exact path="/advert/:id" component={AdvertIdPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/404" component={NotFoundPage} />
+          <Redirect to="/404" component={NotFoundPage} />
         </Switch>
       </div>
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
 
 export const Navigation = () => {
@@ -12,64 +13,89 @@ export const Navigation = () => {
     <React.Fragment>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="/">
+          <NavLink exact className="navbar-brand" to="/">
             Practice 6
-          </a>
+          </NavLink>
+
           <Dropdown>
             <Dropdown.Toggle className="btn btn-secondary btn-dark" id="dropdown-basic">
               Menu
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="/">Home</Dropdown.Item>
-              {isLoggedIn && <Dropdown.Item href="/adverts">User Session</Dropdown.Item>}
-              {isLoggedIn && <Dropdown.Item href="/filter">Filter ads</Dropdown.Item>}
-              {isLoggedIn && <Dropdown.Item href="/new-advert">New Advert</Dropdown.Item>}
-              {!isLoggedIn && <Dropdown.Item href="/login">Log In</Dropdown.Item>}
+              <Dropdown.Item>
+                <NavLink exact to="/">
+                  Home
+                </NavLink>
+              </Dropdown.Item>
               {isLoggedIn && (
-                <Dropdown.Item href="/" onClick={handleLogOut}>
-                  Log Out
+                <Dropdown.Item>
+                  <NavLink exact to="/adverts">
+                    User Session
+                  </NavLink>
+                </Dropdown.Item>
+              )}
+              {isLoggedIn && (
+                <Dropdown.Item>
+                  <NavLink exact to="/filter">
+                    Filter ads
+                  </NavLink>
+                </Dropdown.Item>
+              )}
+              {isLoggedIn && (
+                <Dropdown.Item>
+                  <NavLink exact to="/new-advert">
+                    New Advert
+                  </NavLink>
+                </Dropdown.Item>
+              )}
+              {!isLoggedIn && (
+                <Dropdown.Item>
+                  <NavLink exact to="/login">
+                    Log In
+                  </NavLink>
+                </Dropdown.Item>
+              )}
+              {isLoggedIn && (
+                <Dropdown.Item>
+                  <NavLink exact to="/" onClick={handleLogOut}>
+                    Log out
+                  </NavLink>
                 </Dropdown.Item>
               )}
             </Dropdown.Menu>
           </Dropdown>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse " id="navbarNav">
             <ul className="navbar-nav ml-auto">
               {!isLoggedIn && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/login">
-                    Log In<span className="sr-only"></span>
-                  </a>
-                </li>
+                <NavLink exact className="nav-item nav-link" to="/login">
+                  Log In<span className="sr-only"></span>
+                </NavLink>
               )}
 
               {isLoggedIn && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/adverts">
-                    User Session
-                  </a>
-                </li>
+                <NavLink exact className="nav-item nav-link" to="/adverts">
+                  User Session
+                </NavLink>
               )}
               {isLoggedIn && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/filter">
-                    Filter Ads
-                  </a>
-                </li>
+                <NavLink exact className="nav-item nav-link" to="/filter">
+                  Filter Ads
+                </NavLink>
               )}
               {isLoggedIn && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/new-advert">
-                    New Advert
-                  </a>
-                </li>
+                <NavLink exact className="nav-item nav-link" to="/new-advert">
+                  New Advert
+                </NavLink>
               )}
               {isLoggedIn && (
-                <li className="nav-item">
-                  <a className="nav-link" href="/" onClick={handleLogOut}>
-                    Log Out
-                  </a>
-                </li>
+                <NavLink
+                  exact
+                  className="nav-item nav-link"
+                  to="/"
+                  onClick={handleLogOut}>
+                  Log Out
+                </NavLink>
               )}
             </ul>
           </div>
