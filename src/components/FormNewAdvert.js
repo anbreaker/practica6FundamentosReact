@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {
   Form,
   Button,
@@ -10,6 +11,7 @@ import {
 import {urlBackend} from '../helpers/apiUrls';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
+  const history = useHistory();
   const [adName, setAdName] = useState('');
   const [onSale, setOnSale] = useState(true);
   const [cost, setCost] = useState(0);
@@ -55,8 +57,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
       .catch(console.error)
       .then(() => {
         setTimeout(() => {
-          window.location.href = '/adverts';
-          // history.push('/adverts');
+          history.push('/adverts');
         }, 500);
       });
   }

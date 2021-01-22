@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import {FormFiltersAds} from '../FormFiltersAds';
 import {AdvertsList} from '../AdvertsList';
 import {Layout} from '../Layout';
 import {urlBackend} from '../../helpers/apiUrls';
 
 export const FilterAdvertsPage = () => {
+  const history = useHistory();
   const [ads, setAds] = useState([]);
 
   const token = localStorage.getItem('token');
 
-  //http://localhost:3001/api/loginJWT
   useEffect(() => {
     fetch(`${urlBackend}api/ads?token=${token}`, {
       method: 'GET',
@@ -19,11 +20,12 @@ export const FilterAdvertsPage = () => {
     })
       .then((response) => {
         if (response.status === 200) return response.json();
-        window.location.href = '/login';
+
+        history.push('/login');
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
-  }, [token, urlBackend]);
+  }, [token, history]);
 
   function onFilterChange(filters) {
     const params = new URLSearchParams();
@@ -41,7 +43,8 @@ export const FilterAdvertsPage = () => {
     })
       .then((response) => {
         if (response.status === 200) return response.json();
-        window.location.href = '/login';
+
+        history.push('/login');
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));

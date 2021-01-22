@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import {urlBackend} from '../../helpers/apiUrls';
 import {AdvertId} from '../AdvertId';
@@ -6,6 +7,7 @@ import {Layout} from '../Layout';
 import {SpinnerComponent} from '../SpinnerComponent';
 
 export const AdvertIdPage = (props) => {
+  const history = useHistory();
   const {id} = useParams();
   const [advert, setadvert] = useState();
 
@@ -20,7 +22,7 @@ export const AdvertIdPage = (props) => {
     })
       .then((response) => {
         if (response.status === 200) return response.json();
-        window.location.href = '/login';
+        history.push('/login');
       })
       .then((response) => setadvert(response))
       .catch((error) => console.error('Error:', error));

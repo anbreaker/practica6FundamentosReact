@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 import {urlBackend} from '../helpers/apiUrls';
 
-export const Login = ({history}) => {
-  console.log('history-->', history);
+export const Login = () => {
+  const history = useHistory();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -30,8 +31,7 @@ export const Login = ({history}) => {
       .then((response) => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
-          window.location.href = '/adverts';
-          // history.push('/adverts');
+          history.push('/adverts');
         } else {
           setShowError(true);
         }

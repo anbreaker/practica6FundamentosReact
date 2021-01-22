@@ -1,9 +1,11 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
 import {ModalComponent} from './ModalComponent';
 import {urlBackend} from '../helpers/apiUrls';
 
 export const AdvertId = ({ad}) => {
+  const history = useHistory();
   const token = localStorage.getItem('token');
   const urlToDelete = `${urlBackend}api/ads/${ad._id}?token=${token}`;
 
@@ -13,7 +15,7 @@ export const AdvertId = ({ad}) => {
     fetch(urlToDelete, {method: 'DELETE'})
       .then((response) => response.json())
       .catch(console.error)
-      .then(() => (window.location.href = '/adverts'));
+      .then(() => history.push('/adverts'));
   }
 
   return (

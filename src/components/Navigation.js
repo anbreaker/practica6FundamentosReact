@@ -1,17 +1,21 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import {NavLink, Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
 import './general.css';
 
 export const Navigation = () => {
+  const history = useHistory();
+
   const handleLogOut = () => {
     localStorage.clear();
+    history.push('/adverts');
   };
 
   const isLoggedIn = !!localStorage.getItem('token');
 
   //No elimina lo de logout del NavBar... Preguntar...
-  console.log(isLoggedIn, 'Logueado??');
+  // Enviar isLoggedIn
 
   return (
     <React.Fragment>
@@ -88,8 +92,7 @@ export const Navigation = () => {
               {isLoggedIn && (
                 <NavLink
                   className="nav-item nav-link decoration"
-                  // to="/"
-                  to="/adverts"
+                  to="/"
                   onClick={handleLogOut}>
                   Log Out
                 </NavLink>
