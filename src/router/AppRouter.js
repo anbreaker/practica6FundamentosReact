@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import {Navigation} from '../components/Navigation';
 import {AdvertIdPage} from '../components/pages/AdvertIdPage';
 import {AdvertsListPage} from '../components/pages/AdvertsListPage';
 import {FilterAdvertsPage} from '../components/pages/FilterAdvertsPage';
@@ -12,6 +13,8 @@ export const AppRouter = () => {
   return (
     <Router>
       <div className="container">
+        <Navigation />
+
         <Switch>
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/filter" component={FilterAdvertsPage} />

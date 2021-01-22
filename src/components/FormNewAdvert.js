@@ -7,6 +7,7 @@ import {
   Jumbotron,
   Container,
 } from 'react-bootstrap';
+import {urlBackend} from '../helpers/apiUrls';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const [adName, setAdName] = useState('');
@@ -16,7 +17,6 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   const [tags, setTags] = useState([]);
 
   const token = localStorage.getItem('token');
-  const url = `http://127.0.0.1:3001/api/ads?token=${token}`;
 
   function onChangeAdvertName(event) {
     setAdName(event.target.value);
@@ -47,7 +47,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
-    fetch(url, {
+    fetch(`${urlBackend}api/ads?token=${token}`, {
       method: 'POST',
       body: form,
     })

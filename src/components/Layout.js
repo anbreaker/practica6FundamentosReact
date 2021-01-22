@@ -1,6 +1,5 @@
 import React from 'react';
 import {Head} from './Head';
-import {Navigation} from './Navigation';
 import {Footer} from './Footer';
 
 export const Layout = ({children}) => {
@@ -10,7 +9,6 @@ export const Layout = ({children}) => {
   return (
     <React.Fragment>
       <Head />
-      <Navigation />
       {children}
       <Footer />
     </React.Fragment>

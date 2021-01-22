@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 import {urlBackend} from '../helpers/apiUrls';
 
-export const Login = () => {
+export const Login = ({history}) => {
+  console.log('history-->', history);
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showError, setShowError] = useState(false);
   const [rememberMail, setRememberMail] = useState(false);
 
   const onChangeEmail = (event) => setEmail(event.target.value);
-
   const onChangePassword = (event) => setPassword(event.target.value);
-
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
 
-  console.log(email, password, showError, rememberMail);
+  // console.log(email, password, rememberMail);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +31,7 @@ export const Login = () => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
           window.location.href = '/adverts';
-          // history.push('/adverts')
+          // history.push('/adverts');
         } else {
           setShowError(true);
         }
@@ -87,6 +87,7 @@ export const Login = () => {
                       Log In
                     </Button>
                   </Form>
+
                   {showError && (
                     <div className="text-center text-danger mt-2">
                       Invalid Credentials

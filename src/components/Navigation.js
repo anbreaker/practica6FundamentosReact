@@ -4,11 +4,14 @@ import {Dropdown} from 'react-bootstrap';
 import './general.css';
 
 export const Navigation = () => {
-  function handleLogOut() {
+  const handleLogOut = () => {
     localStorage.clear();
-  }
+  };
 
   const isLoggedIn = !!localStorage.getItem('token');
+
+  //No elimina lo de logout del NavBar... Preguntar...
+  console.log(isLoggedIn, 'Logueado??');
 
   return (
     <React.Fragment>
@@ -85,7 +88,8 @@ export const Navigation = () => {
               {isLoggedIn && (
                 <NavLink
                   className="nav-item nav-link decoration"
-                  to="/"
+                  // to="/"
+                  to="/adverts"
                   onClick={handleLogOut}>
                   Log Out
                 </NavLink>
