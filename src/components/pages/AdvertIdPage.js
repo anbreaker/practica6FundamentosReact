@@ -24,7 +24,7 @@ export const AdvertIdPage = (props) => {
       })
       .then((response) => setadvert(response))
       .catch((error) => console.error('Error:', error));
-  }, [token, urlBackend, id]);
+  }, [token, id]);
 
   return <Layout>{advert ? <AdvertId ad={advert} /> : <SpinnerComponent />}</Layout>;
 };

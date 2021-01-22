@@ -1,11 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import {AdvertIdPage} from '../components/pages/AdvertIdPage';
 import {AdvertsListPage} from '../components/pages/AdvertsListPage';
 import {FilterAdvertsPage} from '../components/pages/FilterAdvertsPage';
 import {HomePage} from '../components/pages/HomePage';
 import {LoginPage} from '../components/pages/LoginPage';
 import {NewAdvertPage} from '../components/pages/NewAdvertPage';
+import {NotFoundPage} from '../components/pages/NotFoundPage';
 
 export const AppRouter = () => {
   return (

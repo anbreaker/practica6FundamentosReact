@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-
 import './components/general.css';
+import {NodePopApp} from './NodePopApp';
 
 ReactDOM.render(
   <React.Fragment>
-    <App />
+    <NodePopApp />
   </React.Fragment>,
   document.getElementById('root')
 );

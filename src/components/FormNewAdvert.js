@@ -56,6 +56,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
       .then(() => {
         setTimeout(() => {
           window.location.href = '/adverts';
+          // history.push('/adverts');
         }, 500);
       });
   }

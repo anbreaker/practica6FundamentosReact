@@ -40,6 +40,7 @@ export const Login = () => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
           window.location.href = '/adverts';
+          // history.push('/adverts')
         } else {
           setShowError(true);
         }
