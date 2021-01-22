@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react';
 import {FormFiltersAds} from '../FormFiltersAds';
 import {AdvertsList} from '../AdvertsList';
 import {Layout} from '../Layout';
+import {urlBackend} from '../../helpers/apiUrls';
 
 export const FilterAdvertsPage = () => {
-  const url = `http://localhost:3001/`;
   const [ads, setAds] = useState([]);
 
   const token = localStorage.getItem('token');
 
   //http://localhost:3001/api/loginJWT
   useEffect(() => {
-    fetch(`${url}api/ads?token=${token}`, {
+    fetch(`${urlBackend}api/ads?token=${token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const FilterAdvertsPage = () => {
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
-  }, [token, url]);
+  }, [token, urlBackend]);
 
   function onFilterChange(filters) {
     const params = new URLSearchParams();
@@ -33,7 +33,7 @@ export const FilterAdvertsPage = () => {
     params.set('cost', `${filters.cost[0] * 100}-${filters.cost[1] * 100}`);
     filters.tags.forEach((tag) => params.append('tags', tag));
 
-    fetch(`${url}api/ads?${params.toString()}`, {
+    fetch(`${urlBackend}api/ads?${params.toString()}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

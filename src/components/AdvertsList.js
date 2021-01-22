@@ -1,11 +1,9 @@
 import React from 'react';
 import {Jumbotron, Container, Table} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {urlBackend} from '../helpers/apiUrls';
 
 export const AdvertsList = ({ads = []}) => {
-  // const urlFront = `http://localhost:3000/`;
-  const urlBackend = `http://localhost:3001/`;
-
   return (
     <React.Fragment>
       <Container className="p-4 form-sign">

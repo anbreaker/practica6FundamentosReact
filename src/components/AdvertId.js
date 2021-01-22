@@ -1,10 +1,11 @@
 import React from 'react';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
 import {ModalComponent} from './ModalComponent';
+import {urlBackend} from '../helpers/apiUrls';
 
 export const AdvertId = ({ad}) => {
   const token = localStorage.getItem('token');
-  const urlToDelete = `http://127.0.0.1:3001/api/ads/${ad._id}?token=${token}`;
+  const urlToDelete = `${urlBackend}api/ads/${ad._id}?token=${token}`;
 
   function deleteAdById(event) {
     event.preventDefault();
@@ -23,7 +24,7 @@ export const AdvertId = ({ad}) => {
           <Card style={{width: '12rem'}}>
             <Card.Img
               variant="top"
-              src={`http://localhost:3001/uploads/thumbnails/${ad.imagePath}.png`}
+              src={`${urlBackend}uploads/thumbnails/${ad.imagePath}.png`}
             />
           </Card>
 

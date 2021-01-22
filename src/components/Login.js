@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
+import {urlBackend} from '../helpers/apiUrls';
 
 export const Login = () => {
   const [email, setEmail] = useState();
@@ -27,7 +28,7 @@ export const Login = () => {
     console.log(email);
     console.log(password);
 
-    fetch('http://localhost:3001/api/loginJWT', {
+    fetch(`${urlBackend}api/loginJWT`, {
       method: 'POST',
       body: JSON.stringify({email, password}),
       headers: {

@@ -62,29 +62,28 @@ export const Navigation = () => {
           <div className="collapse navbar-collapse " id="navbarNav">
             <ul className="navbar-nav ml-auto ">
               {!isLoggedIn && (
-                <NavLink exact className="nav-item nav-link decoration" to="/login">
+                <NavLink className="nav-item nav-link decoration" to="/login">
                   Log In<span className="sr-only"></span>
                 </NavLink>
               )}
 
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link decoration" to="/adverts">
+                <NavLink className="nav-item nav-link decoration" to="/adverts">
                   User Session
                 </NavLink>
               )}
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link decoration" to="/filter">
+                <NavLink className="nav-item nav-link decoration" to="/filter">
                   Filter Ads
                 </NavLink>
               )}
               {isLoggedIn && (
-                <NavLink exact className="nav-item nav-link decoration" to="/new-advert">
+                <NavLink className="nav-item nav-link decoration" to="/new-advert">
                   New Advert
                 </NavLink>
               )}
               {isLoggedIn && (
                 <NavLink
-                  exact
                   className="nav-item nav-link decoration"
                   to="/"
                   onClick={handleLogOut}>
