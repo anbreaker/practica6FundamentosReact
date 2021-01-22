@@ -6,27 +6,18 @@ export const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showError, setShowError] = useState(false);
-  // const [rememberMail, setRememberMail] = useState(true);
+  const [rememberMail, setRememberMail] = useState(false);
 
-  function onChangeEmail(event) {
-    setEmail(event.target.value);
-  }
+  const onChangeEmail = (event) => setEmail(event.target.value);
 
-  // const userSession = sessionStorage.getItem('email');
-  // console.log(userSession);
-  // if (userSession !== null) {
-  //   console.log(userSession);
-  // }
+  const onChangePassword = (event) => setPassword(event.target.value);
 
-  // function remberEmail() {
-  //   setRememberMail(true);
-  //   console.log();
-  // }
+  const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
 
-  function handleSubmit(event) {
+  console.log(email, password, showError, rememberMail);
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email);
-    console.log(password);
 
     fetch(`${urlBackend}api/loginJWT`, {
       method: 'POST',
@@ -45,7 +36,7 @@ export const Login = () => {
           setShowError(true);
         }
       });
-  }
+  };
 
   return (
     <React.Fragment>
@@ -78,16 +69,17 @@ export const Login = () => {
                         className="form-control form-input"
                         required
                         onFocus={() => setShowError(false)}
-                        onChange={(ev) => setPassword(ev.target.value)}
+                        onChange={onChangePassword}
                       />
                     </div>
-                    {/* <Form.Check
+                    <Form.Check
                       inline
                       label="Remember This"
                       type="checkbox"
                       id="lifestyle"
-                      onClick={remberEmail}
-                    /> */}
+                      name="checkbox"
+                      onChange={onChangeRemberEmail}
+                    />
                     <Button
                       type="submit"
                       id="btn-login"
