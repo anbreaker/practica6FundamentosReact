@@ -6,7 +6,9 @@ import {urlBackend} from '../helpers/apiUrls';
 
 export const AdvertId = ({ad}) => {
   const history = useHistory();
+
   const token = localStorage.getItem('token');
+
   const urlToDelete = `${urlBackend}api/ads/${ad._id}?token=${token}`;
 
   function deleteAdById(event) {
@@ -45,13 +47,6 @@ export const AdvertId = ({ad}) => {
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">
-              {/* <Button
-                className="btn btn-success mt-4 mb-4 mr-4"
-                onClick={() => {
-                  window.location.href = `/change-advert/${ad._id}`;
-                }}>
-                Change Ad
-              </Button> */}
               <ModalComponent deleteAdById={deleteAdById} />
             </div>
           </Card>

@@ -8,10 +8,8 @@ body {
   height: 282px;
 }
 
-
-
 .decoration:hover {
-  background-color: #131313;
+  background-color: rgb(66, 66, 66);
   border-radius: 7px;
   color: azure;
   padding: 7px;

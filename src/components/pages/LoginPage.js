@@ -5,7 +5,6 @@ import {Footer} from '../Footer';
 
 export const LoginPage = () => {
   return (
-    //Bucle infinito Layout...
     <React.Fragment>
       <Head />
       <Login />

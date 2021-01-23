@@ -1,2 +1,1 @@
-// const urlFront = `http://localhost:3000/`;
-export const urlBackend = `http://localhost:3001/`;
+export const urlBackend = process.env.REACT_APP_API_BASE_URL;

@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 import {urlBackend} from '../helpers/apiUrls';
+import {AuthContext} from '../context/AuthContext';
 
 export const Login = () => {
   const history = useHistory();
+  const {onLogin} = useContext(AuthContext);
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -31,6 +33,7 @@ export const Login = () => {
       .then((response) => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
+          onLogin(true);
           history.push('/adverts');
         } else {
           setShowError(true);
