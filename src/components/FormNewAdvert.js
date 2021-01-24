@@ -101,7 +101,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-5">
+              <Form.Group className="col-6">
                 <Form.Label>Select Tags:</Form.Label>
                 {['checkbox'].map((type) => (
                   <div key={`inline-${type}`} className="mb-3">
@@ -137,11 +137,13 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                 ))}
               </Form.Group>
 
-              <Form.Group className="col-7">
+              <Form.Group className="col-6">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
-                  label="Select Photography"
-                  custom
+                  for="Select Photography"
+                  className="form-control form-control"
+                  id="formFileLg"
+                  type="file"
                   onChange={(ev) => setFile(ev.target.files[0])}
                 />
               </Form.Group>
