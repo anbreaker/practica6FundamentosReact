@@ -2,17 +2,20 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {Head} from './Head';
 import {Footer} from './Footer';
+import {GetSessionDetails} from '../context/AuthContext';
 
 export const Layout = ({children}) => {
   const history = useHistory();
-  const isLoggedIn = !!localStorage.getItem('token');
-  if (!isLoggedIn) return history.push('/login');
+
+  const {isLogged} = GetSessionDetails();
+
+  if (!isLogged) return history.push('/login');
 
   return (
-    <React.Fragment>
+    <>
       <Head />
       {children}
       <Footer />
-    </React.Fragment>
+    </>
   );
 };

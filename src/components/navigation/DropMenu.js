@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
 
 import {AuthContext, GetSessionDetails} from '../../context/AuthContext';
-
 import '../general.css';
 
 export const DropMenu = () => {
