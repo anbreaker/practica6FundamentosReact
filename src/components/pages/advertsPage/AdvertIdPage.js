@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import {urlBackend} from '../../../helpers/apiUrls';
 import {AdvertId} from '../../pagesComponent/advertsComponent/AdvertId';
 import {Layout} from '../../layout/Layout';
-import {SpinnerComponent} from '../../SpinnerComponent';
+import {SpinnerComponent} from '../../uxTools/SpinnerComponent';
 
 export const AdvertIdPage = (props) => {
   const history = useHistory();

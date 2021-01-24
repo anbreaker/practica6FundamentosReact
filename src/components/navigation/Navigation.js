@@ -26,7 +26,6 @@ export const Navigation = () => {
                   Log In<span className="sr-only"></span>
                 </Link>
               )}
-
               {isLogged && (
                 <Link className="nav-item nav-link decoration" to="/adverts">
                   User Session

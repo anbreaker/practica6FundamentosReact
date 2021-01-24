@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
-import {ModalComponent} from '../../ModalComponent';
+import {ModalComponent} from '../../uxTools/ModalComponent';
 import {urlBackend} from '../../../helpers/apiUrls';
 
 export const AdvertId = ({ad}) => {
