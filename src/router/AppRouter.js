@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+
 import {Navigation} from '../components/navigation/Navigation';
 import {AdvertIdPage} from '../components/pages/advertsPage/AdvertIdPage';
 import {AdvertsListPage} from '../components/pages/advertsPage/AdvertsListPage';
@@ -11,16 +12,13 @@ import {NotFoundPage} from '../components/pages/notFoundPage/NotFoundPage';
 import {AuthContextProvider} from '../context/AuthContext';
 import {PrivateRoute} from './PrivateRoute';
 
-export const AppRouter = () => {
-  //Sacar y pasar por props el token
-  const token = localStorage.getItem('token');
-
+export const AppRouter = ({token}) => {
   const [isLogged, setIsLogged] = useState(!!token);
 
   const onLogin = () => setIsLogged(true);
 
   const onLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem('token');
     setIsLogged(false);
   };
 

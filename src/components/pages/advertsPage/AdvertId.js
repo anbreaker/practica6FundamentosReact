@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootstrap';
 
-import {WindowWarning} from './WindowWarning';
+import {WarningWindow} from './WarningWindow';
 import {urlBackend} from '../../../helpers/apiUrls';
 
 export const AdvertId = ({ad}) => {
@@ -48,7 +48,7 @@ export const AdvertId = ({ad}) => {
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">
-              <WindowWarning deleteAdById={deleteAdById} />
+              <WarningWindow deleteAdById={deleteAdById} />
             </div>
           </Card>
         </Jumbotron>

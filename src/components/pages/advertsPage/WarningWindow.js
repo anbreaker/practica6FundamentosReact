@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Modal} from 'react-bootstrap';
 
-export const WindowWarning = (props) => {
+export const WarningWindow = (props) => {
   const {deleteAdById} = props;
   const [show, setShow] = useState(false);
 

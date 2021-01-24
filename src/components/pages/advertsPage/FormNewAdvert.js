@@ -8,6 +8,7 @@ import {
   Jumbotron,
   Container,
 } from 'react-bootstrap';
+
 import {urlBackend} from '../../../helpers/apiUrls';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
@@ -140,7 +141,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
               <Form.Group className="col-6">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
                 <Form.File
-                  for="Select Photography"
+                  htmlFor="Select Photography"
                   className="form-control form-control"
                   id="formFileLg"
                   type="file"
