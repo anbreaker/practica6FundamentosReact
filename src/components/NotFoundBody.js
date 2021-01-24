@@ -2,7 +2,7 @@ import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export const NotFound = () => {
+export const NotFoundBody = () => {
   return (
     <React.Fragment>
       <Container className="p-4">

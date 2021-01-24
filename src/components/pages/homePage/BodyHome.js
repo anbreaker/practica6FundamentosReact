@@ -2,7 +2,7 @@ import React from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export const Header = () => {
+export const BodyHome = () => {
   return (
     <React.Fragment>
       <Container>

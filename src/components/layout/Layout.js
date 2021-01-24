@@ -1,8 +1,8 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {Head} from './Head';
-import {Footer} from './Footer';
-import {useGetSessionDetails} from '../context/AuthContext';
+import {HeadLayout} from './HeadLayout';
+import {FooterLayout} from './FooterLayout';
+import {useGetSessionDetails} from '../../context/AuthContext';
 
 export const Layout = ({children}) => {
   const history = useHistory();
@@ -13,9 +13,9 @@ export const Layout = ({children}) => {
 
   return (
     <>
-      <Head />
+      <HeadLayout />
       {children}
-      <Footer />
+      <FooterLayout />
     </>
   );
 };

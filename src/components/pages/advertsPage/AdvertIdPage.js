@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
-import {urlBackend} from '../../helpers/apiUrls';
-import {AdvertId} from '../AdvertId';
-import {Layout} from '../Layout';
-import {SpinnerComponent} from '../SpinnerComponent';
+import {urlBackend} from '../../../helpers/apiUrls';
+import {AdvertId} from '../../pagesComponent/advertsComponent/AdvertId';
+import {Layout} from '../../layout/Layout';
+import {SpinnerComponent} from '../../SpinnerComponent';
 
 export const AdvertIdPage = (props) => {
   const history = useHistory();
@@ -26,7 +26,7 @@ export const AdvertIdPage = (props) => {
       })
       .then((response) => setadvert(response))
       .catch((error) => console.error('Error:', error));
-  }, [token, id]);
+  }, [token, id, history]);
 
   return <Layout>{advert ? <AdvertId ad={advert} /> : <SpinnerComponent />}</Layout>;
 };

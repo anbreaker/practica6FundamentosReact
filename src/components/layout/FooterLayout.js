@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Footer = () => {
+export const FooterLayout = () => {
   return (
     <React.Fragment>
       <footer className="container footer-page p-4 footer">

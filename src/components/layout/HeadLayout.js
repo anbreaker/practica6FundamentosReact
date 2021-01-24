@@ -1,7 +1,7 @@
 import React from 'react';
-import './style/general.css';
+import '../style/general.css';
 
-export const Head = () => {
+export const HeadLayout = () => {
   return (
     <React.Fragment>
       <meta charSet="UTF-8" />

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import {FormFiltersAds} from '../FormFiltersAds';
-import {AdvertsList} from '../AdvertsList';
-import {Layout} from '../Layout';
-import {urlBackend} from '../../helpers/apiUrls';
+import {FormFiltersAds} from '../../pagesComponent/advertsComponent/FormFiltersAds';
+import {AdvertsList} from '../../pagesComponent/advertsComponent/AdvertsList';
+import {Layout} from '../../layout/Layout';
+import {urlBackend} from '../../../helpers/apiUrls';
 
 export const FilterAdvertsPage = () => {
   const history = useHistory();
