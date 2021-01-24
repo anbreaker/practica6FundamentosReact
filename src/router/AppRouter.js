@@ -12,7 +12,9 @@ import {AuthContextProvider} from '../context/AuthContext';
 import {PrivateRoute} from './PrivateRoute';
 
 export const AppRouter = () => {
+  //Sacar y pasar por props el token
   const token = localStorage.getItem('token');
+
   const [isLogged, setIsLogged] = useState(!!token);
 
   const onLogin = () => setIsLogged(true);
@@ -36,7 +38,8 @@ export const AppRouter = () => {
 
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/" component={HomePage} />
-            <Redirect to="/404" component={NotFoundPage} />
+            <Route exact path="/404" component={NotFoundPage} />
+            <Redirect to="/404" />
           </Switch>
         </div>
       </Router>

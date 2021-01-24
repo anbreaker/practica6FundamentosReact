@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 
 import {DropMenu} from './DropMenu';
-import {AuthContext, GetSessionDetails} from '../../context/AuthContext';
+import {AuthContext, useGetSessionDetails} from '../../context/AuthContext';
 import '../general.css';
 
 export const Navigation = () => {
-  const {isLogged} = GetSessionDetails();
-  const {onLogout} = AuthContext;
+  const {isLogged} = useGetSessionDetails();
+  const {onLogout} = useContext(AuthContext);
 
   return (
     <React.Fragment>

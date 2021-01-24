@@ -1,9 +1,9 @@
 import React from 'react';
 import {Redirect, Route} from 'react-router-dom';
-import {GetSessionDetails} from '../context/AuthContext';
+import {useGetSessionDetails} from '../context/AuthContext';
 
 export const PrivateRoute = (props) => {
-  const {isLogged} = GetSessionDetails();
+  const {isLogged} = useGetSessionDetails();
 
   return isLogged ? <Route {...props} /> : <Redirect to="/login" />;
 };

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
 
-import {AuthContext, GetSessionDetails} from '../../context/AuthContext';
+import {AuthContext, useGetSessionDetails} from '../../context/AuthContext';
 import '../general.css';
 
 export const DropMenu = () => {
-  const {isLogged} = GetSessionDetails();
-  const {onLogout} = AuthContext;
+  const {isLogged} = useGetSessionDetails();
+  const {onLogout} = useContext(AuthContext);
 
   return (
     <Dropdown>

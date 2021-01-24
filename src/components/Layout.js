@@ -2,12 +2,12 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {Head} from './Head';
 import {Footer} from './Footer';
-import {GetSessionDetails} from '../context/AuthContext';
+import {useGetSessionDetails} from '../context/AuthContext';
 
 export const Layout = ({children}) => {
   const history = useHistory();
 
-  const {isLogged} = GetSessionDetails();
+  const {isLogged} = useGetSessionDetails();
 
   if (!isLogged) return history.push('/login');
 
