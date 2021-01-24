@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
-import {Navigation} from '../components/Navigation';
+import {Navigation} from '../components/navigation/Navigation';
 import {AdvertIdPage} from '../components/pages/AdvertIdPage';
 import {AdvertsListPage} from '../components/pages/AdvertsListPage';
 import {FilterAdvertsPage} from '../components/pages/FilterAdvertsPage';
@@ -16,7 +16,11 @@ export const AppRouter = () => {
   const [isLogged, setIsLogged] = useState(!!token);
 
   const onLogin = () => setIsLogged(true);
-  const onLogout = () => setIsLogged(false);
+
+  const onLogout = () => {
+    localStorage.clear();
+    setIsLogged(false);
+  };
 
   return (
     <AuthContextProvider value={{isLogged, onLogin, onLogout}}>
