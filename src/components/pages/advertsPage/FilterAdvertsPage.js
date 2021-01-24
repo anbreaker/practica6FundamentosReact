@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import {FormFiltersAds} from '../../pagesComponent/advertsComponent/FormFiltersAds';
-import {AdvertsList} from '../../pagesComponent/advertsComponent/AdvertsList';
+
+import {FormFiltersAds} from './FormFiltersAds';
+import {AdvertsList} from './AdvertsList';
 import {Layout} from '../../layout/Layout';
 import {urlBackend} from '../../../helpers/apiUrls';
 

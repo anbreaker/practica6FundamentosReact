@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
+
 import {urlBackend} from '../../../helpers/apiUrls';
-import {AdvertId} from '../../pagesComponent/advertsComponent/AdvertId';
+import {AdvertId} from './AdvertId';
 import {Layout} from '../../layout/Layout';
 import {SpinnerComponent} from '../../uxTools/SpinnerComponent';
 

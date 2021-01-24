@@ -1,6 +1,7 @@
 import React from 'react';
+
 import {Layout} from '../../layout/Layout';
-import {FormNewAdvert} from '../../pagesComponent/advertsComponent/FormNewAdvert';
+import {FormNewAdvert} from './FormNewAdvert';
 
 export const NewAdvertPage = () => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container, Table} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+
 import {urlBackend} from '../../../helpers/apiUrls';
 
 export const AdvertsList = ({ads = []}) => {

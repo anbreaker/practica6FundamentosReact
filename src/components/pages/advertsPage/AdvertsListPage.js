@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
+
 import {Layout} from '../../layout/Layout';
-import {AdvertsList} from '../../pagesComponent/advertsComponent/AdvertsList';
+import {AdvertsList} from './AdvertsList';
 import {urlBackend} from '../../../helpers/apiUrls';
 
 export const AdvertsListPage = (props) => {

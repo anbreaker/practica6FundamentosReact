@@ -1,6 +1,6 @@
 import React from 'react';
 import {HeadLayout} from '../../layout/HeadLayout';
-import {LoginForm} from '../../pagesComponent/loginComponent/LoginForm';
+import {LoginForm} from './LoginForm';
 import {FooterLayout} from '../../layout/FooterLayout';
 
 export const LoginPage = () => {

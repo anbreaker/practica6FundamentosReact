@@ -1,5 +1,4 @@
 import React from 'react';
-import '../style/general.css';
 
 export const HeadLayout = () => {
   return (
