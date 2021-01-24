@@ -11,14 +11,14 @@ export const AdvertId = ({ad}) => {
 
   const urlToDelete = `${urlBackend}api/ads/${ad._id}?token=${token}`;
 
-  function deleteAdById(event) {
+  const deleteAdById = (event) => {
     event.preventDefault();
 
     fetch(urlToDelete, {method: 'DELETE'})
       .then((response) => response.json())
       .catch(console.error)
       .then(() => history.push('/adverts'));
-  }
+  };
 
   return (
     <React.Fragment>
