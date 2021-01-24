@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import {DropMenu} from './DropMenu';
 import {AuthContext, useGetSessionDetails} from '../../context/AuthContext';
-import '../general.css';
+import '../style/general.css';
 
 export const Navigation = () => {
   const {isLogged} = useGetSessionDetails();

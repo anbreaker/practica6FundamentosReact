@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap';
 
 import {AuthContext, useGetSessionDetails} from '../../context/AuthContext';
-import '../general.css';
+import '../style/general.css';
 
 export const DropMenu = () => {
   const {isLogged} = useGetSessionDetails();
