@@ -43,7 +43,10 @@ export const LoginForm = ({token}) => {
       .then((response) => response.json())
       .then((response) => {
         if (response.auth) {
-          localStorage.setItem('token', response.tokenJWT);
+          // Persistir... si checked
+          if (rememberMail) localStorage.setItem('token', response.tokenJWT);
+          console.log('paso por aki');
+
           onLogin(true);
           history.push('/adverts');
         } else {
