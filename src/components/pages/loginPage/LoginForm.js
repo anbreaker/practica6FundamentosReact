@@ -9,8 +9,6 @@ import {useForm} from '../../../hooks/useForm';
 export const LoginForm = ({token}) => {
   const history = useHistory();
 
-  console.log(token, 'ver');
-
   const {onLogin} = useContext(AuthContext);
   const {isLogged} = useGetSessionDetails();
 
@@ -29,6 +27,8 @@ export const LoginForm = ({token}) => {
   useEffect(() => {
     if (rememberMail) localStorage.setItem('token', rememberMail);
   }, [rememberMail]);
+
+  console.log(rememberMail, 'rememberMail');
 
   const handleSubmit = (event) => {
     event.preventDefault();
