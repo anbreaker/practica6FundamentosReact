@@ -72,10 +72,6 @@ npm run backend
 Path: practica6_fundamentos_react/backendPractica5/
 npm run micro
 
-or ||
-
-Path: practica6_fundamentos_react/backendPractica5/services
-npm run micro
 ```
 
 ## Init NodeApi Backend and microserviceThumbnailCreator.js with PM2 🚀
