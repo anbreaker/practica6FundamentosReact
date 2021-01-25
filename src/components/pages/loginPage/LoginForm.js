@@ -1,9 +1,10 @@
 import React, {useContext, useState} from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
-
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
+
 import {urlBackend} from '../../../helpers/apiUrls';
 import {AuthContext, useGetSessionDetails} from '../../../context/AuthContext';
+import {useForm} from '../../../hooks/useForm';
 
 export const LoginForm = () => {
   const history = useHistory();
@@ -11,16 +12,17 @@ export const LoginForm = () => {
   const {onLogin} = useContext(AuthContext);
   const {isLogged} = useGetSessionDetails();
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [showError, setShowError] = useState(false);
+  const [formValues, handleInputChange] = useForm({
+    email: '',
+    password: '',
+  });
+
+  const {email, password} = formValues;
+
   const [rememberMail, setRememberMail] = useState(false);
+  const [showError, setShowError] = useState(false);
 
-  const onChangeEmail = (event) => setEmail(event.target.value);
-  const onChangePassword = (event) => setPassword(event.target.value);
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
-
-  // console.log(email, password, rememberMail);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -63,8 +65,8 @@ export const LoginForm = () => {
                           name="email"
                           className="form-control form-input"
                           placeholder="email@mail.com"
-                          onChange={onChangeEmail}
-                          // value={userSession || email}
+                          value={email}
+                          onChange={handleInputChange}
                           required
                         />
                       </div>
@@ -72,19 +74,21 @@ export const LoginForm = () => {
                         <input
                           type="password"
                           name="password"
+                          value={password}
                           placeholder="Password "
                           className="form-control form-input"
                           required
                           onFocus={() => setShowError(false)}
-                          onChange={onChangePassword}
+                          onChange={handleInputChange}
                         />
                       </div>
                       <Form.Check
                         inline
                         label="Remember This"
-                        type="checkbox"
                         id="lifestyle"
-                        name="checkbox"
+                        type="checkbox"
+                        name="rememberMail"
+                        value={rememberMail}
                         onChange={onChangeRemberEmail}
                       />
                       <Button

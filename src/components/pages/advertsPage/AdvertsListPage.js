@@ -26,7 +26,7 @@ export const AdvertsListPage = (props) => {
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
-  }, [token, urlBackend, history]);
+  }, [token, history]);
 
   return (
     <Layout>
