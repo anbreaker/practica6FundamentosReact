@@ -4,7 +4,7 @@ import {useGetSessionDetails} from '../context/AuthContext';
 
 export const PrivateRoute = (props) => {
   // Save last route
-  localStorage.setItem('lastPage:', props.location.pathname);
+  localStorage.setItem('lastPage', props.location.pathname);
 
   const {isLogged} = useGetSessionDetails();
 

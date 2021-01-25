@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './style/styles.css';
 import {NodePopApp} from './NodePopApp';
 
-const {token} = localStorage.getItem('token');
+const token = localStorage.getItem('token') || {token: null};
 
 ReactDOM.render(
   <React.Fragment>

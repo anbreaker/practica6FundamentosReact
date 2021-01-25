@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Redirect, useHistory} from 'react-router-dom';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
@@ -6,8 +6,10 @@ import {urlBackend} from '../../../helpers/apiUrls';
 import {AuthContext, useGetSessionDetails} from '../../../context/AuthContext';
 import {useForm} from '../../../hooks/useForm';
 
-export const LoginForm = () => {
+export const LoginForm = ({token}) => {
   const history = useHistory();
+
+  console.log(token, 'ver');
 
   const {onLogin} = useContext(AuthContext);
   const {isLogged} = useGetSessionDetails();
@@ -19,10 +21,14 @@ export const LoginForm = () => {
 
   const {email, password} = formValues;
 
-  const [rememberMail, setRememberMail] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [rememberMail, setRememberMail] = useState(false);
 
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
+
+  useEffect(() => {
+    if (rememberMail) localStorage.setItem('token', rememberMail);
+  }, [rememberMail]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
