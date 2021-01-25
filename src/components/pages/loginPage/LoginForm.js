@@ -25,7 +25,7 @@ export const LoginForm = ({token}) => {
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
 
   useEffect(() => {
-    if (rememberMail) localStorage.setItem('token', rememberMail);
+    if (rememberMail) localStorage.setItem('rememberMail', rememberMail);
   }, [rememberMail]);
 
   console.log(rememberMail, 'rememberMail');
@@ -43,10 +43,7 @@ export const LoginForm = ({token}) => {
       .then((response) => response.json())
       .then((response) => {
         if (response.auth) {
-          // Persistir... si checked
-          if (rememberMail) localStorage.setItem('token', response.tokenJWT);
-          console.log('paso por aki');
-
+          localStorage.setItem('token', response.tokenJWT);
           onLogin(true);
           history.push('/adverts');
         } else {

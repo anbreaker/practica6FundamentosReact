@@ -1,3 +1,3 @@
 # Elimnar anuncio da error pero elimina
 
-# usegetdetail...
+# Persistir... si checked
