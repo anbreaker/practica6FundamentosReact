@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './style/styles.css';
-import {NodePopApp} from './NodePopApp';
+import {AppRouter} from './router/AppRouter';
 
 const token = localStorage.getItem('token') || null;
-console.log(!!token, '<--Token');
 
 ReactDOM.render(
   <React.Fragment>
-    <NodePopApp isLogged={!!token} />
+    <AppRouter token={token} />;
   </React.Fragment>,
   document.getElementById('root')
 );

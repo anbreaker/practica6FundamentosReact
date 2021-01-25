@@ -21,12 +21,15 @@ export const LoginForm = ({token}) => {
 
   const [showError, setShowError] = useState(false);
   const [rememberMail, setRememberMail] = useState(false);
+  const [rememberLastPage, setRememberLastPage] = useState(false);
 
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
+  const onChangeRemberLastPage = (event) => setRememberLastPage(event.target.checked);
 
   useEffect(() => {
     if (rememberMail) localStorage.setItem('rememberMail', rememberMail);
-  }, [rememberMail]);
+    if (rememberLastPage) localStorage.setItem('rememberLastPage', true);
+  }, [rememberMail, rememberLastPage]);
 
   console.log(rememberMail, 'rememberMail');
 
@@ -44,8 +47,9 @@ export const LoginForm = ({token}) => {
       .then((response) => {
         if (response.auth) {
           localStorage.setItem('token', response.tokenJWT);
+          const lastPage = localStorage.getItem('lastPage') || '/adverts';
           onLogin(true);
-          history.push('/adverts');
+          history.push(lastPage);
         } else {
           setShowError(true);
         }
@@ -90,12 +94,21 @@ export const LoginForm = ({token}) => {
                       </div>
                       <Form.Check
                         inline
-                        label="Remember This"
+                        label="Remember"
                         id="lifestyle"
                         type="checkbox"
                         name="rememberMail"
                         value={rememberMail}
                         onChange={onChangeRemberEmail}
+                      />
+                      <Form.Check
+                        inline
+                        label="Remember Last Page"
+                        id="lifestyle"
+                        type="checkbox"
+                        name="rememberLastPage"
+                        value={rememberLastPage}
+                        onChange={onChangeRemberLastPage}
                       />
                       <Button
                         type="submit"
