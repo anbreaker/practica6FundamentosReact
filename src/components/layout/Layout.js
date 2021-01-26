@@ -8,7 +8,7 @@ export const Layout = ({children}) => {
 
   const {isLogged} = useGetSessionDetails();
 
-  if (!isLogged) return history.push('/login');
+  if (!isLogged) history.push('/login');
 
   return (
     <>
