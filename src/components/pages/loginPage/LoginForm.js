@@ -1,16 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Redirect, useHistory} from 'react-router-dom';
+import React, {useState} from 'react';
+import {Redirect} from 'react-router-dom';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
 import {urlBackend} from '../../../helpers/apiUrls';
-import {AuthContext, useGetSessionDetails} from '../../../context/AuthContext';
+import {useGetSessionDetails} from '../../../context/AuthContext';
 import {useForm} from '../../../hooks/useForm';
 
-export const LoginForm = ({token}) => {
-  const history = useHistory();
-
-  const {onLogin} = useContext(AuthContext);
-  const {isLogged} = useGetSessionDetails();
+export const LoginForm = () => {
+  const {isLogged, onLogin} = useGetSessionDetails();
 
   const [formValues, handleInputChange] = useForm({
     email: '',
@@ -21,15 +18,8 @@ export const LoginForm = ({token}) => {
 
   const [showError, setShowError] = useState(false);
   const [rememberMail, setRememberMail] = useState(false);
-  const [rememberLastPage, setRememberLastPage] = useState(false);
 
   const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
-  const onChangeRemberLastPage = (event) => setRememberLastPage(event.target.checked);
-
-  useEffect(() => {
-    if (rememberMail) localStorage.setItem('rememberMail', rememberMail);
-    if (rememberLastPage) localStorage.setItem('rememberLastPage', true);
-  }, [rememberMail, rememberLastPage]);
 
   console.log(rememberMail, 'rememberMail');
 
@@ -46,10 +36,11 @@ export const LoginForm = ({token}) => {
       .then((response) => response.json())
       .then((response) => {
         if (response.auth) {
+          // if (rememberMail)
+
           localStorage.setItem('token', response.tokenJWT);
-          const lastPage = localStorage.getItem('lastPage') || '/adverts';
+
           onLogin(true);
-          history.push(lastPage);
         } else {
           setShowError(true);
         }
@@ -100,15 +91,6 @@ export const LoginForm = ({token}) => {
                         name="rememberMail"
                         value={rememberMail}
                         onChange={onChangeRemberEmail}
-                      />
-                      <Form.Check
-                        inline
-                        label="Remember Last Page"
-                        id="lifestyle"
-                        type="checkbox"
-                        name="rememberLastPage"
-                        value={rememberLastPage}
-                        onChange={onChangeRemberLastPage}
                       />
                       <Button
                         type="submit"
