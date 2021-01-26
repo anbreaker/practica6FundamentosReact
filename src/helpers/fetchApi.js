@@ -1,6 +1,6 @@
-const handleSubmit = async (event) => {
-  event.preventDefault();
+import {urlBackend} from './apiUrls';
 
+export const loginApp = async (email, password) => {
   try {
     let response = await fetch(`${urlBackend}api/loginJWT`, {
       method: 'POST',
@@ -11,15 +11,8 @@ const handleSubmit = async (event) => {
     });
 
     response = await response.json();
-    console.log(response);
 
-    if (response.auth) {
-      localStorage.setItem('token', response.tokenJWT);
-      onLogin(true);
-      history.push('/adverts');
-    } else {
-      setShowError(true);
-    }
+    return response;
   } catch (error) {
     console.error();
   }

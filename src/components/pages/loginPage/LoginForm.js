@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
 import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
-import {urlBackend} from '../../../helpers/apiUrls';
 import {useGetSessionDetails} from '../../../context/AuthContext';
 import {useForm} from '../../../hooks/useForm';
+
+import {loginApp} from '../../../helpers/fetchApi';
 
 export const LoginForm = () => {
   const {isLogged, onLogin} = useGetSessionDetails();
@@ -19,30 +20,18 @@ export const LoginForm = () => {
 
   const [showError, setShowError] = useState(false);
 
-  console.log(email, password, rememberMail, showError);
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const response = await loginApp(email, password);
 
-    fetch(`${urlBackend}api/loginJWT`, {
-      method: 'POST',
-      body: JSON.stringify({email, password}),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.auth) {
-          // if (rememberMail)
+    if (response.auth) {
+      // if (rememberMail)
+      localStorage.setItem('token', response.tokenJWT);
 
-          localStorage.setItem('token', response.tokenJWT);
-
-          onLogin(true);
-        } else {
-          setShowError(true);
-        }
-      });
+      onLogin(true);
+    } else {
+      setShowError(true);
+    }
   };
 
   return (
