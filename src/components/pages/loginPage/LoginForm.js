@@ -12,16 +12,14 @@ export const LoginForm = () => {
   const [formValues, handleInputChange] = useForm({
     email: '',
     password: '',
+    rememberMail: false,
   });
 
-  const {email, password} = formValues;
+  const {email, password, rememberMail} = formValues;
 
   const [showError, setShowError] = useState(false);
-  const [rememberMail, setRememberMail] = useState(false);
 
-  const onChangeRemberEmail = (event) => setRememberMail(event.target.checked);
-
-  console.log(rememberMail, 'rememberMail');
+  console.log(email, password, rememberMail, showError);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -90,7 +88,7 @@ export const LoginForm = () => {
                         type="checkbox"
                         name="rememberMail"
                         value={rememberMail}
-                        onChange={onChangeRemberEmail}
+                        onChange={handleInputChange}
                       />
                       <Button
                         type="submit"
