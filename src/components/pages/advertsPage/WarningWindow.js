@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Modal} from 'react-bootstrap';
 
 export const WarningWindow = (props) => {
-  const {deleteAdById} = props;
+  const {deleteAdvert} = props;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,7 +23,7 @@ export const WarningWindow = (props) => {
           <Button variant="success" onClick={handleClose}>
             No, Close
           </Button>
-          <Button variant="danger" onClick={deleteAdById}>
+          <Button variant="danger" onClick={deleteAdvert}>
             Yes, Delete!
           </Button>
         </Modal.Footer>

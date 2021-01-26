@@ -4,7 +4,6 @@ import {Container, Form, Jumbotron, Button} from 'react-bootstrap';
 
 import {useGetSessionDetails} from '../../../context/AuthContext';
 import {useForm} from '../../../hooks/useForm';
-
 import {loginApp} from '../../../helpers/fetchApi';
 
 export const LoginForm = () => {
@@ -22,6 +21,7 @@ export const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const response = await loginApp(email, password);
 
     if (response.auth) {

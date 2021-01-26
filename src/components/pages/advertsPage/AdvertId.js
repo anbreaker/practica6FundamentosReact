@@ -5,15 +5,21 @@ import {Card, Container, Jumbotron, ListGroup, ListGroupItem} from 'react-bootst
 import {WarningWindow} from './WarningWindow';
 import {urlBackend} from '../../../helpers/apiUrls';
 
+// import {deleteAdById} from '../../../helpers/fetchApi';
+
 export const AdvertId = ({ad}) => {
   const history = useHistory();
 
   const token = localStorage.getItem('token');
 
+  // const urlToDelete = `api/ads/${ad._id}?token=${token}`;
   const urlToDelete = `${urlBackend}api/ads/${ad._id}?token=${token}`;
 
-  const deleteAdById = (event) => {
+  const deleteAdvert = async (event) => {
     event.preventDefault();
+
+    // const ver = await deleteAdById(urlToDelete);
+    // console.log(ver);
 
     fetch(urlToDelete, {method: 'DELETE'})
       .then((response) => response.json())
@@ -48,7 +54,7 @@ export const AdvertId = ({ad}) => {
               </ListGroupItem>
             </ListGroup>
             <div className="text-center">
-              <WarningWindow deleteAdById={deleteAdById} />
+              <WarningWindow deleteAdvert={deleteAdvert} />
             </div>
           </Card>
         </Jumbotron>
