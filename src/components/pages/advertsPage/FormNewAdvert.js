@@ -22,25 +22,25 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
 
   const {token} = useGetSessionDetails();
 
-  function onChangeAdvertName(event) {
+  const onChangeAdvertName = (event) => {
     setAdName(event.target.value);
-  }
-  function onChangeCost(event) {
+  };
+  const onChangeCost = (event) => {
     setCost(event.target.value);
-  }
+  };
 
-  function onChangeSaleBuy(event) {
+  const onChangeSaleBuy = (event) => {
     if (event.target.id === 'buyBtn') setOnSale(false);
     if (event.target.id === 'saleBtn') setOnSale(true);
-  }
+  };
 
-  function clickTags(event) {
+  const clickTags = (event) => {
     if (event.target.checked === false) {
       setTags(tags.filter((tag) => tag !== event.target.id));
     } else {
       setTags((tags) => [...tags, event.target.id]);
     }
-  }
+  };
 
   const formSubmit = async (event) => {
     event.preventDefault();

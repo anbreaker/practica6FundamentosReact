@@ -11,13 +11,13 @@ export const AdvertsListPage = (props) => {
 
   const {token} = useGetSessionDetails();
 
-  const changeAdversToShow = async (token) => {
+  const adversToShow = async (token) => {
     const response = await showAdvertsList(token);
     setAds(response);
   };
 
   useEffect(() => {
-    changeAdversToShow(token);
+    adversToShow(token);
   }, [token]);
 
   return (

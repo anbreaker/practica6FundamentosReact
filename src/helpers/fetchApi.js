@@ -18,10 +18,6 @@ export const loginApp = async (email, password) => {
   }
 };
 
-// const myFetch = (url, token) => {
-//   return fetch(`${url}&token=${token}`).then(response => response.json())
-// }
-
 export const showAdvertsList = async (token) => {
   try {
     let response = await fetch(`${urlBackend}api/ads?limit=50&token=${token}`, {
@@ -56,6 +52,22 @@ export const showAdvertPageById = async (id, token) => {
   }
 };
 
+export const showAdvertsByFilters = async (params) => {
+  try {
+    let response = await fetch(`${urlBackend}api/ads?${params.toString()}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.status === 200) return response.json();
+
+    return response;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
 export const createNewAdvert = async (token, form) => {
   try {
     let response = await fetch(`${urlBackend}api/ads?token=${token}`, {
@@ -77,3 +89,8 @@ export const deleteAdById = async ({id, token}) => {
     console.error('Error:', error);
   }
 };
+
+// pensar como hacer el response...
+// const myFetch = (url, token) => {
+//   return fetch(`${url}&token=${token}`).then(response => response.json())
+// }
