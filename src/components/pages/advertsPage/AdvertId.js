@@ -13,12 +13,12 @@ export const AdvertId = ({ad}) => {
 
   const {token} = useGetSessionDetails();
 
-  const urlToDelete = `api/ads/${ad._id}?token=${token}`;
+  const id = ad._id;
 
   const deleteAdvert = async (event) => {
     event.preventDefault();
 
-    await deleteAdById(urlToDelete);
+    await deleteAdById({id, token});
     history.push('/adverts');
   };
 

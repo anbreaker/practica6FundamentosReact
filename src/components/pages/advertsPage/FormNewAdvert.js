@@ -9,8 +9,8 @@ import {
   Container,
 } from 'react-bootstrap';
 
-import {urlBackend} from '../../../helpers/apiUrls';
 import {useGetSessionDetails} from '../../../context/AuthContext';
+import {createNewAdvert} from '../../../helpers/fetchApi';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const history = useHistory();
@@ -42,7 +42,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     }
   }
 
-  function formSubmit(event) {
+  const formSubmit = async (event) => {
     event.preventDefault();
     const form = new FormData();
     form.append('name', adName);
@@ -51,18 +51,12 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
-    fetch(`${urlBackend}api/ads?token=${token}`, {
-      method: 'POST',
-      body: form,
-    })
-      .then((response) => response.json())
-      .catch(console.error)
-      .then(() => {
-        setTimeout(() => {
-          history.push('/adverts');
-        }, 500);
-      });
-  }
+    await createNewAdvert(token, form);
+
+    setTimeout(() => {
+      history.push('/adverts');
+    }, 500);
+  };
 
   return (
     <React.Fragment>
