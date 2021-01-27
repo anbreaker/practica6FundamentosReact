@@ -12,18 +12,20 @@ import {NotFoundPage} from '../components/pages/notFoundPage/NotFoundPage';
 import {AuthContextProvider} from '../context/AuthContext';
 import {PrivateRoute} from './PrivateRoute';
 
-export const AppRouter = ({token}) => {
-  const [isLogged, setIsLogged] = useState(!!token);
+export const AppRouter = ({initialToken}) => {
+  const [token, setToken] = useState(initialToken);
 
-  const onLogin = () => setIsLogged(true);
+  const onLogin = (tokenJWT) => {
+    setToken(tokenJWT);
+  };
 
   const onLogout = () => {
     localStorage.removeItem('token');
-    setIsLogged(false);
+    setToken(null);
   };
 
   return (
-    <AuthContextProvider value={{isLogged, onLogin, onLogout}}>
+    <AuthContextProvider value={{isLogged: !!token, onLogin, onLogout, token}}>
       <Router>
         <div className="container">
           <Navigation />

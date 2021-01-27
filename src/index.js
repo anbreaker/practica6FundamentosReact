@@ -8,7 +8,7 @@ const token = localStorage.getItem('token') || null;
 
 ReactDOM.render(
   <React.Fragment>
-    <AppRouter token={token} />;
+    <AppRouter initialToken={token} />;
   </React.Fragment>,
   document.getElementById('root')
 );

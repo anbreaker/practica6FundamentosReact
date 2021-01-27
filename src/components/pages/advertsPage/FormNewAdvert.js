@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap';
 
 import {urlBackend} from '../../../helpers/apiUrls';
+import {useGetSessionDetails} from '../../../context/AuthContext';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const history = useHistory();
@@ -19,7 +20,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   const [file, setFile] = useState();
   const [tags, setTags] = useState([]);
 
-  const token = localStorage.getItem('token');
+  const {token} = useGetSessionDetails();
 
   function onChangeAdvertName(event) {
     setAdName(event.target.value);

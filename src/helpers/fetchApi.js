@@ -18,6 +18,10 @@ export const loginApp = async (email, password) => {
   }
 };
 
+// const myFetch = (url, token) => {
+//   return fetch(`${url}&token=${token}`).then(response => response.json())
+// }
+
 export const showAdvertPageById = async (id, token) => {
   try {
     let response = await fetch(`${urlBackend}api/ads/${id}?token=${token}`, {
@@ -27,7 +31,7 @@ export const showAdvertPageById = async (id, token) => {
       },
     });
 
-    if (response.status === 200) return await response.json();
+    if (response.status === 200) return response.json();
 
     return response;
   } catch (error) {
@@ -37,8 +41,7 @@ export const showAdvertPageById = async (id, token) => {
 
 export const deleteAdById = async (urlToDelete) => {
   try {
-    let response = await fetch(`${urlBackend}${urlToDelete}`, {method: 'DELETE'});
-    response = await response.json();
+    await fetch(`${urlBackend}${urlToDelete}`, {method: 'DELETE'});
   } catch (error) {
     console.error('Error:', error);
   }

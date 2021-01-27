@@ -25,10 +25,9 @@ export const LoginForm = () => {
     const response = await loginApp(email, password);
 
     if (response.auth) {
-      // if (rememberMail)
-      localStorage.setItem('token', response.tokenJWT);
+      if (rememberMail) localStorage.setItem('token', response.tokenJWT);
 
-      onLogin(true);
+      onLogin(response.tokenJWT);
     } else {
       setShowError(true);
     }
