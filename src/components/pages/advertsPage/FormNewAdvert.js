@@ -30,8 +30,14 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   };
 
   const onChangeSaleBuy = (event) => {
-    if (event.target.id === 'buyBtn') setOnSale(false);
-    if (event.target.id === 'saleBtn') setOnSale(true);
+    if (event.target.id === 'buyBtn') {
+      setOnSale(false);
+      console.log(event.target.id, '<-Compra');
+    }
+    if (event.target.id === 'saleBtn') {
+      setOnSale(true);
+      console.log(event.target.id, '<-Venta');
+    }
   };
 
   const clickTags = (event) => {
@@ -44,7 +50,9 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
 
   const formSubmit = async (event) => {
     event.preventDefault();
+
     const form = new FormData();
+
     form.append('name', adName);
     form.append('onSale', onSale);
     form.append('cost', cost);
@@ -80,13 +88,13 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                 <ButtonToolbar aria-label="Toolbar with button groups">
                   <ButtonGroup className="mr-2" aria-label="First group">
                     <Button
-                      className="btn btn-sm btn-secondary"
+                      className="btn btn-xl btn1-color btn-danger ml-4 mr-4"
                       onClick={onChangeSaleBuy}
                       id="buyBtn">
                       Buy
                     </Button>
                     <Button
-                      className="btn btn-sm btn-primary"
+                      className="btn btn-xl btn-success select"
                       onClick={onChangeSaleBuy}
                       id="saleBtn">
                       Sale

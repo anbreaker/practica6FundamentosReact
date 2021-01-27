@@ -8,6 +8,21 @@ body {
   height: 282px;
 }
 
+.btn1-color {
+  background-color: #ff6361;
+  color: azure;
+}
+
+.btn1-color:hover {
+
+  background-color: #de425b;
+}
+
+.select:hover {
+
+  background-color: #488f31;
+}
+
 .decoration:hover {
   background-color: rgb(66, 66, 66);
   border-radius: 7px;
