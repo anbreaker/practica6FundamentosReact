@@ -4,13 +4,15 @@ import {useHistory} from 'react-router-dom';
 import {FormFiltersAds} from './FormFiltersAds';
 import {AdvertsList} from './AdvertsList';
 import {Layout} from '../../layout/Layout';
+import {SpinnerComponent} from '../../uxTools/SpinnerComponent';
 import {urlBackend} from '../../../helpers/apiUrls';
+import {useGetSessionDetails} from '../../../context/AuthContext';
 
 export const FilterAdvertsPage = () => {
   const history = useHistory();
   const [ads, setAds] = useState([]);
 
-  const token = localStorage.getItem('token');
+  const {token} = useGetSessionDetails();
 
   useEffect(() => {
     fetch(`${urlBackend}api/ads?token=${token}`, {
@@ -21,8 +23,6 @@ export const FilterAdvertsPage = () => {
     })
       .then((response) => {
         if (response.status === 200) return response.json();
-
-        history.push('/login');
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
@@ -44,8 +44,6 @@ export const FilterAdvertsPage = () => {
     })
       .then((response) => {
         if (response.status === 200) return response.json();
-
-        history.push('/login');
       })
       .then((response) => setAds(response))
       .catch((error) => console.error('Error:', error));
@@ -54,7 +52,9 @@ export const FilterAdvertsPage = () => {
   return (
     <Layout>
       <FormFiltersAds onFilterChange={onFilterChange} />
-      <AdvertsList ads={ads} />
+      {ads.length !== 0 ? <AdvertsList ads={ads} /> : <SpinnerComponent />}
     </Layout>
   );
 };
+
+<Layout></Layout>;
