@@ -72,7 +72,6 @@ export const LoginForm = () => {
                       <Form.Check
                         inline
                         label="Remember"
-                        id="lifestyle"
                         type="checkbox"
                         name="rememberMail"
                         value={rememberMail}

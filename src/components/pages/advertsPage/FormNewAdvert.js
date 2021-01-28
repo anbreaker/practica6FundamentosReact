@@ -1,52 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import {
-  Form,
-  Button,
-  ButtonGroup,
-  ButtonToolbar,
-  Jumbotron,
-  Container,
-} from 'react-bootstrap';
+import {Form, FormCheck, Button, Jumbotron, Container} from 'react-bootstrap';
 
 import {useGetSessionDetails} from '../../../context/AuthContext';
 import {createNewAdvert} from '../../../helpers/fetchApi';
+import {useForm} from '../../../hooks/useForm';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const history = useHistory();
-  const [adName, setAdName] = useState('');
-  const [onSale, setOnSale] = useState(true);
-  const [cost, setCost] = useState(0);
-  const [file, setFile] = useState();
-  const [tags, setTags] = useState([]);
 
   const {token} = useGetSessionDetails();
 
-  const onChangeAdvertName = (event) => {
-    setAdName(event.target.value);
-  };
-  const onChangeCost = (event) => {
-    setCost(event.target.value);
-  };
+  const [file, setFile] = useState();
+  const [filterValues, handleInputChange] = useForm({
+    adName: '',
+    onSale: true,
+    cost: 0,
+    tags: [],
+  });
 
-  const onChangeSaleBuy = (event) => {
-    if (event.target.id === 'buyBtn') {
-      setOnSale(false);
-      console.log(event.target.id, '<-Compra');
-    }
-    if (event.target.id === 'saleBtn') {
-      setOnSale(true);
-      console.log(event.target.id, '<-Venta');
-    }
-  };
+  const {adName, onSale, cost, tags} = filterValues;
 
-  const clickTags = (event) => {
-    if (event.target.checked === false) {
-      setTags(tags.filter((tag) => tag !== event.target.id));
-    } else {
-      setTags((tags) => [...tags, event.target.id]);
-    }
-  };
+  // console.log(adName, onSale, cost, tags);
+  console.log(onSale, '<-- venta');
+
+  useEffect(() => {
+    console.log('hey');
+  }, [adName, onSale, cost]);
 
   const formSubmit = async (event) => {
     event.preventDefault();
@@ -72,35 +52,56 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
         <h1>New Advert</h1>
         <Jumbotron>
           <Form onSubmit={formSubmit}>
-            <Form.Group onChange={onChangeAdvertName}>
+            <Form.Group>
               <Form.Label>Advert Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter advert name" required />
+              <Form.Control
+                name="adName"
+                value={adName}
+                type="text"
+                placeholder="Enter advert name"
+                onChange={handleInputChange}
+                required
+              />
             </Form.Group>
 
             <Form.Row>
-              <Form.Group className="col-8" onChange={onChangeCost}>
+              <Form.Group className="col-8">
                 <Form.Label>Cost €</Form.Label>
-                <Form.Control type="number" placeholder="Enter Cost €" required />
+                <Form.Control
+                  name="cost"
+                  value={cost}
+                  type="number"
+                  placeholder="Enter Cost €"
+                  onChange={handleInputChange}
+                  required
+                />
               </Form.Group>
 
               <Form.Group className="col-4">
-                <Form.Label>Select Buy or Sale Product:</Form.Label>
-                <ButtonToolbar aria-label="Toolbar with button groups">
-                  <ButtonGroup className="mr-2" aria-label="First group">
-                    <Button
-                      className="btn btn-xl btn1-color btn-danger ml-4 mr-4"
-                      onClick={onChangeSaleBuy}
-                      id="buyBtn">
-                      Buy
-                    </Button>
-                    <Button
-                      className="btn btn-xl btn-success select"
-                      onClick={onChangeSaleBuy}
-                      id="saleBtn">
-                      Sale
-                    </Button>
-                  </ButtonGroup>
-                </ButtonToolbar>
+                <Form.Label className="ml-4">Select Buy or Sale Product:</Form.Label>
+                <FormCheck className="form-check ">
+                  <Form.Row>
+                    <Form.Check
+                      label="Buy"
+                      className="ml-4 mt-2"
+                      type="radio"
+                      name="onSale"
+                      inline
+                      value={onSale}
+                      onChange={handleInputChange}
+                    />
+
+                    <Form.Check
+                      label="Sale"
+                      className="ml-4 mt-2"
+                      inline
+                      type="radio"
+                      name="onSale"
+                      value={onSale}
+                      onChange={() => (filterValues.onSale = false)}
+                    />
+                  </Form.Row>
+                </FormCheck>
               </Form.Group>
             </Form.Row>
 
@@ -114,28 +115,36 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                       label="technology"
                       type="checkbox"
                       id="technology"
-                      onClick={clickTags}
+                      name="technology"
+                      value={tags}
+                      onClick={handleInputChange}
                     />
                     <Form.Check
                       inline
                       label="Developer"
                       type="checkbox"
                       id="developer"
-                      onClick={clickTags}
+                      name="developer"
+                      value={tags}
+                      onClick={handleInputChange}
                     />
                     <Form.Check
                       inline
                       label="Work"
                       type="checkbox"
                       id="work"
-                      onClick={clickTags}
+                      name="work"
+                      value={tags}
+                      onClick={handleInputChange}
                     />
                     <Form.Check
                       inline
                       label="lifestyle"
                       type="checkbox"
                       id="lifestyle"
-                      onClick={clickTags}
+                      name="lifestyle"
+                      value={tags}
+                      onClick={handleInputChange}
                     />
                   </div>
                 ))}
@@ -152,6 +161,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                 />
               </Form.Group>
             </Form.Row>
+
             <div className="text-center">
               <Button className="btn btn-info btn-lg mt-2" type="submit">
                 Upload New Advert
