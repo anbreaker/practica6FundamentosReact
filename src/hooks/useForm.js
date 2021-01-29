@@ -12,8 +12,7 @@ export const useForm = (initialStateForm = {}) => {
 
     setFormValues({
       ...formValues,
-      [name]:
-        type === 'checkbox' ? checked : value || type === 'radio' ? checked : checked,
+      [name]: type === 'checkbox' ? checked : value,
     });
   };
 

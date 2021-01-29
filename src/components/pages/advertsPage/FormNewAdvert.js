@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Form, FormCheck, Button, Jumbotron, Container} from 'react-bootstrap';
 
@@ -14,19 +14,22 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   const [file, setFile] = useState();
   const [filterValues, handleInputChange] = useForm({
     adName: '',
-    onSale: true,
+    onSale: 'buy',
     cost: 0,
     tags: [],
   });
 
   const {adName, onSale, cost, tags} = filterValues;
 
-  // console.log(adName, onSale, cost, tags);
-  console.log(onSale, '<-- venta');
+  const clickTags = (event) => {
+    console.log(event.target);
 
-  useEffect(() => {
-    console.log('hey');
-  }, [adName, onSale, cost]);
+    // if (event.target.checked === false) {
+    //   handleInputChange(tags.filter((tag) => tag !== event.target.id));
+    // } else {
+    //   handleInputChange((tags) => [...tags, event.target.id]);
+    // }
+  };
 
   const formSubmit = async (event) => {
     event.preventDefault();
@@ -34,15 +37,17 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     const form = new FormData();
 
     form.append('name', adName);
-    form.append('onSale', onSale);
+    form.append('onSale', onSale === 'buy' ? true : false);
     form.append('cost', cost);
     form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
+    console.log(form.get('tags'));
+
     await createNewAdvert(token, form);
 
     setTimeout(() => {
-      history.push('/adverts');
+      // history.push('/adverts');
     }, 500);
   };
 
@@ -87,7 +92,8 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                       type="radio"
                       name="onSale"
                       inline
-                      value={onSale}
+                      value="buy"
+                      checked={onSale === 'buy'}
                       onChange={handleInputChange}
                     />
 
@@ -97,8 +103,9 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                       inline
                       type="radio"
                       name="onSale"
-                      value={onSale}
-                      onChange={() => (filterValues.onSale = false)}
+                      value="sale"
+                      checked={onSale === 'sale'}
+                      onChange={handleInputChange}
                     />
                   </Form.Row>
                 </FormCheck>
@@ -106,48 +113,47 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6">
+              <Form.Group className="col-6 ">
                 <Form.Label>Select Tags:</Form.Label>
-                {['checkbox'].map((type) => (
-                  <div key={`inline-${type}`} className="mb-3">
-                    <Form.Check
-                      inline
-                      label="technology"
-                      type="checkbox"
-                      id="technology"
-                      name="technology"
-                      value={tags}
-                      onClick={handleInputChange}
-                    />
-                    <Form.Check
-                      inline
-                      label="Developer"
-                      type="checkbox"
-                      id="developer"
-                      name="developer"
-                      value={tags}
-                      onClick={handleInputChange}
-                    />
-                    <Form.Check
-                      inline
-                      label="Work"
-                      type="checkbox"
-                      id="work"
-                      name="work"
-                      value={tags}
-                      onClick={handleInputChange}
-                    />
-                    <Form.Check
-                      inline
-                      label="lifestyle"
-                      type="checkbox"
-                      id="lifestyle"
-                      name="lifestyle"
-                      value={tags}
-                      onClick={handleInputChange}
-                    />
-                  </div>
-                ))}
+
+                <div className="mt-2 mb-3">
+                  <Form.Check
+                    inline
+                    label="technology"
+                    type="checkbox"
+                    id="technology"
+                    name="technology"
+                    value={true}
+                    onClick={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="Developer"
+                    type="checkbox"
+                    id="developer"
+                    name="developer"
+                    value={true}
+                    onClick={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="Work"
+                    type="checkbox"
+                    id="work"
+                    name="work"
+                    value={true}
+                    onClick={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="lifestyle"
+                    type="checkbox"
+                    id="lifestyle"
+                    name="lifestyle"
+                    value={true}
+                    onClick={clickTags}
+                  />
+                </div>
               </Form.Group>
 
               <Form.Group className="col-6">
