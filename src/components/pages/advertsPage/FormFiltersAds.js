@@ -7,8 +7,10 @@ import {
   ButtonToolbar,
   Container,
   Form,
+  FormCheck,
   Jumbotron,
 } from 'react-bootstrap';
+import {SelectTags} from './SelectTags';
 
 export const FormFiltersAds = ({onFilterChange = () => {}}) => {
   const [adName, setAdName] = useState('');
@@ -66,66 +68,74 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6">
-                <Form.Label>Select On Sale or Search Product:</Form.Label>
-                <ButtonToolbar aria-label="Toolbar with button groups">
-                  <ButtonGroup className="mr-2" aria-label="First group">
-                    <Button
-                      className="btn btn-sm btn-secondary"
-                      onClick={onChangeSaleBuy}
-                      id="buyBtn">
-                      Buy
-                    </Button>
-                    <Button
-                      className="btn btn-sm btn-primary"
-                      onClick={onChangeSaleBuy}
-                      id="saleBtn">
-                      Sale
-                    </Button>
-                    <Button
-                      className="btn btn-sm btn-primary"
-                      onClick={onChangeSaleBuy}
-                      id="allAds">
-                      All
-                    </Button>
-                  </ButtonGroup>
-                </ButtonToolbar>
+              <Form.Group className="col-6" name="tags">
+                <Form.Label>Select On Buy / Sale or Search all Products:</Form.Label>
+
+                <div className="mt-2 mb-3">
+                  <Form.Check
+                    inline
+                    label="Buy Products"
+                    type="checkbox"
+                    name="buy"
+                    // checked={tags.includes('technology')}
+                    // onChange={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="Sale Products"
+                    type="checkbox"
+                    name="sale"
+                    // checked={tags.includes('developer')}
+                    // onChange={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="All Products"
+                    type="checkbox"
+                    name="all"
+                    // checked={tags.includes('developer')}
+                    // onChange={clickTags}
+                  />
+                </div>
               </Form.Group>
 
-              <Form.Group className="col-6">
+              <Form.Group className="col-6" name="tags">
                 <Form.Label>Select Tags:</Form.Label>
-                {['checkbox'].map((type) => (
-                  <div key={`inline-${type}`} className="mb-3">
-                    <Form.Check
-                      inline
-                      label="technology"
-                      type="checkbox"
-                      id="technology"
-                      onClick={clickTags}
-                    />
-                    <Form.Check
-                      inline
-                      label="Developer"
-                      type="checkbox"
-                      id="developer"
-                      onClick={clickTags}
-                    />
-                    <Form.Check
-                      inline
-                      label="Work"
-                      type="checkbox"
-                      id="work"
-                      onClick={clickTags}
-                    />
-                    <Form.Check
-                      inline
-                      label="lifestyle"
-                      type="checkbox"
-                      id="lifestyle"
-                      onClick={clickTags}
-                    />
-                  </div>
-                ))}
+
+                <div className="mt-2 mb-3">
+                  <Form.Check
+                    inline
+                    label="technology"
+                    type="checkbox"
+                    name="technology"
+                    checked={tags.includes('technology')}
+                    onChange={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="developer"
+                    type="checkbox"
+                    name="developer"
+                    checked={tags.includes('developer')}
+                    onChange={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="Work"
+                    type="checkbox"
+                    name="work"
+                    checked={tags.includes('work')}
+                    onChange={clickTags}
+                  />
+                  <Form.Check
+                    inline
+                    label="Lifestyle"
+                    type="checkbox"
+                    name="lifestyle"
+                    checked={tags.includes('lifestyle')}
+                    onChange={clickTags}
+                  />
+                </div>
               </Form.Group>
             </Form.Row>
 
