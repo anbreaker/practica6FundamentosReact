@@ -22,11 +22,11 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   const {adName, onSale, cost, tags} = filterValues;
 
   const clickTags = (event) => {
-    console.log(event.target);
+    console.log(event.target.value);
 
-    // if (event.target.checked === false) {
+    // if (event.target.value === true) {
     //   handleInputChange(tags.filter((tag) => tag !== event.target.id));
-    // } else {
+    //}else {
     //   handleInputChange((tags) => [...tags, event.target.id]);
     // }
   };
@@ -113,7 +113,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6 ">
+              <Form.Group className="col-6">
                 <Form.Label>Select Tags:</Form.Label>
 
                 <div className="mt-2 mb-3">
