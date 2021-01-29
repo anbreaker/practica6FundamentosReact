@@ -22,13 +22,13 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
   const {adName, onSale, cost, tags} = filterValues;
 
   const clickTags = (event) => {
-    console.log(event.target.value);
+    const {checked, name} = event.target;
 
-    // if (event.target.value === true) {
-    //   handleInputChange(tags.filter((tag) => tag !== event.target.id));
-    //}else {
-    //   handleInputChange((tags) => [...tags, event.target.id]);
-    // }
+    if (checked) {
+      handleInputChange({target: {value: [...tags, name], name: 'tags'}});
+    } else {
+      handleInputChange({target: {value: [], name: 'tags'}});
+    }
   };
 
   const formSubmit = async (event) => {
@@ -47,7 +47,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     await createNewAdvert(token, form);
 
     setTimeout(() => {
-      // history.push('/adverts');
+      history.push('/adverts');
     }, 500);
   };
 
@@ -77,6 +77,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                   value={cost}
                   type="number"
                   placeholder="Enter Cost €"
+                  autoComplete="off"
                   onChange={handleInputChange}
                   required
                 />
@@ -113,7 +114,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6">
+              <Form.Group className="col-6" name="tags">
                 <Form.Label>Select Tags:</Form.Label>
 
                 <div className="mt-2 mb-3">
@@ -121,37 +122,33 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
                     inline
                     label="technology"
                     type="checkbox"
-                    id="technology"
                     name="technology"
-                    value={true}
-                    onClick={clickTags}
+                    checked={tags.includes('technology')}
+                    onChange={clickTags}
                   />
                   <Form.Check
                     inline
-                    label="Developer"
+                    label="developer"
                     type="checkbox"
-                    id="developer"
                     name="developer"
-                    value={true}
-                    onClick={clickTags}
+                    checked={tags.includes('developer')}
+                    onChange={clickTags}
                   />
                   <Form.Check
                     inline
                     label="Work"
                     type="checkbox"
-                    id="work"
                     name="work"
-                    value={true}
-                    onClick={clickTags}
+                    checked={tags.includes('work')}
+                    onChange={clickTags}
                   />
                   <Form.Check
                     inline
-                    label="lifestyle"
+                    label="Lifestyle"
                     type="checkbox"
-                    id="lifestyle"
                     name="lifestyle"
-                    value={true}
-                    onClick={clickTags}
+                    checked={tags.includes('lifestyle')}
+                    onChange={clickTags}
                   />
                 </div>
               </Form.Group>
