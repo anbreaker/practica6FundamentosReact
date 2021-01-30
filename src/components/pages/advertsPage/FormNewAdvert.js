@@ -5,6 +5,7 @@ import {Form, FormCheck, Button, Jumbotron, Container} from 'react-bootstrap';
 import {useGetSessionDetails} from '../../../context/AuthContext';
 import {createNewAdvert} from '../../../helpers/fetchApi';
 import {useForm} from '../../../hooks/useForm';
+import {SelectTags} from './SelectTags';
 
 export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) => {
   const history = useHistory();
@@ -114,44 +115,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <Form.Group className="col-6" name="tags">
-                <Form.Label>Select Tags:</Form.Label>
-
-                <div className="mt-2 mb-3">
-                  <Form.Check
-                    inline
-                    label="technology"
-                    type="checkbox"
-                    name="technology"
-                    checked={tags.includes('technology')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="developer"
-                    type="checkbox"
-                    name="developer"
-                    checked={tags.includes('developer')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="Work"
-                    type="checkbox"
-                    name="work"
-                    checked={tags.includes('work')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="Lifestyle"
-                    type="checkbox"
-                    name="lifestyle"
-                    checked={tags.includes('lifestyle')}
-                    onChange={clickTags}
-                  />
-                </div>
-              </Form.Group>
+              <SelectTags clickTags={clickTags} useForm={useForm} />
 
               <Form.Group className="col-6">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>

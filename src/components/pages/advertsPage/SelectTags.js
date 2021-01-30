@@ -1,7 +1,9 @@
 import React from 'react';
 import {Form} from 'react-bootstrap';
 
-export const SelectTags = () => {
+export const SelectTags = (props) => {
+  const {clickTags} = props;
+
   return (
     <Form.Group className="col-6" name="tags">
       <Form.Label>Select Tags:</Form.Label>
@@ -12,7 +14,7 @@ export const SelectTags = () => {
           label="technology"
           type="checkbox"
           name="technology"
-          checked={tags.includes('technology')}
+          // checked={tags.includes('technology')}
           onChange={clickTags}
         />
         <Form.Check
@@ -20,7 +22,7 @@ export const SelectTags = () => {
           label="developer"
           type="checkbox"
           name="developer"
-          checked={tags.includes('developer')}
+          // checked={tags.includes('developer')}
           onChange={clickTags}
         />
         <Form.Check
@@ -28,7 +30,7 @@ export const SelectTags = () => {
           label="Work"
           type="checkbox"
           name="work"
-          checked={tags.includes('work')}
+          // checked={tags.includes('work')}
           onChange={clickTags}
         />
         <Form.Check
@@ -36,7 +38,7 @@ export const SelectTags = () => {
           label="Lifestyle"
           type="checkbox"
           name="lifestyle"
-          checked={tags.includes('lifestyle')}
+          // checked={tags.includes('lifestyle')}
           onChange={clickTags}
         />
       </div>

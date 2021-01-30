@@ -1,67 +1,63 @@
 import React, {useState} from 'react';
 import {Range} from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import {
-  Button,
-  ButtonGroup,
-  ButtonToolbar,
-  Container,
-  Form,
-  FormCheck,
-  Jumbotron,
-} from 'react-bootstrap';
+import {Button, Container, Form, Jumbotron} from 'react-bootstrap';
+
 import {SelectTags} from './SelectTags';
+import {useForm} from '../../../hooks/useForm';
 
 export const FormFiltersAds = ({onFilterChange = () => {}}) => {
-  const [adName, setAdName] = useState('');
-  const [onSale, setOnSale] = useState(true);
+  const [filterValues, handleInputChange] = useForm({
+    adName: '',
+    onSale: 'buy',
+    tags: [],
+  });
   const [cost, setCost] = useState([1, 40]);
-  const [tags, setTags] = useState([]);
 
-  function onChangeAdvertName(event) {
-    setAdName(event.target.value);
-  }
+  const {adName, onSale, tags} = filterValues;
 
-  function onChangeSaleBuy(event) {
-    if (event.target.id === 'buyBtn') setOnSale(false);
-    if (event.target.id === 'saleBtn') setOnSale(true);
-    if (event.target.id === 'allAds') setOnSale('');
-  }
-
-  function clickTags(event) {
-    if (event.target.checked === false) {
-      setTags(tags.filter((tag) => tag !== event.target.id));
+  const clickTags = (event) => {
+    const {checked, name} = event.target;
+    if (checked) {
+      handleInputChange({target: {value: [...tags, name], name: 'tags'}});
     } else {
-      setTags((tags) => [...tags, event.target.id]);
+      handleInputChange({target: {value: [], name: 'tags'}});
     }
-  }
+  };
 
-  // function Slider
-  function log(value) {
+  const valueSlider = (value) => {
     setCost([value[0], value[1]]);
-  }
+  };
 
   return (
     <React.Fragment>
       <Container className="p-4">
         <h1>Filters Adverts</h1>
         <Jumbotron>
-          <Form
-            onSubmit={(event) => {
-              event.preventDefault();
-              onFilterChange({adName, onSale, cost, tags});
-            }}>
+          <Form>
             <Form.Row>
-              <Form.Group className="col-6" onChange={onChangeAdvertName}>
+              <Form.Group className="col-6">
                 <Form.Label>Advert Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter advert name" />
+                <Form.Control
+                  name="adName"
+                  value={adName}
+                  type="text"
+                  placeholder="Enter advert name"
+                  onChange={handleInputChange}
+                  required
+                />
               </Form.Group>
 
               <Form.Group className="col-6 slidecontainer">
                 <Form.Label>Value Max</Form.Label>
-                <Range allowCross={false} defaultValue={[20, 50]} onChange={log} />
+                <Range
+                  className="mt-3"
+                  allowCross={false}
+                  defaultValue={[20, 50]}
+                  onChange={valueSlider}
+                />
                 <br />
-                <h5 className="text-xl-center">
+                <h5 className="text-center text-xl">
                   Value between: {`${cost[0] * 100} - ${cost[1] * 100}`}
                 </h5>
               </Form.Group>
@@ -99,44 +95,7 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
                 </div>
               </Form.Group>
 
-              <Form.Group className="col-6" name="tags">
-                <Form.Label>Select Tags:</Form.Label>
-
-                <div className="mt-2 mb-3">
-                  <Form.Check
-                    inline
-                    label="technology"
-                    type="checkbox"
-                    name="technology"
-                    checked={tags.includes('technology')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="developer"
-                    type="checkbox"
-                    name="developer"
-                    checked={tags.includes('developer')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="Work"
-                    type="checkbox"
-                    name="work"
-                    checked={tags.includes('work')}
-                    onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
-                    label="Lifestyle"
-                    type="checkbox"
-                    name="lifestyle"
-                    checked={tags.includes('lifestyle')}
-                    onChange={clickTags}
-                  />
-                </div>
-              </Form.Group>
+              <SelectTags clickTags={clickTags} />
             </Form.Row>
 
             <div className="text-center">
