@@ -29,12 +29,19 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
     setCost([value[0], value[1]]);
   };
 
+  const applyFilters = (event) => {
+    event.preventDefault();
+    console.log({adName, onSale, cost, tags});
+
+    // onFilterChange({adName, onSale, cost, tags});
+  };
+
   return (
     <React.Fragment>
       <Container className="p-4">
         <h1>Filters Adverts</h1>
         <Jumbotron>
-          <Form>
+          <Form onSubmit={applyFilters}>
             <Form.Row>
               <Form.Group className="col-6">
                 <Form.Label>Advert Name</Form.Label>
@@ -44,7 +51,6 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
                   type="text"
                   placeholder="Enter advert name"
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
