@@ -43,8 +43,6 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
     form.append('image', file);
     tags.forEach((tag) => form.append('tags', tag));
 
-    console.log(form.get('tags'));
-
     await createNewAdvert(token, form);
 
     setTimeout(() => {

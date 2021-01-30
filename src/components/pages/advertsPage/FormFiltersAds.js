@@ -31,9 +31,10 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
 
   const applyFilters = (event) => {
     event.preventDefault();
-    console.log({adName, onSale, cost, tags});
 
-    // onFilterChange({adName, onSale, cost, tags});
+    if (onSale === 'buy') onFilterChange({adName, onSale: true, cost, tags});
+    if (onSale === 'sale') onFilterChange({adName, onSale: false, cost, tags});
+    if (onSale === 'all') onFilterChange({adName, onSale: '', cost, tags});
   };
 
   return (
@@ -75,28 +76,35 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
 
                 <div className="mt-2 mb-3">
                   <Form.Check
+                    label="Buy"
+                    className="ml-4 mt-2"
+                    type="radio"
+                    name="onSale"
                     inline
-                    label="Buy Products"
-                    type="checkbox"
-                    name="buy"
-                    // checked={tags.includes('technology')}
-                    // onChange={clickTags}
+                    value="buy"
+                    checked={onSale === 'buy'}
+                    onChange={handleInputChange}
+                  />
+
+                  <Form.Check
+                    label="Sale"
+                    className="ml-4 mt-2"
+                    inline
+                    type="radio"
+                    name="onSale"
+                    value="sale"
+                    checked={onSale === 'sale'}
+                    onChange={handleInputChange}
                   />
                   <Form.Check
-                    inline
-                    label="Sale Products"
-                    type="checkbox"
-                    name="sale"
-                    // checked={tags.includes('developer')}
-                    // onChange={clickTags}
-                  />
-                  <Form.Check
-                    inline
                     label="All Products"
-                    type="checkbox"
-                    name="all"
-                    // checked={tags.includes('developer')}
-                    // onChange={clickTags}
+                    className="ml-4 mt-2"
+                    inline
+                    type="radio"
+                    name="onSale"
+                    value="all"
+                    checked={onSale === 'all'}
+                    onChange={handleInputChange}
                   />
                 </div>
               </Form.Group>

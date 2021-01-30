@@ -17,6 +17,8 @@ export const FilterAdvertsPage = () => {
     setAds(response);
   };
 
+  // Disparar de nuevo el efecto. Preguntar.
+
   useEffect(() => {
     adversToShow(token);
   }, [token]);

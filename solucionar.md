@@ -1,3 +1,1 @@
-# Elimnar anuncio da error pero elimina
-
-# Persistir... si checked
+// Disparar de nuevo el efecto. Preguntar.
