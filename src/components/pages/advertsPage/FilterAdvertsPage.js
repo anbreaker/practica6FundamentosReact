@@ -17,14 +17,13 @@ export const FilterAdvertsPage = () => {
     setAds(response);
   };
 
-  // Disparar de nuevo el efecto. Preguntar.
-
   useEffect(() => {
     adversToShow(token);
   }, [token]);
 
   const onFilterChange = async (filters) => {
     const params = new URLSearchParams();
+
     params.set('token', token);
     params.set('name', filters.adName);
     params.set('onSale', filters.onSale);

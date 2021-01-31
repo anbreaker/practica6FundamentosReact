@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
+import {Button, Container, Form, Jumbotron} from 'react-bootstrap';
 import {Range} from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import {Button, Container, Form, Jumbotron} from 'react-bootstrap';
 
 import {SelectTags} from './SelectTags';
 import {useForm} from '../../../hooks/useForm';
@@ -50,7 +50,7 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
                   name="adName"
                   value={adName}
                   type="text"
-                  placeholder="Enter advert name"
+                  placeholder="Enter advert name (It is Sensitive Case)"
                   onChange={handleInputChange}
                 />
               </Form.Group>
