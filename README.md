@@ -11,7 +11,11 @@
 
 > Frontend of Backend on Node Express Nodepop
 
+<br>
+
 ### 🏠 [Homepage](https://github.com/anbreaker/practica6FundamentosReact)
+
+<br>
 
 ## Install all dependencies src 💾
 
@@ -22,12 +26,16 @@ Path: practica6_fundamentos_react/
 npm i
 ```
 
+<br>
+
 ## Install Dependencies of backendPractica5 🔧
 
 ```sh
 Path: practica6_fundamentos_react/backendPractica5
 npm i
 ```
+
+<br>
 
 ## To start a initial DataBase with Advert an Users 🏁
 
@@ -42,12 +50,16 @@ npm run initDB
 Respond y or yes
 ```
 
+<br>
+
 ## Microservice install dependencies services backendPractica5/services 🔧
 
 ```sh
 Path: practica6_fundamentos_react/backendPractica5/services
 npm i
 ```
+
+<br>
 
 ## Frontend on REACT(first terminal) 🔨
 
@@ -57,6 +69,12 @@ Path: practica6_fundamentos_react/
 npm start
 ```
 
+<br><br>
+
+# To handle this application, it is necessary to start the whole backend, two options manual start or with PM2.
+
+<br>
+
 ## Backend Node with Express (second terminal) 🔨
 
 ```sh
@@ -64,6 +82,8 @@ npm start
 Path: practica6_fundamentos_react/backendPractica5
 npm run backend
 ```
+
+<br>
 
 ## Microservices with Node (third terminal) 🔨
 
@@ -74,6 +94,8 @@ npm run micro
 
 ```
 
+<br>
+
 ## Init NodeApi Backend and microserviceThumbnailCreator.js with PM2 🚀
 
 ```sh
@@ -83,6 +105,8 @@ Path: practica6_fundamentos_react/backendPractica5
 pm2 start ecosystem.config.js
 ```
 
+<br>
+
 ## Postman Model 📯
 
 - Postman: https://www.postman.com/collections/60f54fb4d346d7f4ebc0
@@ -91,9 +115,13 @@ pm2 start ecosystem.config.js
 
 - Postman API DOCs: - https://documenter.getpostman.com/view/12623471/TVCjvk79
 
+<br><br>
+
 ## To see an example on youtube (click on the image) 📼
 
 [![](https://raw.githubusercontent.com/anbreaker/practica6_fundamentos_react/main/public/React.png)](https://www.youtube.com/watch?v=2wyjvx5XDOE&t")
+
+<br><br>
 
 ## Author
 
