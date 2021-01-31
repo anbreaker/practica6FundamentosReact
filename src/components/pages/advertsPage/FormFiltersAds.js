@@ -18,9 +18,13 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
 
   const clickTags = (event) => {
     const {checked, name} = event.target;
+
     if (checked) {
       handleInputChange({target: {value: [...tags, name], name: 'tags'}});
     } else {
+      // Arreglar esta parte del else...
+      console.log('deschequeo');
+
       handleInputChange({target: {value: [], name: 'tags'}});
     }
   };
@@ -29,7 +33,7 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
     setCost([value[0], value[1]]);
   };
 
-  const applyFilters = (event) => {
+  const applyFilterBuySellAll = (event) => {
     event.preventDefault();
 
     if (onSale === 'buy') onFilterChange({adName, onSale: true, cost, tags});
@@ -42,7 +46,7 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
       <Container className="p-4">
         <h1>Filters Adverts</h1>
         <Jumbotron>
-          <Form onSubmit={applyFilters}>
+          <Form onSubmit={applyFilterBuySellAll}>
             <Form.Row>
               <Form.Group className="col-6">
                 <Form.Label>Advert Name</Form.Label>
@@ -109,7 +113,7 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
                 </div>
               </Form.Group>
 
-              <SelectTags clickTags={clickTags} />
+              <SelectTags name="tags" value={filterValues.tags} onChange={clickTags} />
             </Form.Row>
 
             <div className="text-center">

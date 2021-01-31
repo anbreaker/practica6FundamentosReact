@@ -2,7 +2,10 @@ import React from 'react';
 import {Form} from 'react-bootstrap';
 
 export const SelectTags = (props) => {
-  const {clickTags} = props;
+  const {onChange, value} = props;
+  console.log(value, '<--');
+
+  //{target:{value, name}}
 
   return (
     <Form.Group className="col-6" name="tags">
@@ -14,32 +17,32 @@ export const SelectTags = (props) => {
           label="technology"
           type="checkbox"
           name="technology"
-          // checked={tags.includes('technology')}
-          onChange={clickTags}
+          checked={value.includes('technology')}
+          onChange={onChange}
         />
         <Form.Check
           inline
           label="developer"
           type="checkbox"
           name="developer"
-          // checked={tags.includes('developer')}
-          onChange={clickTags}
+          checked={value.includes('developer')}
+          onChange={onChange}
         />
         <Form.Check
           inline
           label="Work"
           type="checkbox"
           name="work"
-          // checked={tags.includes('work')}
-          onChange={clickTags}
+          checked={value.includes('work')}
+          onChange={onChange}
         />
         <Form.Check
           inline
           label="Lifestyle"
           type="checkbox"
           name="lifestyle"
-          // checked={tags.includes('lifestyle')}
-          onChange={clickTags}
+          checked={value.includes('lifestyle')}
+          onChange={onChange}
         />
       </div>
     </Form.Group>

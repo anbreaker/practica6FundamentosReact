@@ -113,7 +113,7 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <SelectTags clickTags={clickTags} useForm={useForm} />
+              <SelectTags name="tags" value={filterValues.tags} onChange={clickTags} />
 
               <Form.Group className="col-6">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>
