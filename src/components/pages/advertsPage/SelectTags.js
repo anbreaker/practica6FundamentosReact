@@ -3,9 +3,24 @@ import {Form} from 'react-bootstrap';
 
 export const SelectTags = (props) => {
   const {onChange, value} = props;
-  console.log(value, '<--');
 
-  //{target:{value, name}}
+  const handleOnChangeTags = ({target}) => {
+    const {checked, name} = target;
+
+    let newArray;
+    if (checked) {
+      onChange({
+        target: {
+          value: [...value, name],
+          name: 'tags',
+        },
+      });
+    } else {
+      newArray = value.filter((tag) => tag !== target.name);
+
+      onChange({target: {value: newArray, name: 'tags'}});
+    }
+  };
 
   return (
     <Form.Group className="col-6" name="tags">
@@ -18,7 +33,7 @@ export const SelectTags = (props) => {
           type="checkbox"
           name="technology"
           checked={value.includes('technology')}
-          onChange={onChange}
+          onChange={handleOnChangeTags}
         />
         <Form.Check
           inline
@@ -26,7 +41,7 @@ export const SelectTags = (props) => {
           type="checkbox"
           name="developer"
           checked={value.includes('developer')}
-          onChange={onChange}
+          onChange={handleOnChangeTags}
         />
         <Form.Check
           inline
@@ -34,7 +49,7 @@ export const SelectTags = (props) => {
           type="checkbox"
           name="work"
           checked={value.includes('work')}
-          onChange={onChange}
+          onChange={handleOnChangeTags}
         />
         <Form.Check
           inline
@@ -42,7 +57,7 @@ export const SelectTags = (props) => {
           type="checkbox"
           name="lifestyle"
           checked={value.includes('lifestyle')}
-          onChange={onChange}
+          onChange={handleOnChangeTags}
         />
       </div>
     </Form.Group>

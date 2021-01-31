@@ -22,16 +22,6 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
 
   const {adName, onSale, cost, tags} = filterValues;
 
-  const clickTags = (event) => {
-    const {checked, name} = event.target;
-
-    if (checked) {
-      handleInputChange({target: {value: [...tags, name], name: 'tags'}});
-    } else {
-      handleInputChange({target: {value: [], name: 'tags'}});
-    }
-  };
-
   const formSubmit = async (event) => {
     event.preventDefault();
 
@@ -113,7 +103,11 @@ export const FormNewAdvert = ({uploadImage = false, onFilterChange = () => {}}) 
             </Form.Row>
 
             <Form.Row>
-              <SelectTags name="tags" value={filterValues.tags} onChange={clickTags} />
+              <SelectTags
+                name="tags"
+                value={filterValues.tags}
+                onChange={handleInputChange}
+              />
 
               <Form.Group className="col-6">
                 <Form.Label>Photo (with extension: jpeg | jpg | png | gif)</Form.Label>

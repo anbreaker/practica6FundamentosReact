@@ -16,19 +16,6 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
 
   const {adName, onSale, tags} = filterValues;
 
-  const clickTags = (event) => {
-    const {checked, name} = event.target;
-
-    if (checked) {
-      handleInputChange({target: {value: [...tags, name], name: 'tags'}});
-    } else {
-      // Arreglar esta parte del else...
-      console.log('deschequeo');
-
-      handleInputChange({target: {value: [], name: 'tags'}});
-    }
-  };
-
   const valueSlider = (value) => {
     setCost([value[0], value[1]]);
   };
@@ -113,7 +100,11 @@ export const FormFiltersAds = ({onFilterChange = () => {}}) => {
                 </div>
               </Form.Group>
 
-              <SelectTags name="tags" value={filterValues.tags} onChange={clickTags} />
+              <SelectTags
+                name="tags"
+                value={filterValues.tags}
+                onChange={handleInputChange}
+              />
             </Form.Row>
 
             <div className="text-center">
